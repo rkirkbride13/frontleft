@@ -4,7 +4,6 @@ import Act, { IAct } from "../models/acts";
 const ActsController = {
   Create: async (req: Request, res: Response): Promise<void> => {
     const { name, stage, date, start, end } = req.body;
-
     const act: IAct = new Act({ name, stage, date, start, end });
 
     try {
