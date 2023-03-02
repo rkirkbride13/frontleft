@@ -43,32 +43,42 @@ const ActForm = (): ReactElement => {
 
   return (
     <>
+      <div className="logo">
+        <img
+          src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
+          alt="Lightning fonts"
+        ></img>
+      </div>
       <div className="actForm">
+        <br></br>
         <div className="header">Who would you like to see?</div>
         <br></br>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name: </label>
           <input
-            placeholder="Name"
+            className="input"
+            placeholder="Band, DJ etc.."
             id="name"
             type="text"
+            style={{ width: "120px" }}
             value={name}
             onChange={handleChange(setName)}
           />
           <br></br>
-          <br></br>
           <label htmlFor="name">Stage: </label>
           <input
-            placeholder="Stage"
+            className="input"
+            placeholder="Where are they"
             id="stage"
             type="text"
+            style={{ width: "120px" }}
             value={stage}
             onChange={handleChange(setStage)}
           />
           <br></br>
-          <br></br>
           <label htmlFor="name">Date: </label>
           <input
+            className="input"
             placeholder="Date"
             id="date"
             type="date"
@@ -76,20 +86,20 @@ const ActForm = (): ReactElement => {
             onChange={handleChange(setDate)}
           />
           <br></br>
-          <br></br>
           <label htmlFor="name">Start: </label>
           <input
-            placeholder="Start"
+            className="input"
+            placeholder="When are they on"
             id="start"
             type="number"
             value={start}
             onChange={handleChange(setStart)}
           />
           <br></br>
-          <br></br>
           <label htmlFor="name">End: </label>
           <input
-            placeholder="End"
+            className="input"
+            placeholder="Until what time"
             id="end"
             type="number"
             value={end}
@@ -97,7 +107,12 @@ const ActForm = (): ReactElement => {
           />
           <br></br>
           <br></br>
-          <input id="submit" type="submit" value="Submit" />
+          <input
+            className="submit"
+            id="submit"
+            type="submit"
+            value="Save this act"
+          />
         </form>
       </div>
     </>
