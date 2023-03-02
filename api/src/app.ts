@@ -11,4 +11,4 @@ app.use(cors());
 app.use(express.json());
 app.use('/acts', actsRouter);
 
-export default app;
+export {app};
