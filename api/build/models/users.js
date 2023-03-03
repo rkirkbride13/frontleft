@@ -24,12 +24,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const ActSchema = new mongoose_1.Schema({
+const UserSchema = new mongoose_1.Schema({
     name: { type: String, required: true },
-    stage: { type: String, required: true },
-    date: { type: Date, required: true },
-    start: { type: Number, required: true },
-    end: { type: Number, required: true }
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        dropDups: true,
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/],
+    },
+    password: { type: String, required: true },
 });
-const Act = mongoose_1.default.model('Act', ActSchema);
-exports.default = Act;
+const User = mongoose_1.default.model("User", UserSchema);
+exports.default = User;
