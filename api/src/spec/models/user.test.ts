@@ -24,4 +24,20 @@ describe("User", () => {
     expect(users.length).toEqual(1);
     expect(users[0].name).toEqual("Robbie");
   });
+
+  it("cannot create a user with an existing email address", async () => {
+    let dupilcate: IUser = new User({
+      name: "Robbie New",
+      email: "robbie@email.com",
+      password: "password2",
+    });
+
+    dupilcate
+      .save()
+      .then(() => fail("No error raised when saving the file"))
+      .catch((error) => {});
+      
+    const users = await User.find();
+    expect(users.length).toEqual(1);
+  });
 });
