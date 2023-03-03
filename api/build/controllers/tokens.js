@@ -12,25 +12,29 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const tokens_1 = __importDefault(require("../models/tokens"));
 const users_1 = __importDefault(require("../models/users"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const UsersController = {
+const TokensController = {
     Create: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        let encryptedPassword;
-        try {
-            encryptedPassword = yield bcrypt_1.default
-                .genSalt(5)
-                .then((salt) => bcrypt_1.default.hash(req.body.password, salt));
-            yield users_1.default.create({
-                name: req.body.name,
-                email: req.body.email,
-                password: encryptedPassword,
-            });
-            res.status(201).json({ message: "OK" });
+        const email = req.body.email;
+        const password = req.body.password;
+        console.log("In the controller");
+        const user = yield users_1.default.findOne({ email: email });
+        if (!user) {
+            res.status(401).json({ message: "auth error - user does not exist" });
+            return;
         }
-        catch (err) {
-            res.status(400).json({ message: "Bad request - user not created" });
+        const match = yield bcrypt_1.default
+            .compare(password, user.password)
+            .catch((error) => console.error(error));
+        if (!match) {
+            res.status(401).json({ message: "auth error - passwords do not match" });
+        }
+        else {
+            const token = yield tokens_1.default.jsonwebtoken(user.id);
+            res.status(201).json({ token: token, message: "OK" });
         }
     }),
 };
-exports.default = UsersController;
+exports.default = TokensController;

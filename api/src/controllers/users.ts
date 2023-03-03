@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import User, { IUser } from "../models/users";
+import User from "../models/users";
 import bcrypt from "bcrypt";
 
 const UsersController = {
@@ -10,19 +10,14 @@ const UsersController = {
         .genSalt(5)
         .then((salt) => bcrypt.hash(req.body.password, salt));
 
-      const user: IUser = new User({
+      await User.create({
         name: req.body.name,
         email: req.body.email,
         password: encryptedPassword,
       });
-      try {
-        await user.save();
-        res.status(201).json({ message: "OK" });
-      } catch (err) {
-        res.status(400).json({ messag: "Bad request" });
-      }
+      res.status(201).json({ message: "OK" });
     } catch (err) {
-      res.status(400).json({ message: "Bad request" });
+      res.status(400).json({ message: "Bad request - user not created" });
     }
   },
 };
