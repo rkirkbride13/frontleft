@@ -24,5 +24,20 @@ describe("/users", () => {
         let newUser = users[users.length - 1];
         expect(newUser.email).toEqual("robbie@email.com");
     });
+
+    it('encrypts the password', async () => {
+      let response = await request(app)
+      .post("/users")
+      .send({
+        name: "Robbie",
+        email: "robbie@email.com",
+        password: "password",
+      });
+      expect(response.statusCode).toBe(201)
+
+      let users = await User.find()
+      let newUser = users[users.length - 1];
+      bcrypt.compare("password", newUser.password).then((res) => expect(res).toBe(true))
+    })
   });
 });
