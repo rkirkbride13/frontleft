@@ -16,4 +16,6 @@ const ActSchema: Schema = new Schema({
   end: { type: Number, required: true }
 });
 
-export default mongoose.model<IAct>('Act', ActSchema);
+const Act = mongoose.model<IAct>('Act', ActSchema);
+
+export default Act;
