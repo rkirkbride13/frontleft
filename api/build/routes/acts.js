@@ -7,4 +7,5 @@ const express_1 = require("express");
 const acts_1 = __importDefault(require("../controllers/acts"));
 const router = (0, express_1.Router)();
 router.post("/", acts_1.default.Create);
+router.get("/", acts_1.default.Find);
 exports.default = router;

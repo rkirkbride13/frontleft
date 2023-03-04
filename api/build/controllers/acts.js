@@ -15,16 +15,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const acts_1 = __importDefault(require("../models/acts"));
 const ActsController = {
     Create: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const { name, stage, date, start, end } = req.body;
-        const act = new acts_1.default({ name, stage, date, start, end });
+        const { name, stage, date, start, end, user_id } = req.body;
+        const act = new acts_1.default({ name, stage, date, start, end, user_id });
         try {
             yield act.save();
             res.status(201).json({ message: "OK" });
         }
         catch (err) {
             console.error(err);
-            res.status(500).json({ message: "Server Error" });
+            res.status(400).json({ message: "Trip not created" });
         }
     }),
+    Find: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        try {
+            const acts = yield acts_1.default.find({ user_id: req.body.user_id });
+            res.status(200).json({ acts });
+        }
+        catch (err) {
+            console.error(err);
+            res.status(400).json({ message: "Trips not found" });
+        }
+    })
 };
 exports.default = ActsController;

@@ -29,7 +29,8 @@ const ActSchema = new mongoose_1.Schema({
     stage: { type: String, required: true },
     date: { type: Date, required: true },
     start: { type: Number, required: true },
-    end: { type: Number, required: true }
+    end: { type: Number, required: true },
+    user_id: { type: String, required: true }
 });
 const Act = mongoose_1.default.model('Act', ActSchema);
 exports.default = Act;
