@@ -21,7 +21,7 @@ code {
   color: white;
 }
 
-.actForm {
+.formPage {
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,44 +1,51 @@
 import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
 
-const ActForm = (): ReactElement => {
+const SignUpForm = (): ReactElement => {
   const handleChange = (
     setFunction: React.Dispatch<React.SetStateAction<string>>
   ) => {
     return (event: ChangeEvent<HTMLInputElement>) => {
+      setEmailExists(false);
       setFunction(event.target.value);
     };
   };
 
   const [name, setName] = useState<string>("");
-  const [stage, setStage] = useState<string>("");
-  const [date, setDate] = useState<string>("");
-  const [start, setStart] = useState<string>("");
-  const [end, setEnd] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [emailExists, setEmailExists] = useState<boolean>(false);
 
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
 
-    fetch("/acts", {
+    fetch("/users", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: name,
-        stage: stage,
-        date: date,
-        start: start,
-        end: end,
+        email: email,
+        password: password,
       }),
     }).then((response) => {
       if (response.status === 201) {
         console.log("Success");
       } else {
+        setEmailExists(true);
         console.log("No luck");
       }
     });
+  };
+
+  const checkEmailExists = () => {
+    if (emailExists) {
+      return <div className="invalidDetails">Email already exists</div>;
+    } else {
+      return <></>;
+    }
   };
 
   return (
@@ -51,13 +58,13 @@ const ActForm = (): ReactElement => {
       </div>
       <div className="formPage">
         <br></br>
-        <div className="header">Who would you like to see?</div>
+        <div className="header">Please sign up below</div>
         <br></br>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name: </label>
           <input
             className="input"
-            placeholder="Band, DJ etc.."
+            placeholder="Your username"
             id="name"
             type="text"
             style={{ width: "120px" }}
@@ -65,58 +72,34 @@ const ActForm = (): ReactElement => {
             onChange={handleChange(setName)}
           />
           <br></br>
-          <label htmlFor="stage">Stage: </label>
+          <label htmlFor="email">Email: </label>
           <input
             className="input"
-            placeholder="Where are they"
-            id="stage"
+            placeholder="Your email"
+            id="email"
             type="text"
             style={{ width: "120px" }}
-            value={stage}
-            onChange={handleChange(setStage)}
+            value={email}
+            onChange={handleChange(setEmail)}
           />
           <br></br>
-          <label htmlFor="date">Date: </label>
+          <label htmlFor="password">Password: </label>
           <input
             className="input"
-            placeholder="Date"
-            id="date"
-            type="date"
-            value={date}
-            onChange={handleChange(setDate)}
+            placeholder="Your password"
+            id="password"
+            type="password"
+            value={password}
+            onChange={handleChange(setPassword)}
           />
           <br></br>
-          <label htmlFor="start">Start: </label>
-          <input
-            className="input"
-            placeholder="When are they on"
-            id="start"
-            type="number"
-            value={start}
-            onChange={handleChange(setStart)}
-          />
+          {checkEmailExists()}
           <br></br>
-          <label htmlFor="end">End: </label>
-          <input
-            className="input"
-            placeholder="Until what time"
-            id="end"
-            type="number"
-            value={end}
-            onChange={handleChange(setEnd)}
-          />
-          <br></br>
-          <br></br>
-          <input
-            className="submit"
-            id="submit"
-            type="submit"
-            value="Save this act"
-          />
+          <input className="submit" id="submit" type="submit" value="Sign Up" />
         </form>
       </div>
     </>
   );
 };
 
-export default ActForm;
+export default SignUpForm;
