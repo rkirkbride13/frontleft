@@ -14,6 +14,7 @@ describe("Act", () => {
       date: "2023-06-24",
       start: 2200,
       end: 2330,
+      user_id: "640336eb9e363bc491c41921",
     });
   });
 
@@ -23,6 +24,7 @@ describe("Act", () => {
     expect(act.date).toEqual(new Date("2023-06-24"));
     expect(act.start).toEqual(2200);
     expect(act.end).toEqual(2330);
+    expect(act.user_id).toEqual("640336eb9e363bc491c41921");
   });
 
   it("acts are saved to the database and can be accessed", async () => {

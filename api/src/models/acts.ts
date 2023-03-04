@@ -6,6 +6,7 @@ export interface IAct extends Document {
   date: Date;
   start: number;
   end: number;
+  user_id: string;
 }
 
 const ActSchema: Schema = new Schema({
@@ -13,7 +14,8 @@ const ActSchema: Schema = new Schema({
   stage: { type: String, required: true },
   date: { type: Date, required: true },
   start: { type: Number, required: true },
-  end: { type: Number, required: true }
+  end: { type: Number, required: true },
+  user_id: { type: String, required: true}
 });
 
 const Act = mongoose.model<IAct>('Act', ActSchema);

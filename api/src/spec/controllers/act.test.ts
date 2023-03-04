@@ -45,7 +45,7 @@ describe("/acts", () => {
   });
 
   describe("Get", () => {
-    test("responds with a status code 201, and returns all users acts", async () => {
+    test("responds with a status code 200, and returns all users acts", async () => {
       let user = new User({
         name: "Robbie",
         email: "robbie@email.com",
@@ -68,6 +68,7 @@ describe("/acts", () => {
         .get("/acts")
         .set("Authorization", `Bearer ${token}`)
         .send();
+      expect(response.statusCode).toEqual(200);
       expect(response.body.acts[0].name).toEqual("Elton John");
     });
   });
