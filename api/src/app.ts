@@ -3,7 +3,7 @@ import cors from 'cors';
 import { config } from 'dotenv';
 import actsRouter from './routes/acts';
 import usersRouter from './routes/users';
-import tokensRouter from './routes/users';
+import tokensRouter from './routes/tokens';
 
 config({ path: './config.env' });
 

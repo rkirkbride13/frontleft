@@ -7,7 +7,6 @@ const TokensController = {
   Create: async (req: Request, res: Response): Promise<void> => {
     const email = req.body.email;
     const password = req.body.password;
-    console.log("In the controller")
     const user = await User.findOne({ email: email });
     if (!user) {
       res.status(401).json({ message: "auth error - user does not exist" });

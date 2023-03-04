@@ -19,7 +19,6 @@ const TokensController = {
     Create: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const email = req.body.email;
         const password = req.body.password;
-        console.log("In the controller");
         const user = yield users_1.default.findOne({ email: email });
         if (!user) {
             res.status(401).json({ message: "auth error - user does not exist" });
