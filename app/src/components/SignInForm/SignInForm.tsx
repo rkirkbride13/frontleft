@@ -95,6 +95,9 @@ const SignInForm = ({navigate}: SignInFormInt): ReactElement => {
           {checkUserFound()}
           <br></br>
           <input className="submit" id="submit" type="submit" value="Sign In" />
+          <br></br>
+          <br></br>
+          <a href="/signup">Don't have an account?</a>
         </form>
       </div>
     </>

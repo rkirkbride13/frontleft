@@ -5,7 +5,7 @@ interface SignUpFormInt {
   navigate: NavigateFunction;
 }
 
-const SignUpForm = ({navigate}: SignUpFormInt): ReactElement => {
+const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
   const handleChange = (
     setFunction: React.Dispatch<React.SetStateAction<string>>
   ) => {
@@ -38,7 +38,7 @@ const SignUpForm = ({navigate}: SignUpFormInt): ReactElement => {
     }).then((response) => {
       if (response.status === 201) {
         console.log("Success");
-        navigate("/signin")
+        navigate("/signin");
       } else {
         setEmailExists(true);
         console.log("No luck");
@@ -102,6 +102,9 @@ const SignUpForm = ({navigate}: SignUpFormInt): ReactElement => {
           {checkEmailExists()}
           <br></br>
           <input className="submit" id="submit" type="submit" value="Sign Up" />
+          <br></br>
+          <br></br>
+          <a href="/signin">Already have an account?</a>
         </form>
       </div>
     </>
