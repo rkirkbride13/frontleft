@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import ActForm from '../ActForm/ActForm';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import SignInForm from "../SignInForm/SignInForm";
+import Acts from '../Acts/acts'
 
 const App = (): ReactElement => {
   return (
@@ -10,6 +11,7 @@ const App = (): ReactElement => {
       <Route path="/" element={<ActForm/>} />
       <Route path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
       <Route path="/signin" element={<SignInForm navigate={useNavigate()}/>} />
+      <Route path="/acts" element={<Acts navigate={useNavigate()}/>} />
     </Routes>
   );
 };

@@ -8,7 +8,8 @@ const ActForm = (): ReactElement => {
       setFunction(event.target.value);
     };
   };
-
+  
+  const [token] = useState(window.localStorage.getItem("token"))
   const [name, setName] = useState<string>("");
   const [stage, setStage] = useState<string>("");
   const [date, setDate] = useState<string>("");
@@ -24,6 +25,7 @@ const ActForm = (): ReactElement => {
       method: "post",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         name: name,
