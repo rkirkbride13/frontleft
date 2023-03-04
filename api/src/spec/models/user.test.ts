@@ -1,5 +1,4 @@
 import User, { IUser } from "../../models/users";
-import mongoose from "mongoose";
 import "../mongodb_helper";
 
 describe("User", () => {

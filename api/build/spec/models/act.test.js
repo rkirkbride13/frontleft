@@ -15,8 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const acts_1 = __importDefault(require("../../models/acts"));
 const mongoose_1 = __importDefault(require("mongoose"));
 require("../mongodb_helper");
-// import 'jest';
-// import { DropCollectionOptions } from 'mongodb';
 describe("Act", () => {
     let act;
     beforeEach(() => __awaiter(void 0, void 0, void 0, function* () {

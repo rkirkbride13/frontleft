@@ -1,8 +1,6 @@
 import Act, { IAct } from "../../models/acts";
 import mongoose from "mongoose";
 import "../mongodb_helper";
-// import 'jest';
-// import { DropCollectionOptions } from 'mongodb';
 
 describe("Act", () => {
   let act: IAct;

@@ -1,4 +1,4 @@
-import Act, { IAct } from "../../models/acts";
+import Act from "../../models/acts";
 import { app } from "../../app";
 import request from "supertest";
 import "../mongodb_helper";
