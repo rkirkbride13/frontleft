@@ -83,7 +83,7 @@ const ActForm = (): ReactElement => {
             className="input"
             placeholder="Date"
             id="date"
-            type="date"
+            type="datetime-local"
             value={date}
             onChange={handleChange(setDate)}
           />
@@ -115,7 +115,8 @@ const ActForm = (): ReactElement => {
             type="submit"
             value="Save this act"
           />
-        </form>
+        </form><br></br>
+        <a href='/acts'>Go to saved</a>
       </div>
     </>
   );
