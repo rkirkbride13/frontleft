@@ -86,11 +86,23 @@ a {
   margin-right: auto;
   background-color: rgba(137, 43, 226, 0.7);
   border-radius: 10px;
+}
+
+.stage {
   font-size: 16px;
   color: white;
+  text-decoration: underline;
 }
 
 .actsContainer {
   font-size: 14px;
   color: white;
+  text-decoration: none;
+
+}
+
+.day {
+  font-size: 15px;
+  color: white;
+  text-decoration: underline;
 }

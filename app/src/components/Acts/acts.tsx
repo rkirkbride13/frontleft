@@ -39,6 +39,19 @@ const Acts = ({ navigate }: ActsInt) => {
 
   const sortedActs = sortByDate(acts);
 
+  const convertDateToDay = (date: Date) => {
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    return days[new Date(date).getDay()];
+  };
+
   const printStages = () => {
     return (
       <>
@@ -46,19 +59,26 @@ const Acts = ({ navigate }: ActsInt) => {
           return (
             <>
               <div className="stageContainer">
-                {stage}
-                <div className="actsContainer">
-                  {sortedActs
-                    .filter((acts) => acts.stage === stage)
-                    .map((act) => {
-                      return (
-                        <>
-                          <div className="act">
-                            {act.name} - {act.start} to {act.end}
-                          </div>
-                        </>
-                      );
-                    })}
+                <p className="stage">{stage}</p>
+                <div className="dayContainer">
+                  <div className="actsContainer">
+                    {sortedActs
+                      .filter((acts) => acts.stage === stage)
+                      .map((act) => {
+                        return (
+                          <>
+                            <div className="act">
+                              <p className="day">
+                                {convertDateToDay(act.date)}:
+                              </p>{" "}
+                              <p>
+                                {act.name} - {act.start} to {act.end}
+                              </p>
+                            </div>
+                          </>
+                        );
+                      })}
+                  </div>
                 </div>
               </div>
             </>
@@ -71,12 +91,14 @@ const Acts = ({ navigate }: ActsInt) => {
   return (
     <>
       <main id="main-container">
-      <div className="logo">
-        <a href ="/"><img
-          src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
-          alt="Lightning fonts"
-        ></img></a>
-      </div>
+        <div className="logo">
+          <a href="/">
+            <img
+              src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
+              alt="Lightning fonts"
+            ></img>
+          </a>
+        </div>
         <div>{printStages()}</div>
       </main>
     </>
