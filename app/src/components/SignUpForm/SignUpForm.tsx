@@ -62,49 +62,57 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
           alt="Lightning fonts"
         ></img>
       </div>
-      <div className="formPage">
+      <div className="form-page">
         <br></br>
         <div className="header">Please sign up below</div>
         <br></br>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name: </label>
-          <input
-            className="input"
-            placeholder="Your username"
-            id="name"
-            type="text"
-            style={{ width: "120px" }}
-            value={name}
-            onChange={handleChange(setName)}
-          />
-          <br></br>
-          <label htmlFor="email">Email: </label>
-          <input
-            className="input"
-            placeholder="Your email"
-            id="email"
-            type="text"
-            style={{ width: "120px" }}
-            value={email}
-            onChange={handleChange(setEmail)}
-          />
-          <br></br>
-          <label htmlFor="password">Password: </label>
-          <input
-            className="input"
-            placeholder="Your password"
-            id="password"
-            type="password"
-            value={password}
-            onChange={handleChange(setPassword)}
-          />
-          <br></br>
+          <div className="form-row">
+            <label htmlFor="name">Name: </label>
+            <input
+              className="input"
+              placeholder="Your username"
+              id="name"
+              type="text"
+              style={{ width: "120px" }}
+              value={name}
+              onChange={handleChange(setName)}
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="email">Email: </label>
+            <input
+              className="input"
+              placeholder="Your email"
+              id="email"
+              type="text"
+              style={{ width: "120px" }}
+              value={email}
+              onChange={handleChange(setEmail)}
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="password">Password: </label>
+            <input
+              className="input"
+              placeholder="Your password"
+              id="password"
+              type="password"
+              value={password}
+              onChange={handleChange(setPassword)}
+            />
+          </div>
           {checkEmailExists()}
           <br></br>
-          <input className="submit" id="submit" type="submit" value="Sign Up" />
-          <br></br>
-          <br></br>
-          <a href="/signin">Already have an account?</a>
+          <div className="submit-with-link">
+            <input
+              className="submit"
+              id="submit"
+              type="submit"
+              value="Sign Up"
+            />
+            <a href="/signin">Or sign in</a>
+          </div>
         </form>
       </div>
     </>

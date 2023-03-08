@@ -5,7 +5,7 @@ interface SignInFormInt {
   navigate: NavigateFunction;
 }
 
-const SignInForm = ({navigate}: SignInFormInt): ReactElement => {
+const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
   const handleChange = (
     setFunction: React.Dispatch<React.SetStateAction<string>>
   ) => {
@@ -39,7 +39,7 @@ const SignInForm = ({navigate}: SignInFormInt): ReactElement => {
       console.log("Success");
       let data = await response.json();
       window.localStorage.setItem("token", data.token);
-      navigate("/")
+      navigate("/");
     } else {
       setUserFound(false);
       console.log("No luck");
@@ -66,38 +66,45 @@ const SignInForm = ({navigate}: SignInFormInt): ReactElement => {
           alt="Lightning fonts"
         ></img>
       </div>
-      <div className="formPage">
+      <div className="form-page">
         <br></br>
         <div className="header">Please sign in below</div>
         <br></br>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Email: </label>
-          <input
-            className="input"
-            placeholder="Your email"
-            id="email"
-            type="text"
-            style={{ width: "120px" }}
-            value={email}
-            onChange={handleChange(setEmail)}
-          />
-          <br></br>
-          <label htmlFor="password">Password: </label>
-          <input
-            className="input"
-            placeholder="Your password"
-            id="password"
-            type="password"
-            value={password}
-            onChange={handleChange(setPassword)}
-          />
-          <br></br>
+          <div className="form-row">
+            <label htmlFor="email">Email: </label>
+            <input
+              className="input"
+              placeholder="Your email"
+              id="email"
+              type="text"
+              style={{ width: "120px" }}
+              value={email}
+              onChange={handleChange(setEmail)}
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="password">Password: </label>
+            <input
+              className="input"
+              placeholder="Your password"
+              id="password"
+              type="password"
+              value={password}
+              onChange={handleChange(setPassword)}
+            />
+          </div>
           {checkUserFound()}
           <br></br>
-          <input className="submit" id="submit" type="submit" value="Sign In" />
-          <br></br>
-          <br></br>
-          <a href="/signup">Don't have an account?</a>
+          <div className="submit-with-link">
+            <input
+              className="submit"
+              id="submit"
+              type="submit"
+              value="Sign In"
+            />
+            <a href="/signup">Or sign up</a>
+          </div>
         </form>
       </div>
     </>

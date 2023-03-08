@@ -21,7 +21,7 @@ code {
   color: white;
 }
 
-.formPage {
+.form-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,6 +35,21 @@ code {
   border-radius: 10px;
 }
 
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-with-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 label {
   color: white;
   font-size: 14px;
@@ -46,7 +61,6 @@ label {
   background-color: white;
   border-color: #fff;
   border-radius: 5px;
-  margin: 0px 50px 0px 50px;
 }
 
 .input {
