@@ -29,25 +29,9 @@ const tokenChecker = (req, res, next) => {
         next();
     }
     else {
-        res.status(401).json({ message: "Auth error" });
+        res.status(400).json({ message: "Auth error" });
     }
 };
-// const tokenChecker = (req: Request, res: Response, next: NextFunction) => {
-//   let token: string | undefined;
-//   const authHeader = req.get("Authorization");
-//   if (authHeader) {
-//     token = authHeader.slice(7);
-//   }
-//   JWT.verify(token as string, process.env.JWT_SECRET as string, (error: any, payload: any) => {
-//     if (error) {
-//       console.log(error);
-//       res.status(401).json({ message: "auth error" });
-//     } else {
-//       req.body.user_id = payload.user_id;
-//       next();
-//     }
-//   });
-// };
 app.use("/acts", tokenChecker, acts_1.default);
 app.use("/users", users_1.default);
 app.use("/tokens", tokens_1.default);

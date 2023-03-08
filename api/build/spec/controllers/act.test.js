@@ -51,6 +51,28 @@ describe("/acts", () => {
             expect(acts.length).toEqual(1);
             expect(acts[0].name).toEqual("Elton John");
         }));
+        test("responds with a status code 400 if act not created", () => __awaiter(void 0, void 0, void 0, function* () {
+            let user = new users_1.default({
+                name: "Robbie",
+                email: "robbie@email.com",
+                password: "password1",
+            });
+            yield user.save();
+            let token = yield tokens_1.default.jsonwebtoken(user.id);
+            let response = yield (0, supertest_1.default)(app_1.app)
+                .post("/acts")
+                .set("Authorization", `Bearer ${token}`)
+                .send({
+                stage: "Pyramid",
+                date: "2023-06-24",
+                start: 2200,
+                end: 2330,
+            });
+            expect(response.status).toEqual(400);
+            expect(response.body.message).toEqual("Trip not created");
+            let acts = yield acts_1.default.find();
+            expect(acts.length).toEqual(0);
+        }));
     });
     describe("Get", () => {
         test("responds with a status code 200, and returns all users acts", () => __awaiter(void 0, void 0, void 0, function* () {
@@ -77,6 +99,29 @@ describe("/acts", () => {
                 .send();
             expect(response.statusCode).toEqual(200);
             expect(response.body.acts[0].name).toEqual("Elton John");
+        }));
+        test("responds with a status code 400 if user_id/token not found", () => __awaiter(void 0, void 0, void 0, function* () {
+            let user = new users_1.default({
+                name: "Robbie",
+                email: "robbie@email.com",
+                password: "password1",
+            });
+            yield user.save();
+            let token = yield tokens_1.default.jsonwebtoken(user.id);
+            yield (0, supertest_1.default)(app_1.app)
+                .post("/acts")
+                .set("Authorization", `Bearer ${token}`)
+                .send({
+                name: "Elton John",
+                stage: "Pyramid",
+                date: "2023-06-24",
+                start: 2200,
+                end: 2330,
+            });
+            let response = yield (0, supertest_1.default)(app_1.app)
+                .get("/acts")
+                .send();
+            expect(response.statusCode).toEqual(400);
         }));
     });
 });
