@@ -19,6 +19,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [emailExists, setEmailExists] = useState<boolean>(false);
+  const [emptyField, setEmptyField] = useState<string>("");
 
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
@@ -39,6 +40,8 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
       if (response.status === 201) {
         console.log("Success");
         navigate("/signin");
+      } else if (email === "" || password === "" || name === "") {
+        setEmptyField("All fields are required");
       } else {
         setEmailExists(true);
         console.log("No luck");
@@ -46,9 +49,11 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
     });
   };
 
-  const checkEmailExists = () => {
+  const handleError = () => {
     if (emailExists) {
-      return <div className="invalidDetails">Email already exists</div>;
+      return <div className="invalid-details">Email already exists</div>;
+    } else if (emptyField) {
+      return <div className="invalid-details">{emptyField}</div>;
     } else {
       return <></>;
     }
@@ -102,7 +107,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
               onChange={handleChange(setPassword)}
             />
           </div>
-          {checkEmailExists()}
+          {handleError()}
           <br></br>
           <div className="submit-with-link">
             <input

@@ -54,10 +54,10 @@ const ActForm = ({ navigate }: ActFormInt): ReactElement => {
   return (
     <>
       <div className="logo">
-        <img
+      <a href="/signin"><img
           src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
           alt="Lightning fonts"
-        ></img>
+        ></img></a>
       </div>
       <div className="form-page">
         <br></br>

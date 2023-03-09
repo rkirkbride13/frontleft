@@ -18,6 +18,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [userFound, setUserFound] = useState<boolean>(true);
+  const [emptyField, setEmptyField] = useState<string>("");
 
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
@@ -40,21 +41,21 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
       let data = await response.json();
       window.localStorage.setItem("token", data.token);
       navigate("/");
+    } else if (email === "" || password === "") {
+      setEmptyField("All fields are required");
     } else {
       setUserFound(false);
       console.log("No luck");
     }
   };
 
-  const checkUserFound = () => {
-    if (userFound) {
-      return <></>;
+  const handleError = () => {
+    if (!userFound) {
+      return <div className="invalid-details">This user was not found</div>;
+    } else if (emptyField) {
+      return <div className="invalid-details">{emptyField}</div>;
     } else {
-      return (
-        <div className="invalidDetails">
-          This user was not found<br></br>Please check details
-        </div>
-      );
+      return <></>;
     }
   };
 
@@ -94,7 +95,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
               onChange={handleChange(setPassword)}
             />
           </div>
-          {checkUserFound()}
+          {handleError()}
           <br></br>
           <div className="submit-with-link">
             <input
