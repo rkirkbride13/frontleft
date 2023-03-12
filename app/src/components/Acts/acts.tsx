@@ -10,6 +10,7 @@ const Acts = ({ navigate }: ActsInt) => {
   const [acts, setActs] = useState<Array<IAct>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
   const [stages, setStages] = useState<Array<string>>([]);
+  const [days, setDays] = useState<Array<string>>([]);
 
   useEffect(() => {
     if (token) {
@@ -25,9 +26,13 @@ const Acts = ({ navigate }: ActsInt) => {
             new Set(acts.map((act) => act.stage))
           );
           setStages(uniqueStages);
+          const uniqueDays = Array.from(
+            new Set(acts.map((act) => convertDateToDay(act.date)))
+          );
+          setDays(uniqueDays);
         });
     } else {
-      navigate("/signin");
+      navigate("/");
     }
   }, []);
 
@@ -52,25 +57,22 @@ const Acts = ({ navigate }: ActsInt) => {
     return days[new Date(date).getDay()];
   };
 
-  const printStages = () => {
+  const mapDays = () => {
     return (
       <>
-        {stages.map((stage) => {
+        {days.map((day) => {
           return (
             <>
               <div className="stageContainer">
-                <p className="stage">{stage}</p>
+                <p className="stage">{day}</p>
                 <div className="dayContainer">
                   <div className="actsContainer">
                     {sortedActs
-                      .filter((acts) => acts.stage === stage)
+                      .filter((acts) => convertDateToDay(acts.date) === day)
                       .map((act) => {
                         return (
                           <>
                             <div className="act">
-                              <p className="day">
-                                {convertDateToDay(act.date)}:
-                              </p>{" "}
                               <p>
                                 {act.name} - {act.start} to {act.end}
                               </p>
@@ -92,14 +94,14 @@ const Acts = ({ navigate }: ActsInt) => {
     <>
       <main id="main-container">
         <div className="logo">
-          <a href="/">
+          <a href="/act">
             <img
               src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
               alt="Lightning fonts"
             ></img>
           </a>
         </div>
-        <div>{printStages()}</div>
+        <div>{mapDays()}</div>
       </main>
     </>
   );

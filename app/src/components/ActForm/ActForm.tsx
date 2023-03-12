@@ -27,7 +27,7 @@ const ActForm = ({ navigate }: ActFormInt): ReactElement => {
     event.preventDefault();
 
     if (!token) {
-      navigate("/signup");
+      navigate("/");
     } else {
       fetch("/acts", {
         method: "post",
@@ -54,7 +54,7 @@ const ActForm = ({ navigate }: ActFormInt): ReactElement => {
   return (
     <>
       <div className="logo">
-      <a href="/signin"><img
+      <a href="/"><img
           src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
           alt="Lightning fonts"
         ></img></a>

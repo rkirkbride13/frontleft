@@ -8,9 +8,9 @@ import Acts from '../Acts/acts'
 const App = (): ReactElement => {
   return (
     <Routes>
-      <Route path="/" element={<ActForm navigate={useNavigate()}/>} />
+      <Route path="/act" element={<ActForm navigate={useNavigate()}/>} />
       <Route path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
-      <Route path="/signin" element={<SignInForm navigate={useNavigate()}/>} />
+      <Route path="/" element={<SignInForm navigate={useNavigate()}/>} />
       <Route path="/acts" element={<Acts navigate={useNavigate()}/>} />
     </Routes>
   );

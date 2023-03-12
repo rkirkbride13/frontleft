@@ -39,7 +39,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
     }).then((response) => {
       if (response.status === 201) {
         console.log("Success");
-        navigate("/signin");
+        navigate("/");
       } else if (email === "" || password === "" || name === "") {
         setEmptyField("All fields are required");
       } else {

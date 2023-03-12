@@ -40,7 +40,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
       console.log("Success");
       let data = await response.json();
       window.localStorage.setItem("token", data.token);
-      navigate("/");
+      navigate("/act");
     } else if (email === "" || password === "") {
       setEmptyField("All fields are required");
     } else {
