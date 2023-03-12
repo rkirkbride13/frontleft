@@ -4,7 +4,8 @@ import ActForm from '../ActForm/ActForm';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import SignInForm from "../SignInForm/SignInForm";
 import Acts from '../Acts/userActs'
-import Day from '../Day/day'
+import Friday from '../DayCharts/friday'
+import Saturday from '../DayCharts/saturday'
 
 const App = (): ReactElement => {
   return (
@@ -13,7 +14,8 @@ const App = (): ReactElement => {
       <Route path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
       <Route path="/" element={<SignInForm navigate={useNavigate()}/>} />
       <Route path="/acts" element={<Acts navigate={useNavigate()}/>} />
-      <Route path="/day/friday" element={<Day navigate={useNavigate()}/>} />
+      <Route path="/day/friday" element={<Friday navigate={useNavigate()}/>} />
+      <Route path="/day/saturday" element={<Saturday navigate={useNavigate()}/>} />
     </Routes>
   );
 };
