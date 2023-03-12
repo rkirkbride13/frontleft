@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavigateFunction } from "react-router";
 import { IAct } from "../../../../api/src/models/acts";
+import Act from "../Act/act";
 
 interface ActsInt {
   navigate: NavigateFunction;
@@ -61,25 +62,18 @@ const Acts = ({ navigate }: ActsInt) => {
     return (
       <>
         {days.map((day) => {
+          const href = `/day/${day.toLowerCase()}`;
           return (
             <>
               <div className="stageContainer">
-                <p className="stage">{day}</p>
+                <a href={href} className="stage">{day}</a>
                 <div className="dayContainer">
                   <div className="actsContainer">
                     {sortedActs
                       .filter((acts) => convertDateToDay(acts.date) === day)
-                      .map((act) => {
-                        return (
-                          <>
-                            <div className="act">
-                              <p>
-                                {act.name} - {act.start} to {act.end}
-                              </p>
-                            </div>
-                          </>
-                        );
-                      })}
+                      .map((act) => (
+                        <Act act={act} token={token} setActs={setActs} />
+                      ))}
                   </div>
                 </div>
               </div>
