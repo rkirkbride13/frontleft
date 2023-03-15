@@ -10,7 +10,7 @@ const Friday = ({ navigate }: DayInt) => {
   const [acts, setActs] = useState<Array<IAct>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
   const [stages, setStages] = useState<Array<string>>([]);
-  const [actsData, setActsData] = useState<Record<string, any>>({});
+  const [screenWidth, setSceenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     if (token) {
@@ -21,27 +21,23 @@ const Friday = ({ navigate }: DayInt) => {
       })
         .then((response) => response.json())
         .then(async (data) => {
-          console.log(data.acts)
+          console.log(data.acts);
           setActs(filterByDay(data.acts));
           setStages(mapStages(data.acts));
-          console.log(stages);
-          console.log(acts)
-          // acts.forEach((act) => {
-          //   const start = act.start;
-          //   const end = act.end;
-          //   const startPosition = (start - 0) * 50;
-          //   const width = (end - start) * 50;
-          //   data[act.id] = {
-          //     start,
-          //     end,
-          //     startPosition,
-          //     width,
-          //   };
-          // });
         });
     } else {
       navigate("/");
     }
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSceenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const convertDateToDay = (date: Date) => {
@@ -66,7 +62,10 @@ const Friday = ({ navigate }: DayInt) => {
   };
 
   const chartData = acts.map((act) => {
-    const duration = act.end - act.start;
+    let duration;
+    (act.end - act.start) % 100 === 0
+      ? (duration = act.end - act.start)
+      : (duration = ((act.end - act.start) * 1.5) / 1.3);
     return {
       stage: act.stage,
       start: act.start,
@@ -75,55 +74,72 @@ const Friday = ({ navigate }: DayInt) => {
     };
   });
 
-  // const setChartActs = () => {
-  //   return stages.map((stage) => {
-  //     return (
-  //       <tr>
-  //         <th>{stage}</th>
-  //       </tr>
-  //     );
-  //   });
-  // };
-
   return (
-    <div className="act-chart">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            {[...Array(24)].map((_, i) => (
-              <th key={i}>{i + 0}:00</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {stages.map((stage) => (
-            <tr key={stage}>
-              <th>{stage}</th>
-              {[...Array(24)].map((_, i) => (
-                <td key={i} className="cell">
-                  {chartData.map((data) => {
-                    if (data.stage === stage && data.start === i) {
-                      const left = (data.start / 24) * 100 + "%";
-                      const width = (data.duration / 24) * 100 + "%";
-                      return (
-                        <div
-                          className="act"
-                          style={{ left: left, width: width }}
-                        >
-                          {data.name}
-                        </div>
-                        
-                      );
-                    }
-                  })}
-                </td>
+    <>
+      <div className="chart-container">
+        <div className="logo" style={{ padding: 2131 / 2 - 340 / 2 }}>
+          <img
+            src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
+            alt="Lightning fonts"
+          ></img>
+        </div>
+        <div className="act-chart">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                {[...Array(25)].map((_, i) => (
+                  <th key={i}>{i + 0}00</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {stages.map((stage) => (
+                <tr key={stage}>
+                  <th className="stage-cell">{stage}</th>
+                  {[...Array(25)].map((_, i) => (
+                    <td key={i} className="cell">
+                      {chartData.map((data) => {
+                        if (data.stage === stage && data.start === i * 100) {
+                          const left = 50 + "%";
+                          const width = data.duration + "%";
+                          return (
+                            <div
+                              className="act"
+                              style={{ left: left, width: width }}
+                              key={data.name}
+                            >
+                              {data.name}
+                            </div>
+                          );
+                        } else if (
+                          data.stage === stage &&
+                          data.start === (i + 0.3) * 100
+                        ) {
+                          const left = 100 + "%";
+                          const width = data.duration + "%";
+                          return (
+                            <div
+                              className="act"
+                              style={{ left: left, width: width }}
+                              key={data.name}
+                            >
+                              {data.name}
+                            </div>
+                          );
+                        }
+                        return null;
+                      })}
+                    </td>
+                  ))}
+                </tr>
               ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+            </tbody>
+          </table>
+        </div>
+        <div className="base-block"></div>
+      </div>
+    </>
   );
 };
 
