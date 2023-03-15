@@ -6,41 +6,44 @@ With sometimes endless music festival lineups it can be a bit daunting choosing 
 
 Frontleft will help you plan out your days at a festival and catch every moment of your favourite artists.
 
-Since finishing the Makers Academy coding bootcamp I have setout to learn TypeScript and have created this app using it.
+Since finishing the Makers Academy coding bootcamp I have setout to learn TypeScript and have built this to put my skills to the test.
 
 ## Technologies
 
-This is a MERN stack application but instead of writing in JavaScript I have used TypeScript. The styling has been done using CSS. 
+This is a mobile-first MERN stack application written with TypeScript. The styling has been done using CSS. 
 
-The backend was test driven using Jest, as well as testing calls using Postman. The frontend was tested via user interaction, with the intention to add tests as I develop it.
+The backend was test driven using Jest, as well as testing calls using Postman. The frontend was tested via user interaction, but I intend to add tests as part of the future development of the project.
 
 ## Future goals
 
 This is a work in progress. This is the first version of the app and there are several additional features I intend to add. The main ones are:
 
 - adding in tests to the frontend. So far the frontend has been tested through using the app in the browser
-- format the saved acts into a gantt chart style, so that a timeline of your acts can be easily visualised and clashes are easily detected
 - add the distances between stages so that a user can make a more informed decision about who to see (it could take the best part of 30 mins to get to one from the other!)
 - deploy the app
-- add styling for bigger screens so that it can be used on laptops etc too
 
 ## Screenshots
 
 ### Homepage
 
-![Homepage](./images/frontleft_act_form.png)
+![Signup](./images/signup.png)
 
-### Signup
+### Saving an act
 
-![Signup](./images/frontleft_signup.png)
+![actform](./images/actform.png)
 
-## Using the app
+### Saved acts
 
-The intention is for the app to be used on a mobile phone. The styling to date has only been implemented with a smaller screen in mind.
+![saved_acts](./images/saved_acts.png)
+
+### Act timeline
+
+![act_timeline](./images/act_timeline.png)
+
 
 ### Installation
 
-To download and initialise the project follow the below steps. Note that the JavaScript files are included in the repo and do not need to be compiled from TypeScript:
+To download and initialise the project follow the below steps. Note that the JavaScript files are NOT included in the repo and need to be compiled from TypeScript:
 
 ```js
 $ git clone https://github.com/rkirkbride13/frontleft.git
@@ -50,6 +53,7 @@ $ npm install
 $ cd ..
 $ cd api
 $ npm install
+$ tsc
 ```
 
 Create a new .env file in the api folder:

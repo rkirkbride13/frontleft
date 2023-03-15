@@ -100,7 +100,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 50px;
   padding-bottom: 20px;
 }
 
@@ -192,7 +192,7 @@ th {
   border-top: 2px solid rgb(137, 43, 226);
   display: flex;
   margin-left: 0;
-  width: 2131px;
+  width: 2155px;
   height: 100%;
   position: absolute;
   left: 0;

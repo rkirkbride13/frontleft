@@ -63,9 +63,14 @@ const Saturday = ({ navigate }: DayInt) => {
 
   const chartData = acts.map((act) => {
     let duration;
-    (act.end - act.start) % 100 === 0
-      ? (duration = act.end - act.start)
-      : (duration = ((act.end - act.start) * 1.5) / 1.3);
+    if ((act.end - act.start) % 100 === 0) {
+      duration = act.end - act.start;
+    } else if ((act.end - act.start - 30) % 100 === 0) {
+      duration = ((act.end - act.start) * 1.5) / 1.3;
+    } else {
+      duration = ((act.end - act.start) * 1.5) / 1.7;
+    }
+
     return {
       stage: act.stage,
       start: act.start,
@@ -77,7 +82,7 @@ const Saturday = ({ navigate }: DayInt) => {
   return (
     <>
       <div className="chart-container">
-        <div className="logo" style={{ padding: 2131 / 2 - 340 / 2 }}>
+        <div className="logo" style={{ padding: 2155 / 2 - 340 / 2 }}>
           <img
             src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
             alt="Lightning fonts"
@@ -103,6 +108,7 @@ const Saturday = ({ navigate }: DayInt) => {
                         if (data.stage === stage && data.start === i * 100) {
                           const left = 50 + "%";
                           const width = data.duration + "%";
+                          console.log(data.name, data.duration, width);
                           return (
                             <div
                               className="act"
@@ -118,6 +124,8 @@ const Saturday = ({ navigate }: DayInt) => {
                         ) {
                           const left = 100 + "%";
                           const width = data.duration + "%";
+                          console.log(data.name, data.duration, width);
+
                           return (
                             <div
                               className="act"
