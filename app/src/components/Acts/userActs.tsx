@@ -23,10 +23,7 @@ const Acts = ({ navigate }: ActsInt) => {
         .then((response) => response.json())
         .then(async (data) => {
           setActs(data.acts);
-          const uniqueDays = Array.from(
-            new Set(acts.map((act) => convertDateToDay(act.date)))
-          );
-          setDays(uniqueDays);
+          console.log(data.acts);
         });
     } else {
       navigate("/");
@@ -40,6 +37,14 @@ const Acts = ({ navigate }: ActsInt) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    const uniqueDays = Array.from(
+      new Set(acts.map((act) => convertDateToDay(act.date)))
+    );
+    setDays(uniqueDays);
+    console.log(days);
+  }, [acts]);
 
   const sortByDate = (acts: Array<IAct>): Array<IAct> => {
     return acts.sort(
@@ -69,18 +74,16 @@ const Acts = ({ navigate }: ActsInt) => {
           const href = `/day/${day.toLowerCase()}`;
           return (
             <>
-              <div className="day-block">
+              <div key={day} className="day-block">
                 <a href={href} className="stage">
                   {day}
                 </a>
-                <div className="dayContainer">
-                  <div className="actsContainer">
-                    {sortedActs
-                      .filter((acts) => convertDateToDay(acts.date) === day)
-                      .map((act) => (
-                        <Act act={act} token={token} setActs={setActs} />
-                      ))}
-                  </div>
+                <div>
+                  {sortedActs
+                    .filter((acts) => convertDateToDay(acts.date) === day)
+                    .map((act) => (
+                      <Act key={act._id} act={act} />
+                    ))}
                 </div>
               </div>
             </>
