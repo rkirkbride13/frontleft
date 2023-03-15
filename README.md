@@ -24,22 +24,26 @@ This is a work in progress. This is the first version of the app and there are s
 
 ## Screenshots
 
-### Homepage
+<table>
+  <tr>
+    <td>Sign Up</td>
+    <td>Save an act</td>
+    <td>View saved acts</td>
+    <td>View timeline</td>
+  </tr>
+  <tr>
+    <td><img src="images/signup.png" width=270></td>
+    <td><img src="images/actform.png" width=270></td>
+    <td><img src="images/saved_acts.png" width=400></td>
+    <td><img src="images/act_timeline.png" width=400></td>
+  </tr>
+ </table>
 
-![Signup](./images/signup.png)
+ ### Larger screen
+ 
+ When viewed on a larger screen, flanking block are introduced to direct user to the centre of the page and reduce white space.
 
-### Saving an act
-
-![actform](./images/actform.png)
-
-### Saved acts
-
-![saved_acts](./images/saved_acts.png)
-
-### Act timeline
-
-![act_timeline](./images/act_timeline.png)
-
+ ![larger_screen](./images/larger_screen.png)
 
 ### Installation
 
