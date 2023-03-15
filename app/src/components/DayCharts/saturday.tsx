@@ -10,6 +10,7 @@ const Saturday = ({ navigate }: DayInt) => {
   const [acts, setActs] = useState<Array<IAct>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
   const [stages, setStages] = useState<Array<string>>([]);
+  const [screenWidth, setSceenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     if (token) {
@@ -27,6 +28,16 @@ const Saturday = ({ navigate }: DayInt) => {
     } else {
       navigate("/");
     }
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSceenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const convertDateToDay = (date: Date) => {
@@ -64,60 +75,71 @@ const Saturday = ({ navigate }: DayInt) => {
   });
 
   return (
-    <div className="act-chart">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            {[...Array(25)].map((_, i) => (
-              <th key={i}>{i + 0}00</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {stages.map((stage) => (
-            <tr key={stage}>
-              <th className="stage-cell">{stage}</th>
-              {[...Array(25)].map((_, i) => (
-                <td key={i} className="cell">
-                  {chartData.map((data) => {
-                    if (data.stage === stage && data.start === i * 100) {
-                      const left = 50 + "%";
-                      const width = data.duration + "%";
-                      return (
-                        <div
-                          className="act"
-                          style={{ left: left, width: width }}
-                          key={data.name}
-                        >
-                          {data.name}
-                        </div>
-                      );
-                    } else if (
-                      data.stage === stage &&
-                      data.start === (i + 0.3) * 100
-                    ) {
-                      const left = 100 + "%";
-                      const width = data.duration + "%";
-                      return (
-                        <div
-                          className="act"
-                          style={{ left: left, width: width }}
-                          key={data.name}
-                        >
-                          {data.name}
-                        </div>
-                      );
-                    }
-                    return null;
-                  })}
-                </td>
+    <>
+      <div className="chart-container">
+        <div className="logo" style={{ padding: 2131 / 2 - 340 / 2 }}>
+          <img
+            src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
+            alt="Lightning fonts"
+          ></img>
+        </div>
+        <div className="act-chart">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                {[...Array(25)].map((_, i) => (
+                  <th key={i}>{i + 0}00</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {stages.map((stage) => (
+                <tr key={stage}>
+                  <th className="stage-cell">{stage}</th>
+                  {[...Array(25)].map((_, i) => (
+                    <td key={i} className="cell">
+                      {chartData.map((data) => {
+                        if (data.stage === stage && data.start === i * 100) {
+                          const left = 50 + "%";
+                          const width = data.duration + "%";
+                          return (
+                            <div
+                              className="act"
+                              style={{ left: left, width: width }}
+                              key={data.name}
+                            >
+                              {data.name}
+                            </div>
+                          );
+                        } else if (
+                          data.stage === stage &&
+                          data.start === (i + 0.3) * 100
+                        ) {
+                          const left = 100 + "%";
+                          const width = data.duration + "%";
+                          return (
+                            <div
+                              className="act"
+                              style={{ left: left, width: width }}
+                              key={data.name}
+                            >
+                              {data.name}
+                            </div>
+                          );
+                        }
+                        return null;
+                      })}
+                    </td>
+                  ))}
+                </tr>
               ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+            </tbody>
+          </table>
+        </div>
+        <div className="base-block"></div>
+      </div>
+    </>
   );
 };
 

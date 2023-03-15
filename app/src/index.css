@@ -80,7 +80,7 @@ label {
   padding-top: 25px!important;
   background-color: white;
   border-bottom: 2px solid rgb(137, 43, 226);
-  position: fixed;
+  position: sticky;
   top: 0px;
   z-index: 999;
 }
@@ -143,22 +143,24 @@ a {
   background-color: rgba(137, 43, 226, 0.7);
   color: white;
   width: max-content;
+  padding-bottom: 2px;
 }
 
 th {
   padding-left: 25px;
   padding-right: 25px;
+  border-bottom: 1px solid white;
 }
 
 .stage-cell {
   height: 25px;
-  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   border-right: 1px solid white;
 }
 
 .cell {
   height: 25px;
-  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   position: relative;
   z-index: 999;
 }
@@ -183,6 +185,17 @@ th {
   top: 7.5px;
   left: 0;
   right: 0;
+}
+
+.base-block {
+  background-color: white;
+  border-top: 2px solid rgb(137, 43, 226);
+  display: flex;
+  margin-left: 0;
+  width: 2131px;
+  height: 100%;
+  position: absolute;
+  left: 0;
 }
 
 /* Screen styling */
