@@ -130,12 +130,6 @@ a {
   margin-bottom: 5px;
 }
 
-.day {
-  font-size: 15px;
-  color: white;
-  text-decoration: underline;
-}
-
 .invalid-details {
   color: red;
   text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5), 1px -1px 0 rgba(255, 255, 255, 0.5), -1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(255, 255, 255, 0.5);
@@ -156,17 +150,27 @@ th {
   padding-right: 20px;
 }
 
+.stage-cell {
+  height: 25px;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+}
+
 .cell {
-  height: 50px;
-  border: 1px solid black;
+  height: 25px;
+  border-top: 1px solid white;
   position: relative;
 }
 
 .act {
-  height: 30px;
-  background-color: #0074d9;
+  height: 15px;
+  background-color: white;
+  color: rgb(137, 43, 226);
+  text-align: center;
+  font-size: 12px;
   position: absolute;
-  top: 10px;
+  border-radius: 5px;
+  top: 7.5px;
   left: 0;
   right: 0;
 }

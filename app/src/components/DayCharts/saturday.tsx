@@ -76,12 +76,12 @@ const Saturday = ({ navigate }: DayInt) => {
         <tbody>
           {stages.map((stage) => (
             <tr key={stage}>
-              <th>{stage}</th>
+              <th className="stage-cell">{stage}</th>
               {[...Array(24)].map((_, i) => (
                 <td key={i} className="cell">
                   {chartData.map((data) => {
                     if (data.stage === stage && data.start === i * 100) {
-                      const left = (data.start / 2400) * 100 + "%";
+                      const left = 50 + "%";
                       const width = (data.duration / 2400) * 100 + "%";
                       console.log(width);
                       return (
@@ -94,7 +94,6 @@ const Saturday = ({ navigate }: DayInt) => {
                         </div>
                       );
                     }
-                    // Return null when the condition is not met
                     return null;
                   })}
                 </td>
