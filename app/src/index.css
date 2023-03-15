@@ -160,6 +160,16 @@ th {
   height: 25px;
   border-top: 1px solid white;
   position: relative;
+  z-index: 999;
+}
+
+.cell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px dashed white;
 }
 
 .act {

@@ -23,8 +23,6 @@ const Saturday = ({ navigate }: DayInt) => {
           console.log(data.acts);
           setActs(filterByDay(data.acts));
           setStages(mapStages(data.acts));
-          console.log(stages);
-          console.log(acts);
         });
     } else {
       navigate("/");
@@ -53,7 +51,10 @@ const Saturday = ({ navigate }: DayInt) => {
   };
 
   const chartData = acts.map((act) => {
-    const duration = (act.end - act.start) * 24;
+    let duration;
+    (act.end - act.start) % 100 === 0
+      ? (duration = act.end - act.start)
+      : (duration = ((act.end - act.start) * 1.5) / 1.3);
     return {
       stage: act.stage,
       start: act.start,
@@ -68,7 +69,7 @@ const Saturday = ({ navigate }: DayInt) => {
         <thead>
           <tr>
             <th></th>
-            {[...Array(24)].map((_, i) => (
+            {[...Array(25)].map((_, i) => (
               <th key={i}>{i + 0}00</th>
             ))}
           </tr>
@@ -77,12 +78,12 @@ const Saturday = ({ navigate }: DayInt) => {
           {stages.map((stage) => (
             <tr key={stage}>
               <th className="stage-cell">{stage}</th>
-              {[...Array(24)].map((_, i) => (
+              {[...Array(25)].map((_, i) => (
                 <td key={i} className="cell">
                   {chartData.map((data) => {
                     if (data.stage === stage && data.start === i * 100) {
                       const left = 50 + "%";
-                      const width = (data.duration / 2400) * 100 + "%";
+                      const width = data.duration + "%";
                       return (
                         <div
                           className="act"
@@ -92,9 +93,12 @@ const Saturday = ({ navigate }: DayInt) => {
                           {data.name}
                         </div>
                       );
-                    } else if (data.stage === stage && data.start === (i+0.3) * 100) {
-                      const left = 50 + "%";
-                      const width = (data.duration / 2400) * 100 + "%";
+                    } else if (
+                      data.stage === stage &&
+                      data.start === (i + 0.3) * 100
+                    ) {
+                      const left = 100 + "%";
+                      const width = data.duration + "%";
                       return (
                         <div
                           className="act"
