@@ -83,7 +83,18 @@ const Saturday = ({ navigate }: DayInt) => {
                     if (data.stage === stage && data.start === i * 100) {
                       const left = 50 + "%";
                       const width = (data.duration / 2400) * 100 + "%";
-                      console.log(width);
+                      return (
+                        <div
+                          className="act"
+                          style={{ left: left, width: width }}
+                          key={data.name}
+                        >
+                          {data.name}
+                        </div>
+                      );
+                    } else if (data.stage === stage && data.start === (i+0.3) * 100) {
+                      const left = 50 + "%";
+                      const width = (data.duration / 2400) * 100 + "%";
                       return (
                         <div
                           className="act"
