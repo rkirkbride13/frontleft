@@ -1,4 +1,10 @@
-import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
+import React, {
+  useState,
+  FormEvent,
+  ChangeEvent,
+  ReactElement,
+  useEffect,
+} from "react";
 import { NavigateFunction } from "react-router";
 
 interface SignInFormInt {
@@ -19,6 +25,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
   const [password, setPassword] = useState<string>("");
   const [userFound, setUserFound] = useState<boolean>(true);
   const [emptyField, setEmptyField] = useState<string>("");
+  const [screenWidth, setSceenWidth] = useState(window.innerWidth);
 
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
@@ -59,54 +66,74 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setSceenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
-      <div className="logo">
+      <div className="logo" style={{ padding: screenWidth / 2 - 340 / 2 }}>
         <img
           src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
           alt="Lightning fonts"
         ></img>
       </div>
-      <div className="form-page">
-        <br></br>
-        <div className="header">Please sign in below</div>
-        <br></br>
-        <form onSubmit={handleSubmit}>
-          <div className="form-row">
-            <label htmlFor="email">Email: </label>
-            <input
-              className="input"
-              placeholder="Your email"
-              id="email"
-              type="text"
-              style={{ width: "120px" }}
-              value={email}
-              onChange={handleChange(setEmail)}
-            />
-          </div>
-          <div className="form-row">
-            <label htmlFor="password">Password: </label>
-            <input
-              className="input"
-              placeholder="Your password"
-              id="password"
-              type="password"
-              value={password}
-              onChange={handleChange(setPassword)}
-            />
-          </div>
-          {handleError()}
+      <div className="main-container">
+        <div
+          className="flanking-block-left"
+          style={{ width: screenWidth / 2 - 400 / 2 }}
+        ></div>
+        <div className="form-page">
           <br></br>
-          <div className="submit-with-link">
-            <input
-              className="submit"
-              id="submit"
-              type="submit"
-              value="Sign In"
-            />
-            <a href="/signup">Or sign up</a>
-          </div>
-        </form>
+          <div className="header">Please sign in below</div>
+          <br></br>
+          <form onSubmit={handleSubmit}>
+            <div className="form-row">
+              <label htmlFor="email">Email: </label>
+              <input
+                className="input"
+                placeholder="Your email"
+                id="email"
+                type="text"
+                style={{ width: "120px" }}
+                value={email}
+                onChange={handleChange(setEmail)}
+              />
+            </div>
+            <div className="form-row">
+              <label htmlFor="password">Password: </label>
+              <input
+                className="input"
+                placeholder="Your password"
+                id="password"
+                type="password"
+                value={password}
+                onChange={handleChange(setPassword)}
+              />
+            </div>
+            {handleError()}
+            <br></br>
+            <div className="submit-with-link">
+              <input
+                className="submit"
+                id="submit"
+                type="submit"
+                value="Sign In"
+              />
+              <a href="/signup">Or sign up</a>
+            </div>
+          </form>
+        </div>
+        <div
+          className="flanking-block-right"
+          style={{ width: screenWidth / 2 - 400 / 2 }}
+        ></div>
       </div>
     </>
   );

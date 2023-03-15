@@ -10,8 +10,8 @@ interface ActsInt {
 const Acts = ({ navigate }: ActsInt) => {
   const [acts, setActs] = useState<Array<IAct>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
-  const [stages, setStages] = useState<Array<string>>([]);
   const [days, setDays] = useState<Array<string>>([]);
+  const [screenWidth, setSceenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     if (token) {
@@ -23,10 +23,6 @@ const Acts = ({ navigate }: ActsInt) => {
         .then((response) => response.json())
         .then(async (data) => {
           setActs(data.acts);
-          const uniqueStages = Array.from(
-            new Set(acts.map((act) => act.stage))
-          );
-          setStages(uniqueStages);
           const uniqueDays = Array.from(
             new Set(acts.map((act) => convertDateToDay(act.date)))
           );
@@ -35,6 +31,14 @@ const Acts = ({ navigate }: ActsInt) => {
     } else {
       navigate("/");
     }
+
+    const handleResize = () => {
+      setSceenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const sortByDate = (acts: Array<IAct>): Array<IAct> => {
@@ -65,8 +69,10 @@ const Acts = ({ navigate }: ActsInt) => {
           const href = `/day/${day.toLowerCase()}`;
           return (
             <>
-              <div className="stageContainer">
-                <a href={href} className="stage">{day}</a>
+              <div className="day-block">
+                <a href={href} className="stage">
+                  {day}
+                </a>
                 <div className="dayContainer">
                   <div className="actsContainer">
                     {sortedActs
@@ -86,17 +92,25 @@ const Acts = ({ navigate }: ActsInt) => {
 
   return (
     <>
-      <main id="main-container">
-        <div className="logo">
-          <a href="/act">
-            <img
-              src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
-              alt="Lightning fonts"
-            ></img>
-          </a>
-        </div>
-        <div>{mapDays()}</div>
-      </main>
+      <div className="logo" style={{ padding: screenWidth / 2 - 340 / 2 }}>
+        <a href="/act">
+          <img
+            src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
+            alt="Lightning fonts"
+          ></img>
+        </a>
+      </div>
+      <div className="main-container">
+        <div
+          className="flanking-block-left"
+          style={{ width: screenWidth / 2 - 400 / 2 }}
+        ></div>
+        <div className="days-container">{mapDays()}</div>
+        <div
+          className="flanking-block-right"
+          style={{ width: screenWidth / 2 - 400 / 2 }}
+        ></div>
+      </div>
     </>
   );
 };

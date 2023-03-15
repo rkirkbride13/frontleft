@@ -8,6 +8,12 @@ body {
   background-size: 40px 40px;
 }
 
+.main-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
 .header {
   font-size: 16px;
   color: white;
@@ -18,13 +24,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 150px;
   padding-bottom: 20px;
-  width: 66%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 250px;
   background-color: rgba(137, 43, 226, 0.7);
   border-radius: 10px;
+}
+
+.flanking-block {
+  display: none;
 }
 
 .form-row {
@@ -67,8 +75,14 @@ label {
 }
 
 .logo {
-  margin: 45px 20px 20px 20px;
+  width: 340px;
+  padding-bottom: 20px!important;
+  padding-top: 25px!important;
   background-color: white;
+  border-bottom: 2px solid rgb(137, 43, 226);
+  position: fixed;
+  top: 0px;
+  z-index: 999;
 }
 
 img {
@@ -81,16 +95,22 @@ a {
   font-size: 14px;
 }
 
-.stageContainer {
+.days-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 150px;
   padding-bottom: 20px;
-  width: 66%;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+.day-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  margin-bottom: 50px;
   background-color: rgba(137, 43, 226, 0.7);
   border-radius: 10px;
 }
@@ -147,4 +167,30 @@ th {
   top: 10px;
   left: 0;
   right: 0;
+}
+
+/* Screen styling */
+
+@media screen and (min-width: 500px) {
+
+  .flanking-block-left {
+    background-color: rgba(137, 43, 226, 0.6);
+    border-right: 2px solid rgb(137, 43, 226);
+    display: flex;
+    margin-left: 0;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+  }
+
+  .flanking-block-right {
+    background-color: rgba(137, 43, 226, 0.6);
+    border-left: 2px solid rgb(137, 43, 226);
+    display: flex;
+    margin-left: 0;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+  }
+
 }
