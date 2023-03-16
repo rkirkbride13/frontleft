@@ -10,7 +10,7 @@ import Saturday from '../DayCharts/saturday'
 const App = (): ReactElement => {
   return (
     <Routes>
-      <Route path="/act" element={<ActForm navigate={useNavigate()}/>} />
+      {/* <Route path="/act" element={<ActForm navigate={useNavigate()}/>} /> */}
       <Route path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
       <Route path="/" element={<SignInForm navigate={useNavigate()}/>} />
       <Route path="/acts" element={<Acts navigate={useNavigate()}/>} />

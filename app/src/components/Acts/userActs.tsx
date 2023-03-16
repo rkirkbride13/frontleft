@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavigateFunction } from "react-router";
 import { IAct } from "../../../../api/src/models/acts";
 import Act from "../Act/act";
+import ActForm from "../ActForm/ActForm";
 
 interface ActsInt {
   navigate: NavigateFunction;
@@ -23,7 +24,6 @@ const Acts = ({ navigate }: ActsInt) => {
         .then((response) => response.json())
         .then(async (data) => {
           setActs(data.acts);
-          console.log(data.acts);
         });
     } else {
       navigate("/");
@@ -108,7 +108,10 @@ const Acts = ({ navigate }: ActsInt) => {
           className="flanking-block-left"
           style={{ width: screenWidth / 2 - 400 / 2 }}
         ></div>
-        <div className="days-container">{mapDays()}</div>
+        <div className="acts-container">
+            <ActForm navigate={navigate} setActs={setActs} token={token} />
+          <div className="days-container">{mapDays()}</div>
+        </div>
         <div
           className="flanking-block-right"
           style={{ width: screenWidth / 2 - 400 / 2 }}

@@ -24,7 +24,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 30px;
   padding-bottom: 20px;
   width: 250px;
   background-color: rgba(137, 43, 226, 0.7);
@@ -61,6 +61,14 @@ label {
   background-color: white;
   border-color: #fff;
   border-radius: 5px;
+}
+
+.save {
+  color:blueviolet;
+  background-color: white;
+  border-color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .input {
@@ -100,7 +108,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 30px;
   padding-bottom: 20px;
 }
 
@@ -110,7 +118,7 @@ a {
   justify-content: center;
   align-items: center;
   width: 250px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   background-color: rgba(137, 43, 226, 0.7);
   border-radius: 10px;
 }
@@ -207,7 +215,7 @@ th {
     border-right: 2px solid rgb(137, 43, 226);
     display: flex;
     margin-left: 0;
-    height: 100vh;
+    height: max(100%, 100vh);
     position: absolute;
     left: 0;
   }
@@ -217,7 +225,7 @@ th {
     border-left: 2px solid rgb(137, 43, 226);
     display: flex;
     margin-left: 0;
-    height: 100vh;
+    height: max(100%, 100vh);
     position: absolute;
     right: 0;
   }
