@@ -27,8 +27,7 @@ This is a work in progress. This is the first version of the app and there are s
 <table>
   <tr>
     <td>Sign Up</td>
-    <td>Save an act</td>
-    <td>View saved acts</td>
+    <td>Save and view acts</td>
     <td>View timeline</td>
   </tr>
   <tr>
