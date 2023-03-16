@@ -32,10 +32,9 @@ This is a work in progress. This is the first version of the app and there are s
     <td>View timeline</td>
   </tr>
   <tr>
-    <td><img src="images/signup.png" width=335></td>
-    <td><img src="images/actform.png" width=335></td>
-    <td><img src="images/saved_acts.png" width=335></td>
-    <td><img src="images/act_timeline.png" width=335></td>
+    <td><img src="images/signup.png" width=33%></td>
+    <td><img src="images/saved_acts.png" width=33%></td>
+    <td><img src="images/act_timeline.png" width=33%></td>
   </tr>
  </table>
 
