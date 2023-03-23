@@ -102,6 +102,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
                 className="input"
                 placeholder="Your email"
                 id="email"
+                data-cy="email"
                 type="text"
                 style={{ width: "120px" }}
                 value={email}
@@ -114,6 +115,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
                 className="input"
                 placeholder="Your password"
                 id="password"
+                data-cy="password"
                 type="password"
                 value={password}
                 onChange={handleChange(setPassword)}
@@ -125,6 +127,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
               <input
                 className="submit"
                 id="submit"
+                data-cy="signin-submit"
                 type="submit"
                 value="Sign In"
               />
