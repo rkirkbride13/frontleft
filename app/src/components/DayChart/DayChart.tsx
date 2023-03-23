@@ -22,7 +22,6 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
       })
         .then((response) => response.json())
         .then(async (data) => {
-          console.log(data.acts);
           setActs(filterByDay(data.acts, dayChart));
           setStages(mapStages(data.acts));
         });
@@ -54,7 +53,10 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
     return days[new Date(date).getDay()];
   };
 
-  const filterByDay = (acts: Array<IAct>, selectedDay: string | undefined): Array<IAct> => {
+  const filterByDay = (
+    acts: Array<IAct>,
+    selectedDay: string | undefined
+  ): Array<IAct> => {
     return acts.filter((acts) => convertDateToDay(acts.date) === selectedDay);
   };
 
@@ -78,11 +80,13 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
   return (
     <>
       <div className="chart-container">
-        <div className="logo" style={{ padding: 2131 / 2 - 340 / 2 }}>
+        <div className="logo" style={{ padding: screenWidth / 2 - 340 / 2 }}>
+        <a href="/acts">
           <img
             src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
             alt="Lightning fonts"
           ></img>
+        </a>
         </div>
         <div className="act-chart">
           <table>
