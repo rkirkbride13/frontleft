@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { NavigateFunction } from "react-router";
+import { Link } from "react-router-dom";
+import { Dispatch, SetStateAction } from "react";
 import { IAct } from "../../../../api/src/models/acts";
 import Act from "../Act/act";
 import ActForm from "../ActForm/ActForm";
 
 interface ActsInt {
   navigate: NavigateFunction;
+  setDayChart: Dispatch<SetStateAction<string | undefined>>;
 }
 
-const Acts = ({ navigate }: ActsInt) => {
+const Acts = ({ navigate, setDayChart }: ActsInt) => {
   const [acts, setActs] = useState<Array<IAct>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
   const [days, setDays] = useState<Array<string>>([]);
@@ -71,13 +74,14 @@ const Acts = ({ navigate }: ActsInt) => {
     return (
       <>
         {days.map((day) => {
-          const href = `/day/${day.toLowerCase()}`;
           return (
             <>
               <div key={day} className="day-block">
-                <a href={href} className="stage">
-                  {day}
-                </a>
+                <p className="stage">
+                  <Link onClick={() => setDayChart(day)} to={`/day/${day}`}>
+                    {day}
+                  </Link>
+                </p>
                 <div>
                   {sortedActs
                     .filter((acts) => convertDateToDay(acts.date) === day)
@@ -109,7 +113,7 @@ const Acts = ({ navigate }: ActsInt) => {
           style={{ width: screenWidth / 2 - 400 / 2 }}
         ></div>
         <div className="acts-container">
-            <ActForm navigate={navigate} setActs={setActs} token={token} />
+          <ActForm navigate={navigate} setActs={setActs} token={token} />
           <div className="days-container">{mapDays()}</div>
         </div>
         <div

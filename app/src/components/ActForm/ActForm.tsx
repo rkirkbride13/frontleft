@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  FormEvent,
-  ChangeEvent,
-  ReactElement,
-  useEffect,
-} from "react";
+import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
 import { NavigateFunction } from "react-router";
 import { IAct } from "../../../../api/src/models/acts";
 
@@ -28,7 +22,6 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
   const [date, setDate] = useState<string>("");
   const [start, setStart] = useState<string>("");
   const [end, setEnd] = useState<string>("");
-  const [screenWidth, setSceenWidth] = useState(window.innerWidth);
 
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
@@ -69,16 +62,6 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
       });
     }
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setSceenWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <>
@@ -144,7 +127,13 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               onChange={handleChange(setEnd)}
             />
           </div>
-            <input className="save" id="submit" type="submit" value="Save" style={{marginLeft: 125}}/>
+          <input
+            className="save"
+            id="submit"
+            type="submit"
+            value="Save"
+            style={{ marginLeft: 125 }}
+          />
         </form>
       </div>
     </>

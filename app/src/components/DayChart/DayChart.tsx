@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IAct } from "../../../../api/src/models/acts";
 import { NavigateFunction } from "react-router";
 
 interface DayInt {
   navigate: NavigateFunction;
+  dayChart: string | undefined;
 }
 
-const Sunday = ({ navigate }: DayInt) => {
+const DayChart = ({ navigate, dayChart }: DayInt) => {
   const [acts, setActs] = useState<Array<IAct>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
   const [stages, setStages] = useState<Array<string>>([]);
@@ -22,7 +23,7 @@ const Sunday = ({ navigate }: DayInt) => {
         .then((response) => response.json())
         .then(async (data) => {
           console.log(data.acts);
-          setActs(filterByDay(data.acts));
+          setActs(filterByDay(data.acts, dayChart));
           setStages(mapStages(data.acts));
         });
     } else {
@@ -53,8 +54,8 @@ const Sunday = ({ navigate }: DayInt) => {
     return days[new Date(date).getDay()];
   };
 
-  const filterByDay = (acts: Array<IAct>): Array<IAct> => {
-    return acts.filter((acts) => convertDateToDay(acts.date) === "Sunday");
+  const filterByDay = (acts: Array<IAct>, selectedDay: string | undefined): Array<IAct> => {
+    return acts.filter((acts) => convertDateToDay(acts.date) === selectedDay);
   };
 
   const mapStages = (acts: Array<IAct>): Array<string> => {
@@ -63,14 +64,9 @@ const Sunday = ({ navigate }: DayInt) => {
 
   const chartData = acts.map((act) => {
     let duration;
-    if ((act.end - act.start) % 100 === 0) {
-      duration = act.end - act.start;
-    } else if ((act.end - act.start - 30) % 100 === 0) {
-      duration = ((act.end - act.start) * 1.5) / 1.3;
-    } else {
-      duration = ((act.end - act.start) * 1.5) / 1.7;
-    }
-
+    (act.end - act.start) % 100 === 0
+      ? (duration = act.end - act.start)
+      : (duration = ((act.end - act.start) * 1.5) / 1.3);
     return {
       stage: act.stage,
       start: act.start,
@@ -82,7 +78,7 @@ const Sunday = ({ navigate }: DayInt) => {
   return (
     <>
       <div className="chart-container">
-        <div className="logo" style={{ padding: 2155 / 2 - 340 / 2 }}>
+        <div className="logo" style={{ padding: 2131 / 2 - 340 / 2 }}>
           <img
             src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
             alt="Lightning fonts"
@@ -108,7 +104,6 @@ const Sunday = ({ navigate }: DayInt) => {
                         if (data.stage === stage && data.start === i * 100) {
                           const left = 50 + "%";
                           const width = data.duration + "%";
-                          console.log(data.name, data.duration, width);
                           return (
                             <div
                               className="act"
@@ -124,8 +119,6 @@ const Sunday = ({ navigate }: DayInt) => {
                         ) {
                           const left = 100 + "%";
                           const width = data.duration + "%";
-                          console.log(data.name, data.duration, width);
-
                           return (
                             <div
                               className="act"
@@ -151,4 +144,4 @@ const Sunday = ({ navigate }: DayInt) => {
   );
 };
 
-export default Sunday;
+export default DayChart;
