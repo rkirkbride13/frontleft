@@ -89,7 +89,8 @@ label {
   background-color: white;
   border-bottom: 2px solid rgb(137, 43, 226);
   position: sticky;
-  top: 0px;
+  top: 0;
+  left: 0;
   z-index: 999;
 }
 
@@ -151,7 +152,6 @@ a {
   background-color: rgba(137, 43, 226, 0.7);
   color: white;
   width: max-content;
-  padding-bottom: 2px;
 }
 
 th {

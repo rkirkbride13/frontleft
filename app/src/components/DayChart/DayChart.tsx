@@ -79,71 +79,70 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
 
   return (
     <>
-      <div className="chart-container">
-        <div className="logo" style={{ padding: screenWidth / 2 - 340 / 2 }}>
+      <div className="logo" style={{ padding: 2155 / 2 - 340 / 2 }}>
         <a href="/acts">
           <img
             src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
             alt="Lightning fonts"
           ></img>
         </a>
-        </div>
-        <div className="act-chart">
-          <table>
-            <thead>
-              <tr>
-                <th></th>
+      </div>
+
+      <div className="act-chart">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              {[...Array(25)].map((_, i) => (
+                <th key={i}>{i + 0}00</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {stages.map((stage) => (
+              <tr key={stage}>
+                <th className="stage-cell">{stage}</th>
                 {[...Array(25)].map((_, i) => (
-                  <th key={i}>{i + 0}00</th>
+                  <td key={i} className="cell">
+                    {chartData.map((data) => {
+                      if (data.stage === stage && data.start === i * 100) {
+                        const left = 50 + "%";
+                        const width = data.duration + "%";
+                        return (
+                          <div
+                            className="act"
+                            style={{ left: left, width: width }}
+                            key={data.name}
+                          >
+                            {data.name}
+                          </div>
+                        );
+                      } else if (
+                        data.stage === stage &&
+                        data.start === (i + 0.3) * 100
+                      ) {
+                        const left = 100 + "%";
+                        const width = data.duration + "%";
+                        return (
+                          <div
+                            className="act"
+                            style={{ left: left, width: width }}
+                            key={data.name}
+                          >
+                            {data.name}
+                          </div>
+                        );
+                      }
+                      return null;
+                    })}
+                  </td>
                 ))}
               </tr>
-            </thead>
-            <tbody>
-              {stages.map((stage) => (
-                <tr key={stage}>
-                  <th className="stage-cell">{stage}</th>
-                  {[...Array(25)].map((_, i) => (
-                    <td key={i} className="cell">
-                      {chartData.map((data) => {
-                        if (data.stage === stage && data.start === i * 100) {
-                          const left = 50 + "%";
-                          const width = data.duration + "%";
-                          return (
-                            <div
-                              className="act"
-                              style={{ left: left, width: width }}
-                              key={data.name}
-                            >
-                              {data.name}
-                            </div>
-                          );
-                        } else if (
-                          data.stage === stage &&
-                          data.start === (i + 0.3) * 100
-                        ) {
-                          const left = 100 + "%";
-                          const width = data.duration + "%";
-                          return (
-                            <div
-                              className="act"
-                              style={{ left: left, width: width }}
-                              key={data.name}
-                            >
-                              {data.name}
-                            </div>
-                          );
-                        }
-                        return null;
-                      })}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div className="base-block"></div>
+            ))}
+          </tbody>
+        </table>
       </div>
+      <div className="base-block"></div>
     </>
   );
 };
