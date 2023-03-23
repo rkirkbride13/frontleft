@@ -76,6 +76,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               className="input"
               placeholder="Band, DJ etc.."
               id="name"
+              data-cy="name"
               type="text"
               style={{ width: "120px" }}
               value={name}
@@ -88,6 +89,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               className="input"
               placeholder="Where are they"
               id="stage"
+              data-cy="stage"
               type="text"
               style={{ width: "120px" }}
               value={stage}
@@ -100,6 +102,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               className="input"
               placeholder="Date"
               id="date"
+              data-cy="date"
               type="datetime-local"
               value={date}
               onChange={handleChange(setDate)}
@@ -111,6 +114,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               className="input"
               placeholder="E.g. 2030"
               id="start"
+              data-cy="start"
               type="number"
               value={start}
               onChange={handleChange(setStart)}
@@ -122,6 +126,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               className="input"
               placeholder="Until when"
               id="end"
+              data-cy="end"
               type="number"
               value={end}
               onChange={handleChange(setEnd)}
@@ -130,6 +135,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
           <input
             className="save"
             id="submit"
+            data-cy="submit-act"
             type="submit"
             value="Save"
             style={{ marginLeft: 125 }}
