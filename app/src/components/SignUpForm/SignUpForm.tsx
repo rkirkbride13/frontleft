@@ -100,6 +100,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
                 className="input"
                 placeholder="Your username"
                 id="name"
+                data-cy="name"
                 type="text"
                 style={{ width: "120px" }}
                 value={name}
@@ -112,6 +113,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
                 className="input"
                 placeholder="Your email"
                 id="email"
+                data-cy="email"
                 type="text"
                 style={{ width: "120px" }}
                 value={email}
@@ -124,6 +126,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
                 className="input"
                 placeholder="Your password"
                 id="password"
+                data-cy="password"
                 type="password"
                 value={password}
                 onChange={handleChange(setPassword)}
@@ -135,6 +138,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
               <input
                 className="submit"
                 id="submit"
+                data-cy="signup-submit"
                 type="submit"
                 value="Sign Up"
               />
