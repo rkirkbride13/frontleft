@@ -12,10 +12,6 @@ const act = {
 describe("Act", () => {
   it("renders with an act", () => {
     cy.mount(<Act act={act} />);
-
-    cy.get('[data-cy="act"]')
-      .should("contain.text", "Robbie")
-      .and("contain.text", "1800")
-      .and("contain.text", "1900");
+    cy.get('[data-cy="act"]').should("contain.text", "Robbie - 1800 to 1900");
   });
 });
