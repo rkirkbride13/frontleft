@@ -12,7 +12,20 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
-//
+
+declare namespace Cypress {
+  interface Chainable {
+    signup(name: string, email: string, password: string): Chainable<any>;
+  }
+}
+
+Cypress.Commands.add("signup", (name, email, password) => {
+  cy.visit("/signup");
+  cy.get('[data-cy="name"]').type(name);
+  cy.get('[data-cy="email"]').type(email);
+  cy.get('[data-cy="password"]').type(password);
+  cy.get('[data-cy="signup-submit"]').click();
+});
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
