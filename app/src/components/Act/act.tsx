@@ -1,13 +1,7 @@
-import { IAct } from "../../../../api/src/models/acts";
-
-interface ActProps {
-  act: IAct;
-}
-
-const Act = ({ act }: ActProps) => {
+const Act = ({ act }: any) => {
   return (
     <>
-      <p className="day-acts">
+      <p className="day-acts" data-cy="act">
         {act.name} - {act.start} to {act.end}
       </p>
     </>

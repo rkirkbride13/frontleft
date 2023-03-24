@@ -82,7 +82,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
                     {day}
                   </Link>
                 </p>
-                <div>
+                <div data-cy="acts">
                   {sortedActs
                     .filter((acts) => convertDateToDay(acts.date) === day)
                     .map((act) => (
