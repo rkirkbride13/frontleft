@@ -26,6 +26,20 @@ Cypress.Commands.add("signup", (name, email, password) => {
   cy.get('[data-cy="password"]').type(password);
   cy.get('[data-cy="signup-submit"]').click();
 });
+
+declare namespace Cypress {
+  interface Chainable {
+    signin(email: string, password: string): Chainable<any>;
+  }
+}
+
+Cypress.Commands.add("signin", (email, password) => {
+  cy.visit("/");
+  cy.get('[data-cy="email"]').type(email);
+  cy.get('[data-cy="password"]').type(password);
+  cy.get('[data-cy="signin-submit"]').click();
+});
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
