@@ -21,6 +21,6 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src", "cypress/support/component.ts"
+    "src", "cypress/support/component.ts", "cypress/e2e/**/*.ts"
   ]
 }
