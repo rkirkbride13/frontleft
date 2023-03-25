@@ -61,7 +61,7 @@ describe("/acts", () => {
         });
 
       expect(response.status).toEqual(400);
-      expect(response.body.message).toEqual("Trip not created");
+      expect(response.body.message).toEqual("Act not created");
       let acts = await Act.find();
       expect(acts.length).toEqual(0);
     });
@@ -114,10 +114,43 @@ describe("/acts", () => {
           end: 2330,
         });
 
-        let response = await request(app)
-        .get("/acts")
-        .send();
+      let response = await request(app).get("/acts").send();
       expect(response.statusCode).toEqual(400);
+    });
+  });
+
+  describe("Delete", () => {
+    test("responds with a status code 201 and deletes an act", async () => {
+      let user = new User({
+        name: "Robbie",
+        email: "robbie@email.com",
+        password: "password1",
+      });
+      await user.save();
+      let token = await Token.jsonwebtoken(user.id);
+      await request(app)
+        .post("/acts")
+        .set("Authorization", `Bearer ${token}`)
+        .send({
+          name: "Elton John",
+          stage: "Pyramid",
+          date: "2023-06-24",
+          start: 2200,
+          end: 2330,
+        });
+      let acts = await Act.find();
+      expect(acts.length).toEqual(1);
+      const act_id = acts[0]._id;
+
+      let response_2 = await request(app)
+        .delete("/acts")
+        .set("Authorization", `Bearer ${token}`)
+        .set({ act_id: act_id })
+        .send();
+
+      let updatedActs = await Act.find();
+      expect(response_2.statusCode).toEqual(201);
+      expect(updatedActs.length).toEqual(0);
     });
   });
 });

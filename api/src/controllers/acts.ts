@@ -11,7 +11,7 @@ const ActsController = {
       res.status(201).json({ message: "OK" });
     } catch (err) {
       console.error(err);
-      res.status(400).json({ message: "Trip not created" });
+      res.status(400).json({ message: "Act not created" });
     }
   },
   Find: async (req: Request, res: Response) => {
@@ -20,9 +20,17 @@ const ActsController = {
       res.status(200).json({ acts })
     } catch (err) {
       console.error(err);
-      res.status(400).json({ message: "Trips not found" });
+      res.status(400).json({ message: "Acts not found" });
     }
-  }
+  },
+  Delete: async (req: Request, res: Response) => {
+    try {
+      await Act.findOneAndDelete({ _id: req.get("act_id") });
+      res.status(201).json({ message: "DELETED" });
+    } catch (err) {
+      res.status(400).json({ message: "Act not deleted" });
+    }
+  },
 };
 
 export default ActsController;
