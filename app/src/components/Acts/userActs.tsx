@@ -86,7 +86,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
                   {sortedActs
                     .filter((acts) => convertDateToDay(acts.date) === day)
                     .map((act) => (
-                      <Act key={act._id} act={act} />
+                      <Act key={act._id} act={act} token={token} setActs={setActs} />
                     ))}
                 </div>
               </div>

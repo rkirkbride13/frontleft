@@ -1,8 +1,49 @@
-const Act = ({ act }: any) => {
+import { FormEvent } from "react";
+import { IAct } from "../../../../api/src/models/acts";
+
+interface ActInt {
+  act: IAct;
+  token: string | null;
+  setActs: React.Dispatch<React.SetStateAction<IAct[]>>;
+}
+
+const Act = ({ act, token, setActs }: ActInt) => {
+  const handleDelete = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await fetch("/acts", {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        act_id: act._id,
+      },
+    });
+
+    if (response.status !== 201) {
+      console.log("act NOT deleted");
+    } else {
+      console.log("act deleted");
+
+      if (token) {
+        fetch("/acts", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+          .then((response) => response.json())
+          .then(async (data) => {
+            setActs(data.acts);
+          });
+      }
+    }
+  };
+
   return (
     <>
       <p className="day-acts" data-cy="act">
-        {act.name} - {act.start} to {act.end}
+        <form onSubmit={handleDelete}>
+          <input data-cy="delete-button" type="submit" value="X" />
+        </form>
+        - {act.name} - {act.start} to {act.end}
       </p>
     </>
   );
