@@ -1,7 +1,7 @@
 import Act from "./act";
-import { IAct } from "../../../../api/src/models/acts";
+// import { IAct } from "../../../../api/src/models/acts";
 
-const act: IAct | any = {
+const act: any = {
   name: "Robbie",
   stage: "Git staging",
   date: new Date(),

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavigateFunction } from "react-router";
 import { Link } from "react-router-dom";
 import { Dispatch, SetStateAction } from "react";
-import { IAct } from "../../../../api/src/models/acts";
+// import { IAct } from "../../../../api/src/models/acts";
 import Act from "../Act/act";
 import ActForm from "../ActForm/ActForm";
 import serverURL from "../../serverURL";
@@ -13,7 +13,7 @@ interface ActsInt {
 }
 
 const Acts = ({ navigate, setDayChart }: ActsInt) => {
-  const [acts, setActs] = useState<Array<IAct>>([]);
+  const [acts, setActs] = useState<Array<any>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
   const [days, setDays] = useState<Array<string>>([]);
   const [screenWidth, setSceenWidth] = useState(window.innerWidth);
@@ -50,7 +50,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
     console.log(days);
   }, [acts]);
 
-  const sortByDate = (acts: Array<IAct>): Array<IAct> => {
+  const sortByDate = (acts: Array<any>): Array<any> => {
     return acts.sort(
       (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
     );

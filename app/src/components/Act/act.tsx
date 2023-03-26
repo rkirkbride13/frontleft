@@ -1,11 +1,11 @@
 import { FormEvent } from "react";
-import { IAct } from "../../../../api/src/models/acts";
+// import { IAct } from "../../../../api/src/models/acts";
 import serverURL from "../../serverURL";
 
 interface ActInt {
-  act: IAct;
+  act: any;
   token: string | null;
-  setActs: React.Dispatch<React.SetStateAction<IAct[]>>;
+  setActs: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
 const Act = ({ act, token, setActs }: ActInt) => {

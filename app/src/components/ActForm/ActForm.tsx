@@ -1,12 +1,12 @@
 import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
 import { NavigateFunction } from "react-router";
-import { IAct } from "../../../../api/src/models/acts";
+// import { IAct } from "../../../../api/src/models/acts";
 import serverURL from "../../serverURL";
 
 interface ActFormInt {
   navigate: NavigateFunction;
   token: string | null;
-  setActs: React.Dispatch<React.SetStateAction<IAct[]>>;
+  setActs: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
 const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IAct } from "../../../../api/src/models/acts";
+// import { IAct } from "../../../../api/src/models/acts";
 import { NavigateFunction } from "react-router";
 import serverURL from "../../serverURL";
 
@@ -9,7 +9,7 @@ interface DayInt {
 }
 
 const DayChart = ({ navigate, dayChart }: DayInt) => {
-  const [acts, setActs] = useState<Array<IAct>>([]);
+  const [acts, setActs] = useState<Array<any>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
   const [stages, setStages] = useState<Array<string>>([]);
   const [screenWidth, setSceenWidth] = useState(window.innerWidth);
@@ -55,13 +55,13 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
   };
 
   const filterByDay = (
-    acts: Array<IAct>,
+    acts: Array<any>,
     selectedDay: string | undefined
-  ): Array<IAct> => {
+  ): Array<any> => {
     return acts.filter((acts) => convertDateToDay(acts.date) === selectedDay);
   };
 
-  const mapStages = (acts: Array<IAct>): Array<string> => {
+  const mapStages = (acts: Array<any>): Array<string> => {
     return Array.from(new Set(acts.map((act) => act.stage)));
   };
 
