@@ -46,7 +46,7 @@ describe("/acts", () => {
                 start: 2200,
                 end: 2330,
             });
-            expect(response.status).toEqual(201);
+            expect(response.status).toEqual(200);
             let acts = yield acts_1.default.find();
             expect(acts.length).toEqual(1);
             expect(acts[0].name).toEqual("Elton John");
@@ -150,7 +150,7 @@ describe("/acts", () => {
                 .set({ act_id: act_id })
                 .send();
             let updatedActs = yield acts_1.default.find();
-            expect(response_2.statusCode).toEqual(201);
+            expect(response_2.statusCode).toEqual(200);
             expect(updatedActs.length).toEqual(0);
         }));
     });

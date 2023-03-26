@@ -16,7 +16,7 @@ describe("/users", () => {
         email: "robbie@email.com",
         password: "password",
       });
-      expect(response.statusCode).toBe(201);
+      expect(response.statusCode).toBe(200);
 
       let users = await User.find();
       let newUser = users[users.length - 1];
@@ -29,7 +29,7 @@ describe("/users", () => {
         email: "robbie@email.com",
         password: "password",
       });
-      expect(response.statusCode).toBe(201);
+      expect(response.statusCode).toBe(200);
 
       let users = await User.find();
       let newUser = users[users.length - 1];

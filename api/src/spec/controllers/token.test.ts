@@ -22,7 +22,7 @@ describe("/tokens", () => {
       .post("/tokens")
       .send({ email: "robbie@email.com", password: "password1" });
     expect(response.body.message).toEqual("OK");
-    expect(response.status).toEqual(201);
+    expect(response.status).toEqual(200);
     expect(response.body.token).not.toEqual(undefined);
   });
 

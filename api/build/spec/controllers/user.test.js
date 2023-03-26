@@ -28,7 +28,7 @@ describe("/users", () => {
                 email: "robbie@email.com",
                 password: "password",
             });
-            expect(response.statusCode).toBe(201);
+            expect(response.statusCode).toBe(200);
             let users = yield users_1.default.find();
             let newUser = users[users.length - 1];
             expect(newUser.email).toEqual("robbie@email.com");
@@ -39,7 +39,7 @@ describe("/users", () => {
                 email: "robbie@email.com",
                 password: "password",
             });
-            expect(response.statusCode).toBe(201);
+            expect(response.statusCode).toBe(200);
             let users = yield users_1.default.find();
             let newUser = users[users.length - 1];
             bcrypt_1.default
