@@ -6,6 +6,7 @@ import React, {
   useEffect,
 } from "react";
 import { NavigateFunction } from "react-router";
+import serverURL from "../../serverURL";
 
 interface SignUpFormInt {
   navigate: NavigateFunction;
@@ -33,7 +34,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
   ): Promise<void> => {
     event.preventDefault();
 
-    fetch("/users", {
+    fetch(serverURL() + "/users", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

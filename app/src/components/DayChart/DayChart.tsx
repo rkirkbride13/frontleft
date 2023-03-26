@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { IAct } from "../../../../api/src/models/acts";
 import { NavigateFunction } from "react-router";
+import serverURL from "../../serverURL";
 
 interface DayInt {
   navigate: NavigateFunction;
@@ -15,7 +16,7 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
 
   useEffect(() => {
     if (token) {
-      fetch("/acts", {
+      fetch(serverURL() + "/acts", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

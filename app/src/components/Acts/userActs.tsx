@@ -5,6 +5,7 @@ import { Dispatch, SetStateAction } from "react";
 import { IAct } from "../../../../api/src/models/acts";
 import Act from "../Act/act";
 import ActForm from "../ActForm/ActForm";
+import serverURL from "../../serverURL";
 
 interface ActsInt {
   navigate: NavigateFunction;
@@ -19,7 +20,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
 
   useEffect(() => {
     if (token) {
-      fetch("/acts", {
+      fetch(serverURL() + "/acts", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
