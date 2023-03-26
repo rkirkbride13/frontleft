@@ -8,6 +8,8 @@ Frontleft will help you plan out your days at a festival and catch every moment 
 
 Since finishing the Makers Academy coding bootcamp I have setout to learn TypeScript and have built this to put my skills to the test.
 
+[Try it out for yourself!](https://frontleft.onrender.com)
+
 ## Technologies
 
 This is a mobile-first MERN stack application written with TypeScript. The styling has been done using CSS. 
@@ -16,11 +18,8 @@ The backend was test driven using Jest, as well as testing calls using Postman. 
 
 ## Future goals
 
-This is a work in progress. This is the first version of the app and there are several additional features I intend to add. The main ones are:
-
-- adding in tests to the frontend. So far the frontend has been tested through using the app in the browser
 - add the distances between stages so that a user can make a more informed decision about who to see (it could take the best part of 30 mins to get to one from the other!)
-- deploy the app
+- Create a web scraper too auto-populate the acts from a given festival. Currently the user has to manually type them in
 
 ## Screenshots
 
