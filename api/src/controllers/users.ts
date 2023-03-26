@@ -15,7 +15,7 @@ const UsersController = {
         email: req.body.email,
         password: encryptedPassword,
       });
-      res.status(201).json({ message: "OK" });
+      res.status(200).json({ message: "OK" });
     } catch (err) {
       res.status(400).json({ message: "Bad request - user not created" });
     }

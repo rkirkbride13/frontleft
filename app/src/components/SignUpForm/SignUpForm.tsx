@@ -45,7 +45,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
         password: password,
       }),
     }).then((response) => {
-      if (response.status === 201) {
+      if (response.status === 200) {
         console.log("Success");
         navigate("/");
       } else if (email === "" || password === "" || name === "") {
