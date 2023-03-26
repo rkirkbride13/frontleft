@@ -32,6 +32,7 @@ const tokenChecker = (req, res, next) => {
         res.status(400).json({ message: "Auth error" });
     }
 };
+// App routes
 app.use("/acts", tokenChecker, acts_1.default);
 app.use("/users", users_1.default);
 app.use("/tokens", tokens_1.default);
