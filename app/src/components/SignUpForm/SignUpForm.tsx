@@ -6,6 +6,7 @@ import React, {
   useEffect,
 } from "react";
 import { NavigateFunction } from "react-router";
+import serverURL from "../../serverURL";
 
 interface SignUpFormInt {
   navigate: NavigateFunction;
@@ -33,7 +34,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
   ): Promise<void> => {
     event.preventDefault();
 
-    fetch("/users", {
+    fetch(serverURL() + "/users", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +45,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
         password: password,
       }),
     }).then((response) => {
-      if (response.status === 201) {
+      if (response.status === 200) {
         console.log("Success");
         navigate("/");
       } else if (email === "" || password === "" || name === "") {

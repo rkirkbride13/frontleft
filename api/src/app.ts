@@ -29,6 +29,7 @@ const tokenChecker = (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
+// App routes
 app.use("/acts", tokenChecker, actsRouter);
 app.use("/users", usersRouter);
 app.use("/tokens", tokensRouter);

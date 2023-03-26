@@ -6,6 +6,7 @@ import React, {
   useEffect,
 } from "react";
 import { NavigateFunction } from "react-router";
+import serverURL from "../../serverURL";
 
 interface SignInFormInt {
   navigate: NavigateFunction;
@@ -32,7 +33,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
   ): Promise<void> => {
     event.preventDefault();
 
-    let response = await fetch("/tokens", {
+    let response = await fetch(serverURL() + "/tokens", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +44,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
       }),
     });
 
-    if (response.status === 201) {
+    if (response.status === 200) {
       console.log("Success");
       let data = await response.json();
       window.localStorage.setItem("token", data.token);

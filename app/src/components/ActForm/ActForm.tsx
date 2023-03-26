@@ -1,11 +1,12 @@
 import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
 import { NavigateFunction } from "react-router";
-import { IAct } from "../../../../api/src/models/acts";
+// import { IAct } from "../../../../api/src/models/acts";
+import serverURL from "../../serverURL";
 
 interface ActFormInt {
   navigate: NavigateFunction;
   token: string | null;
-  setActs: React.Dispatch<React.SetStateAction<IAct[]>>;
+  setActs: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
 const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
@@ -31,7 +32,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
     if (!token) {
       navigate("/");
     } else {
-      fetch("/acts", {
+      fetch(serverURL() + "/acts", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -45,9 +46,9 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
           end: end,
         }),
       }).then((response) => {
-        if (response.status === 201) {
+        if (response.status === 200) {
           console.log("Success");
-          fetch("/acts", {
+          fetch(serverURL() + "/acts", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
