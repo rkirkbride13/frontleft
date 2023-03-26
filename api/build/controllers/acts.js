@@ -19,7 +19,7 @@ const ActsController = {
         const act = new acts_1.default({ name, stage, date, start, end, user_id });
         try {
             yield act.save();
-            res.status(201).json({ message: "OK" });
+            res.status(200).json({ message: "OK" });
         }
         catch (err) {
             console.error(err);
@@ -39,7 +39,7 @@ const ActsController = {
     Delete: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         try {
             yield acts_1.default.findOneAndDelete({ _id: req.get("act_id") });
-            res.status(201).json({ message: "DELETED" });
+            res.status(200).json({ message: "DELETED" });
         }
         catch (err) {
             res.status(400).json({ message: "Act not deleted" });

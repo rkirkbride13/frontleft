@@ -19,7 +19,7 @@ const Act = ({ act, token, setActs }: ActInt) => {
       },
     });
 
-    if (response.status !== 201) {
+    if (response.status !== 200) {
       console.log("act NOT deleted");
     } else {
       console.log("act deleted");
