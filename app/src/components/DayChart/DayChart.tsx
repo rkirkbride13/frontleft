@@ -80,7 +80,7 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
 
   return (
     <>
-      <div className="logo" style={{ padding: 2155 / 2 - 340 / 2 }}>
+      <div className="fixed-logo" style={{ padding: 2155 / 2 - 340 / 2 }}>
         <a href="/acts">
           <img
             src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"

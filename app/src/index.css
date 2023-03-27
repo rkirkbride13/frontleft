@@ -83,14 +83,17 @@ label {
 }
 
 .logo {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.logo, .fixed-logo {
   width: 340px;
   padding-bottom: 20px!important;
   padding-top: 25px!important;
   background-color: white;
   border-bottom: 2px solid rgb(137, 43, 226);
-  position: sticky;
-  top: 0;
-  left: 0;
   z-index: 999;
 }
 
@@ -178,7 +181,6 @@ th {
   height: 25px;
   border-bottom: 1px solid white;
   position: relative;
-  z-index: 999;
 }
 
 .cell::before {
