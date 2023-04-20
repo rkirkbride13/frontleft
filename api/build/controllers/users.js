@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const users_1 = __importDefault(require("../models/users"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
+const account_1 = __importDefault(require("../emails/account"));
 const UsersController = {
     Create: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         let encryptedPassword;
@@ -26,6 +27,7 @@ const UsersController = {
                 email: req.body.email,
                 password: encryptedPassword,
             });
+            (0, account_1.default)(req.body.email, req.body.name);
             res.status(200).json({ message: "OK" });
         }
         catch (err) {
