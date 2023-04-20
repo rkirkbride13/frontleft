@@ -8,7 +8,7 @@ const sendWelcomeEmail = (email: string, name: string) => {
     to: email,
     from: process.env.ADMIN_EMAIL!,
     subject: "👾 Thanks for signing up 👾",
-    text: `Welcome to frontleft, ${name}!\n\nTo use the app\n - log in\n - fill in fields for each artist/DJ\n - note that date and time should be exact\n - save them and click underlined days to see clashfinder\n\nI hope you enjoy it and let me know what you think.`,
+    text: `Welcome to frontleft, ${name}!\n\nTo use the app\n - Log in\n - Fill in fields for each artist/DJ\n - Note that date and time should be exact\n - Save them\n - Click the link for each day to see clashfinder\n\nI hope you enjoy it and let me know what you think.`,
   });
 };
 
