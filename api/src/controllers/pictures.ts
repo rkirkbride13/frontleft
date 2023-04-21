@@ -22,6 +22,20 @@ const PicturesController = {
       };
     }
   },
+  Find: async (req: Request, res: Response) => {
+    try {
+      const user = await User.findById(req.params.id);
+
+      if (!user || !user.picture) {
+        throw new Error();
+      }
+
+      res.set("Content-Type", "image/png");
+      res.send(user.picture);
+    } catch (error) {
+      res.status(404).send();
+    }
+  },
 };
 
 export default PicturesController;

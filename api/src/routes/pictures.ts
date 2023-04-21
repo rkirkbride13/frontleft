@@ -6,7 +6,7 @@ const router: Router = Router();
 
 const upload = multer({
   limits: {
-    fileSize: 1000000,
+    fileSize: 2000000,
   },
   fileFilter(req: Request, file, cb: Function) {
     if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
@@ -26,5 +26,6 @@ router.post(
   ]),
   PicturesController.Create
 );
+router.get("/:id", PicturesController.Find);
 
 export default router;

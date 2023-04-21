@@ -107,6 +107,23 @@ a {
   font-size: 14px;
 }
 
+.acts-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.picture-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.prof-pic {
+  border-radius: 100%;
+  width: 50%;
+}
+
 .days-container {
   display: flex;
   flex-direction: column;

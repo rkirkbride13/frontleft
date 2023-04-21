@@ -1,0 +1,107 @@
+import React, {
+  useState,
+  FormEvent,
+  ChangeEvent,
+  ReactElement,
+  useEffect,
+} from "react";
+import { NavigateFunction } from "react-router";
+import serverURL from "../../serverURL";
+
+interface PictureFormInt {
+  navigate: NavigateFunction;
+  token: string | null;
+}
+
+const PictureForm = ({ navigate, token }: PictureFormInt): ReactElement => {
+  const handlePictureChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setPicture(event.target.files[0]);
+    }
+  };
+
+  const [picture, setPicture] = useState<File | string>("");
+  const [imageUrl, setImageUrl] = useState<string>("");
+
+  const user_id: any = window.localStorage.getItem("user_id");
+
+  const handleSubmit = async (
+    event: FormEvent<HTMLFormElement>
+  ): Promise<void> => {
+    event.preventDefault();
+
+    if (!token) {
+      navigate("/");
+    }
+
+    let formData = new FormData();
+    if (picture !== "") {
+      formData.append("picture", picture);
+    }
+    formData.append("user_id", user_id);
+
+    let response = await fetch(serverURL() + "/pictures", {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    });
+
+    await response;
+
+    if (response.status !== 200) {
+      console.log("picture NOT added");
+    } else {
+      console.log("picture added");
+      const form = event.target as HTMLFormElement;
+      form.picture.value = "";
+      const imageUrl = serverURL() + `/pictures/${user_id}`;
+      setImageUrl(imageUrl);
+    }
+  };
+
+  useEffect(() => {
+    const fetchPicture = async () => {
+      const response = await fetch(`${serverURL()}/pictures/${user_id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.ok) {
+        const blob = await response.blob();
+        const imageUrl = URL.createObjectURL(blob);
+        setImageUrl(imageUrl);
+      }
+    };
+    fetchPicture();
+  }, [imageUrl]);
+
+  return (
+    <>
+      <div className="form-page">
+        <br></br>
+        <div className="header">
+          {imageUrl === "" ? "Upload a profile pic?" : ""}
+        </div>
+        {imageUrl !== "" && (
+          <img className="prof-pic" src={imageUrl} alt="Profile Picture" />
+        )}
+        <br></br>
+        <form onSubmit={handleSubmit} encType="multipart/form-data">
+          <input
+            type="file"
+            accept=".png, •jpg,
+          jpeg"
+            name="picture"
+            onChange={handlePictureChange}
+          />
+          <input className="save" id="submit" type="submit" value="Save" />
+        </form>
+      </div>
+    </>
+  );
+};
+
+export default PictureForm;

@@ -1,6 +1,5 @@
 import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
 import { NavigateFunction } from "react-router";
-// import { IAct } from "../../../../api/src/models/acts";
 import serverURL from "../../serverURL";
 
 interface ActFormInt {

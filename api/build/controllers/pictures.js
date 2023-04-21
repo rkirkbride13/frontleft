@@ -30,5 +30,18 @@ const PicturesController = {
             };
         }
     }),
+    Find: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        try {
+            const user = yield users_1.default.findById(req.params.id);
+            if (!user || !user.picture) {
+                throw new Error();
+            }
+            res.set("Content-Type", "image/png");
+            res.send(user.picture);
+        }
+        catch (error) {
+            res.status(404).send();
+        }
+    }),
 };
 exports.default = PicturesController;

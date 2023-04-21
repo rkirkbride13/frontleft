@@ -32,7 +32,7 @@ const TokensController = {
         }
         else {
             const token = yield tokens_1.default.jsonwebtoken(user.id);
-            res.status(200).json({ token: token, message: "OK" });
+            res.status(200).json({ user_id: user._id, token: token, message: "OK" });
         }
     }),
 };

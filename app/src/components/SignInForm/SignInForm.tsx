@@ -48,6 +48,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
       console.log("Success");
       let data = await response.json();
       window.localStorage.setItem("token", data.token);
+      window.localStorage.setItem("user_id", data.user_id);
       navigate("/acts");
     } else if (email === "" || password === "") {
       setEmptyField("All fields are required");
@@ -80,7 +81,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
   return (
     <>
       <div className="logo" style={{ padding: screenWidth / 2 - 340 / 2 }}>
-      <a href="/acts">
+        <a href="/acts">
           <img
             src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
             alt="Lightning fonts"

@@ -19,7 +19,7 @@ const TokensController = {
       res.status(401).json({ message: "auth error - passwords do not match" });
     } else {
       const token = await Token.jsonwebtoken(user.id);
-      res.status(200).json({ token: token, message: "OK" });
+      res.status(200).json({ user_id: user._id, token: token, message: "OK" });
     }
   },
 };

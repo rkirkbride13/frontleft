@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { NavigateFunction } from "react-router";
 import { Link } from "react-router-dom";
 import { Dispatch, SetStateAction } from "react";
-// import { IAct } from "../../../../api/src/models/acts";
 import Act from "../Act/act";
 import ActForm from "../ActForm/ActForm";
 import serverURL from "../../serverURL";
+import PictureForm from "../PictureForm/PictureForm";
 
 interface ActsInt {
   navigate: NavigateFunction;
@@ -47,7 +47,6 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
       new Set(acts.map((act) => convertDateToDay(act.date)))
     );
     setDays(uniqueDays);
-    console.log(days);
   }, [acts]);
 
   const sortByDate = (acts: Array<any>): Array<any> => {
@@ -87,7 +86,12 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
                   {sortedActs
                     .filter((acts) => convertDateToDay(acts.date) === day)
                     .map((act) => (
-                      <Act key={act._id} act={act} token={token} setActs={setActs} />
+                      <Act
+                        key={act._id}
+                        act={act}
+                        token={token}
+                        setActs={setActs}
+                      />
                     ))}
                 </div>
               </div>
@@ -114,6 +118,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
           style={{ width: screenWidth / 2 - 400 / 2 }}
         ></div>
         <div className="acts-container">
+          <PictureForm navigate={navigate} token={token} />
           <ActForm navigate={navigate} setActs={setActs} token={token} />
           <div className="days-container">{mapDays()}</div>
         </div>

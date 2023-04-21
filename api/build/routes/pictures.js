@@ -9,7 +9,7 @@ const pictures_1 = __importDefault(require("../controllers/pictures"));
 const router = (0, express_1.Router)();
 const upload = (0, multer_1.default)({
     limits: {
-        fileSize: 1000000,
+        fileSize: 2000000,
     },
     fileFilter(req, file, cb) {
         if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
@@ -23,4 +23,5 @@ router.post("/", upload.fields([
     { name: "picture", maxCount: 1 },
     { name: "user_id", maxCount: 1 },
 ]), pictures_1.default.Create);
+router.get("/:id", pictures_1.default.Find);
 exports.default = router;
