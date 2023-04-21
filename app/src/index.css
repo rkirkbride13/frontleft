@@ -69,6 +69,7 @@ label {
   border-color: #fff;
   border-radius: 5px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .input {
@@ -123,11 +124,30 @@ input[type="file"] {
   display: none;
 }
 .custom-file-upload {
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  background-color: rgba(137, 43, 226, 0.7);
+  color:white;
+  background-color: rgba(137, 43, 226, 0.8);
+  border-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 5px;
   cursor: pointer;
+}
+
+.save-image {
+  color:white;
+  background-color: rgba(137, 43, 226, 0.8);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.upload-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 250px;
 }
 
 .prof-pic {

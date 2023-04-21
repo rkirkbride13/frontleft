@@ -57,8 +57,19 @@ const PictureForm = ({ navigate, token }: PictureFormInt): ReactElement => {
       console.log("picture added");
       const form = event.target as HTMLFormElement;
       form.picture.value = "";
-      const imageUrl = serverURL() + `/pictures/${user_id}`;
-      setImageUrl(imageUrl);
+      const fetchPicture = async () => {
+        const response = await fetch(`${serverURL()}/pictures/${user_id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (response.ok) {
+          const blob = await response.blob();
+          const imageUrl = URL.createObjectURL(blob);
+          setImageUrl(imageUrl);
+        }
+      };
+      fetchPicture();
     }
   };
 
@@ -76,7 +87,7 @@ const PictureForm = ({ navigate, token }: PictureFormInt): ReactElement => {
       }
     };
     fetchPicture();
-  }, [imageUrl]);
+  }, []);
 
   return (
     <>
@@ -89,9 +100,13 @@ const PictureForm = ({ navigate, token }: PictureFormInt): ReactElement => {
           <img className="prof-pic" src={imageUrl} alt="Profile Picture" />
         )}
         <br></br>
-        <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <form
+          className="upload-image"
+          onSubmit={handleSubmit}
+          encType="multipart/form-data"
+        >
           <label htmlFor="file-upload" className="custom-file-upload">
-            <i className="fa fa-cloud-upload"></i> Upload image
+            <i className="fa fa-cloud-upload"></i> Pick image
           </label>
           <input
             id="file-upload"
@@ -101,14 +116,12 @@ const PictureForm = ({ navigate, token }: PictureFormInt): ReactElement => {
             name="picture"
             onChange={handlePictureChange}
           />
-          {/* <input
-            type="file"
-            accept=".png, •jpg,
-          jpeg"
-            name="picture"
-            onChange={handlePictureChange}
-          /> */}
-          <input className="save" id="submit" type="submit" value="Save" />
+          <input
+            className="save-image"
+            id="submit"
+            type="submit"
+            value="Save"
+          />
         </form>
       </div>
     </>
