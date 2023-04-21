@@ -4,6 +4,7 @@ import { config } from "dotenv";
 import actsRouter from "./routes/acts";
 import usersRouter from "./routes/users";
 import tokensRouter from "./routes/tokens";
+import picturesRouter from "./routes/pictures";
 import JWT, { JwtPayload } from "jsonwebtoken";
 
 config({ path: "./config.env" });
@@ -15,17 +16,18 @@ app.use(express.json());
 const tokenChecker = (req: Request, res: Response, next: NextFunction) => {
   let token: string | undefined;
   const authHeader = req.get("Authorization");
-
   if (authHeader) {
     token = authHeader.slice(7);
   }
-  
   if (token) {
-    const payload = JWT.verify(token, process.env.JWT_SECRET as string) as JwtPayload
-    req.body.user_id = payload.user_id
-    next()
+    const payload = JWT.verify(
+      token,
+      process.env.JWT_SECRET as string
+    ) as JwtPayload;
+    req.body.user_id = payload.user_id;
+    next();
   } else {
-    res.status(400).json({ message: "Auth error" })
+    res.status(400).json({ message: "Auth error" });
   }
 };
 
@@ -33,5 +35,6 @@ const tokenChecker = (req: Request, res: Response, next: NextFunction) => {
 app.use("/acts", tokenChecker, actsRouter);
 app.use("/users", usersRouter);
 app.use("/tokens", tokensRouter);
+app.use("/pictures", tokenChecker, picturesRouter);
 
 export { app };

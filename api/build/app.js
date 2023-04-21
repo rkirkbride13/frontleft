@@ -10,6 +10,7 @@ const dotenv_1 = require("dotenv");
 const acts_1 = __importDefault(require("./routes/acts"));
 const users_1 = __importDefault(require("./routes/users"));
 const tokens_1 = __importDefault(require("./routes/tokens"));
+const pictures_1 = __importDefault(require("./routes/pictures"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 (0, dotenv_1.config)({ path: "./config.env" });
 const app = (0, express_1.default)();
@@ -36,3 +37,4 @@ const tokenChecker = (req, res, next) => {
 app.use("/acts", tokenChecker, acts_1.default);
 app.use("/users", users_1.default);
 app.use("/tokens", tokens_1.default);
+app.use("/pictures", tokenChecker, pictures_1.default);

@@ -5,7 +5,6 @@ const ActsController = {
   Create: async (req: Request, res: Response): Promise<void> => {
     const { name, stage, date, start, end, user_id } = req.body;
     const act: IAct = new Act({ name, stage, date, start, end, user_id });
-
     try {
       await act.save();
       res.status(200).json({ message: "OK" });
@@ -16,8 +15,8 @@ const ActsController = {
   },
   Find: async (req: Request, res: Response) => {
     try {
-      const acts = await Act.find({ user_id: req.body.user_id })
-      res.status(200).json({ acts })
+      const acts = await Act.find({ user_id: req.body.user_id });
+      res.status(200).json({ acts });
     } catch (err) {
       console.error(err);
       res.status(400).json({ message: "Acts not found" });
