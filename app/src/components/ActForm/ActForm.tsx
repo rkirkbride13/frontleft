@@ -104,6 +104,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               id="date"
               data-cy="date"
               type="datetime-local"
+              step="900"
               value={date}
               onChange={handleChange(setDate)}
             />

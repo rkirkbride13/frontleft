@@ -93,9 +93,6 @@ const PictureForm = ({ navigate, token }: PictureFormInt): ReactElement => {
     <>
       <div className="picture-div">
         <br></br>
-        <div className="header">
-          {imageUrl === "" ? "Upload a profile pic?" : ""}
-        </div>
         {imageUrl !== "" && (
           <img className="prof-pic" src={imageUrl} alt="Profile Picture" />
         )}
@@ -106,7 +103,7 @@ const PictureForm = ({ navigate, token }: PictureFormInt): ReactElement => {
           encType="multipart/form-data"
         >
           <label htmlFor="file-upload" className="custom-file-upload">
-            <i className="fa fa-cloud-upload"></i> Pick image
+            <i className="fa fa-cloud-upload"></i> Upload image?
           </label>
           <input
             id="file-upload"
