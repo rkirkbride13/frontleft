@@ -80,7 +80,7 @@ const PictureForm = ({ navigate, token }: PictureFormInt): ReactElement => {
 
   return (
     <>
-      <div className="form-page">
+      <div className="picture-div">
         <br></br>
         <div className="header">
           {imageUrl === "" ? "Upload a profile pic?" : ""}
@@ -90,13 +90,24 @@ const PictureForm = ({ navigate, token }: PictureFormInt): ReactElement => {
         )}
         <br></br>
         <form onSubmit={handleSubmit} encType="multipart/form-data">
+          <label htmlFor="file-upload" className="custom-file-upload">
+            <i className="fa fa-cloud-upload"></i> Upload image
+          </label>
           <input
+            id="file-upload"
             type="file"
             accept=".png, •jpg,
           jpeg"
             name="picture"
             onChange={handlePictureChange}
           />
+          {/* <input
+            type="file"
+            accept=".png, •jpg,
+          jpeg"
+            name="picture"
+            onChange={handlePictureChange}
+          /> */}
           <input className="save" id="submit" type="submit" value="Save" />
         </form>
       </div>

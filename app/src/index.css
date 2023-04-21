@@ -119,9 +119,29 @@ a {
   justify-content: center;
 }
 
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: rgba(137, 43, 226, 0.7);
+  cursor: pointer;
+}
+
 .prof-pic {
   border-radius: 100%;
-  width: 50%;
+}
+
+.picture-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25%;
+  width: 125px;
+  border-radius: 100%;
 }
 
 .days-container {
