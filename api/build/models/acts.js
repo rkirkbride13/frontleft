@@ -24,13 +24,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
+// Define a new Mongoose schema for the "Act" data object
 const ActSchema = new mongoose_1.Schema({
     name: { type: String, required: true },
     stage: { type: String, required: true },
     date: { type: Date, required: true },
     start: { type: Number, required: true },
     end: { type: Number, required: true },
-    user_id: { type: String, required: true }
+    user_id: { type: String, required: true },
 });
-const Act = mongoose_1.default.model('Act', ActSchema);
+// Create a Mongoose model for the "Act" data object using the defined schema
+const Act = mongoose_1.default.model("Act", ActSchema);
 exports.default = Act;

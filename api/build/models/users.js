@@ -24,6 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
+// Define a new Mongoose schema for the "User" data object
 const UserSchema = new mongoose_1.Schema({
     name: { type: String, required: true },
     email: {
@@ -31,12 +32,15 @@ const UserSchema = new mongoose_1.Schema({
         required: true,
         unique: true,
         dropDups: true,
+        // A regular expression for validating the format of the email address
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/],
     },
     password: { type: String, required: true },
+    // A buffer field for storing the user's profile picture
     picture: {
         type: Buffer,
     },
 });
+// Create a Mongoose model for the "User" data object using the defined schema
 const User = mongoose_1.default.model("User", UserSchema);
 exports.default = User;
