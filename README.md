@@ -2,7 +2,7 @@
 
 ## Intro
 
-With sometimes endless music festival lineups it can be a bit daunting choosing what stages to be at and when, knowing that you may be missing some of your favourite acts or running back and forth and not actually seeing any! This is where frontleft comes in. 
+With sometimes endless music festival lineups it can be a bit daunting choosing what stages to be at and when, knowing that you may be missing some of your favourite acts or running back and forth and not actually seeing any! This is where frontleft comes in.
 
 Frontleft will help you plan out your days at a festival and catch every moment of your favourite artists.
 
@@ -12,13 +12,23 @@ Since finishing the Makers Academy coding bootcamp I have setout to learn TypeSc
 
 ## Technologies
 
-This is a mobile-first MERN stack application written with TypeScript. The styling has been done using CSS. 
+This is a mobile-first MERN stack application written with TypeScript. The styling has been done using CSS.
 
-The backend was test driven using Jest, as well as testing calls using Postman. The frontend was tested via user interaction, but I intend to add tests as part of the future development of the project.
+The backend was test driven using Jest, as well as testing calls using Postman. The frontend was tested with Cypress.
+
+### Packages
+
+- [Bcrypt](https://www.npmjs.com/package/bcrypt) has been used for password encryption.
+- [JWT](https://www.npmjs.com/package/jsonwebtoken) used for user verification and route protection.
+- [Multer](https://www.npmjs.com/package/multer) has been used to allow user to upload an image.
+- [Sharp](https://www.npmjs.com/package/sharp) has been used to convert images to a common format.
+- [Mongoose](https://www.npmjs.com/package/mongoose) has been used to create schema-based solutions for models.
+- [Dotenv](https://www.npmjs.com/package/dotenv) has been used to load environment variables from a .env file.
+- [Cors](https://www.npmjs.com/package/cors) has been used to enable cross-origin requests.
+- [Sendgrid](https://www.npmjs.com/package/@sendgrid/mail) has been used to send new users a welcome email.
 
 ## Future goals
 
-- add the distances between stages so that a user can make a more informed decision about who to see (it could take the best part of 30 mins to get to one from the other!)
 - Create a web scraper too auto-populate the acts from a given festival. Currently the user has to manually type them in
 
 ## Screenshots
@@ -36,11 +46,11 @@ The backend was test driven using Jest, as well as testing calls using Postman. 
   </tr>
  </table>
 
- ### Larger screen
- 
- When viewed on a larger screen, flanking block are introduced to direct user to the centre of the page and reduce white space.
+### Larger screen
 
- ![larger_screen](./images/larger_screen.png)
+When viewed on a larger screen, flanking blocks are introduced to direct user to the centre of the page and reduce white space.
+
+![larger_screen](./images/larger_screen.png)
 
 ### Installation
 
@@ -70,6 +80,8 @@ Copy the below code into the .env file and update:
 # .env
 
 JWT_SECRET = "add any random string here"
+SENDGRID_API_KEY="Your API key"
+ADMIN_EMAIL="Your regiestered Sendgrid email"
 ```
 
 ### Using the App
