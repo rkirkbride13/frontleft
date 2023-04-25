@@ -7,17 +7,19 @@ import ActForm from "../ActForm/ActForm";
 import serverURL from "../../serverURL";
 import PictureForm from "../PictureForm/PictureForm";
 
+// Define the expected props for the Acts component
 interface ActsInt {
   navigate: NavigateFunction;
   setDayChart: Dispatch<SetStateAction<string | undefined>>;
 }
 
 const Acts = ({ navigate, setDayChart }: ActsInt) => {
+  // Define state variables for the component
   const [acts, setActs] = useState<Array<any>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
   const [days, setDays] = useState<Array<string>>([]);
   const [screenWidth, setSceenWidth] = useState(window.innerWidth);
-
+  // Fetch the acts and set the state when the component mounts
   useEffect(() => {
     if (token) {
       fetch(serverURL() + "/acts", {
@@ -32,7 +34,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
     } else {
       navigate("/");
     }
-
+    // Add event listener to update screen width state on window resize
     const handleResize = () => {
       setSceenWidth(window.innerWidth);
     };
@@ -41,14 +43,14 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  // Create a list of days with acts to facilitate grouping of acts
   useEffect(() => {
     const uniqueDays = Array.from(
       new Set(acts.map((act) => convertDateToDay(act.date)))
     );
     setDays(uniqueDays);
   }, [acts]);
-
+  // Sort acts by date
   const sortByDate = (acts: Array<any>): Array<any> => {
     return acts.sort(
       (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
@@ -56,7 +58,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
   };
 
   const sortedActs = sortByDate(acts);
-
+  // Convert a date to a day of the week
   const convertDateToDay = (date: Date) => {
     const days = [
       "Sunday",
@@ -69,7 +71,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
     ];
     return days[new Date(date).getDay()];
   };
-
+  // Map each day to a block of acts, each with a link to the DayChart component
   const mapDays = () => {
     return (
       <>
@@ -101,7 +103,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
       </>
     );
   };
-
+  // Render the userActs, along with the PictureForm and ActForm components
   return (
     <>
       <div className="logo" style={{ padding: screenWidth / 2 - 340 / 2 }}>

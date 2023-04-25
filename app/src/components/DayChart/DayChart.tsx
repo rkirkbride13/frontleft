@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-// import { IAct } from "../../../../api/src/models/acts";
 import { NavigateFunction } from "react-router";
 import serverURL from "../../serverURL";
 
+// Define the expected props for the Acts component
 interface DayInt {
   navigate: NavigateFunction;
   dayChart: string | undefined;
 }
 
 const DayChart = ({ navigate, dayChart }: DayInt) => {
+  // Define state variables for the component
   const [acts, setActs] = useState<Array<any>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
   const [stages, setStages] = useState<Array<string>>([]);
-  const [screenWidth, setSceenWidth] = useState(window.innerWidth);
-
+  // Fetch the acts and set the state when the component mounts
   useEffect(() => {
     if (token) {
       fetch(serverURL() + "/acts", {
@@ -30,17 +30,7 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
       navigate("/");
     }
   }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setSceenWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
+  // Convert date object to day string
   const convertDateToDay = (date: Date) => {
     const days = [
       "Sunday",
@@ -53,18 +43,18 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
     ];
     return days[new Date(date).getDay()];
   };
-
+  // Filter acts based on selected day
   const filterByDay = (
     acts: Array<any>,
     selectedDay: string | undefined
   ): Array<any> => {
     return acts.filter((acts) => convertDateToDay(acts.date) === selectedDay);
   };
-
+  // Map unique stages from all acts
   const mapStages = (acts: Array<any>): Array<string> => {
     return Array.from(new Set(acts.map((act) => act.stage)));
   };
-
+  // Map chart data for each act
   const chartData = acts.map((act) => {
     let duration;
     (act.end - act.start) % 100 === 0

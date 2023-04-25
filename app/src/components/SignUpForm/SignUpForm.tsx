@@ -8,11 +8,13 @@ import React, {
 import { NavigateFunction } from "react-router";
 import serverURL from "../../serverURL";
 
+// Define the expected props for the ActForm component
 interface SignUpFormInt {
   navigate: NavigateFunction;
 }
 
 const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
+  // Define a function to handle changes to an input field
   const handleChange = (
     setFunction: React.Dispatch<React.SetStateAction<string>>
   ) => {
@@ -21,19 +23,19 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
       setFunction(event.target.value);
     };
   };
-
+  // Define state variables for the input fields
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [emailExists, setEmailExists] = useState<boolean>(false);
   const [emptyField, setEmptyField] = useState<string>("");
   const [screenWidth, setSceenWidth] = useState(window.innerWidth);
-
+  // Define a function to handle form submission
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-
+    // Send a POST request to the server to create a new user
     fetch(serverURL() + "/users", {
       method: "post",
       headers: {
@@ -45,9 +47,11 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
         password: password,
       }),
     }).then((response) => {
+      // If successful, navigate to the login page
       if (response.status === 200) {
         console.log("Success");
         navigate("/");
+        // Else give error message depending on empty inputs or email existing already
       } else if (email === "" || password === "" || name === "") {
         setEmptyField("All fields are required");
       } else {
@@ -56,7 +60,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
       }
     });
   };
-
+  // Error handler function for existing user or empty input fields
   const handleError = () => {
     if (emailExists) {
       return <div className="invalid-details">Email already exists</div>;
@@ -66,7 +70,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
       return <></>;
     }
   };
-
+  // Add event listener to update screen width state on window resize
   useEffect(() => {
     const handleResize = () => {
       setSceenWidth(window.innerWidth);
@@ -76,7 +80,7 @@ const SignUpForm = ({ navigate }: SignUpFormInt): ReactElement => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  // Render the SignUpForm
   return (
     <>
       <div className="logo" style={{ padding: screenWidth / 2 - 340 / 2 }}>

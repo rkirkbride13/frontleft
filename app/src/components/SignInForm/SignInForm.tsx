@@ -8,11 +8,13 @@ import React, {
 import { NavigateFunction } from "react-router";
 import serverURL from "../../serverURL";
 
+// Define the expected props for the ActForm component
 interface SignInFormInt {
   navigate: NavigateFunction;
 }
 
 const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
+  // Define a function to handle changes to an input field
   const handleChange = (
     setFunction: React.Dispatch<React.SetStateAction<string>>
   ) => {
@@ -21,18 +23,18 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
       setFunction(event.target.value);
     };
   };
-
+  // Define state variables for the input fields
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [userFound, setUserFound] = useState<boolean>(true);
   const [emptyField, setEmptyField] = useState<string>("");
   const [screenWidth, setSceenWidth] = useState(window.innerWidth);
-
+  // Define a function to handle form submission
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-
+    // Send a POST request to the server to create a new token
     let response = await fetch(serverURL() + "/tokens", {
       method: "post",
       headers: {
@@ -47,9 +49,11 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
     if (response.status === 200) {
       console.log("Success");
       let data = await response.json();
+      // Set the token and User ID in the local storage if successful and navigate to /acts
       window.localStorage.setItem("token", data.token);
       window.localStorage.setItem("user_id", data.user_id);
       navigate("/acts");
+      // Else give error message depending on empty inputs or unfound user
     } else if (email === "" || password === "") {
       setEmptyField("All fields are required");
     } else {
@@ -57,7 +61,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
       console.log("No luck");
     }
   };
-
+  // Error handler function for unfound user or empty input fields
   const handleError = () => {
     if (!userFound) {
       return <div className="invalid-details">This user was not found</div>;
@@ -67,7 +71,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
       return <></>;
     }
   };
-
+  // Add event listener to update screen width state on window resize
   useEffect(() => {
     const handleResize = () => {
       setSceenWidth(window.innerWidth);
@@ -77,7 +81,7 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  // Render the SignInForm
   return (
     <>
       <div className="logo" style={{ padding: screenWidth / 2 - 340 / 2 }}>
