@@ -10,27 +10,6 @@ Since finishing the Makers Academy coding bootcamp I have setout to learn TypeSc
 
 [Try it out for yourself!](https://frontleft.onrender.com)
 
-## Technologies
-
-This is a mobile-first MERN stack application written with TypeScript. The styling has been done using CSS.
-
-The backend was test driven using Jest, as well as testing calls using Postman. The frontend was tested with Cypress.
-
-### Packages
-
-- [Bcrypt](https://www.npmjs.com/package/bcrypt) has been used for password encryption.
-- [JWT](https://www.npmjs.com/package/jsonwebtoken) used for user verification and route protection.
-- [Multer](https://www.npmjs.com/package/multer) has been used to allow user to upload an image.
-- [Sharp](https://www.npmjs.com/package/sharp) has been used to convert images to a common format.
-- [Mongoose](https://www.npmjs.com/package/mongoose) has been used to create schema-based solutions for models.
-- [Dotenv](https://www.npmjs.com/package/dotenv) has been used to load environment variables from a .env file.
-- [Cors](https://www.npmjs.com/package/cors) has been used to enable cross-origin requests.
-- [Sendgrid](https://www.npmjs.com/package/@sendgrid/mail) has been used to send new users a welcome email.
-
-## Future goals
-
-- Create a web scraper too auto-populate the acts from a given festival. Currently the user has to manually type them in
-
 ## Video
 
 [<img width="250px" src="images/saved_acts.png" >](https://www.youtube.com/watch?v=Mo3J8VAjf9U&ab_channel=RobbieKirkbride)
@@ -55,6 +34,27 @@ The backend was test driven using Jest, as well as testing calls using Postman. 
 When viewed on a larger screen, flanking blocks are introduced to direct user to the centre of the page and reduce white space.
 
 ![larger_screen](./images/larger_screen.png)
+
+## Technologies
+
+This is a mobile-first MERN stack application written with TypeScript. The styling has been done using CSS.
+
+The backend was test driven using Jest, as well as testing calls using Postman. The frontend was tested with Cypress.
+
+### Packages
+
+- [Bcrypt](https://www.npmjs.com/package/bcrypt) has been used for password encryption.
+- [JWT](https://www.npmjs.com/package/jsonwebtoken) used for user verification and route protection.
+- [Multer](https://www.npmjs.com/package/multer) has been used to allow user to upload an image.
+- [Sharp](https://www.npmjs.com/package/sharp) has been used to convert images to a common format.
+- [Mongoose](https://www.npmjs.com/package/mongoose) has been used to create schema-based solutions for models.
+- [Dotenv](https://www.npmjs.com/package/dotenv) has been used to load environment variables from a .env file.
+- [Cors](https://www.npmjs.com/package/cors) has been used to enable cross-origin requests.
+- [Sendgrid](https://www.npmjs.com/package/@sendgrid/mail) has been used to send new users a welcome email.
+
+## Future goals
+
+- Create a web scraper too auto-populate the acts from a given festival. Currently the user has to manually type them in
 
 ### Installation
 
