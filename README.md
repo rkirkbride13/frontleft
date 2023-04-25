@@ -31,6 +31,10 @@ The backend was test driven using Jest, as well as testing calls using Postman. 
 
 - Create a web scraper too auto-populate the acts from a given festival. Currently the user has to manually type them in
 
+## Video
+
+[<img src="images/saved_acts.png" >](https://www.youtube.com/watch?v=Mo3J8VAjf9U&ab_channel=RobbieKirkbride)
+
 ## Screenshots
 
 <table>
