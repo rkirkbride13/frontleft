@@ -2,6 +2,7 @@ import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
 import { NavigateFunction } from "react-router";
 import serverURL from "../../serverURL";
 
+// Define the expected props for the ActForm component
 interface ActFormInt {
   navigate: NavigateFunction;
   token: string | null;
@@ -9,6 +10,7 @@ interface ActFormInt {
 }
 
 const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
+  // Define a function to handle changes to an input field
   const handleChange = (
     setFunction: React.Dispatch<React.SetStateAction<string>>
   ) => {
@@ -16,21 +18,23 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
       setFunction(event.target.value);
     };
   };
-
+  // Define state variables for the input fields
   const [name, setName] = useState<string>("");
   const [stage, setStage] = useState<string>("");
   const [date, setDate] = useState<string>("");
   const [start, setStart] = useState<string>("");
   const [end, setEnd] = useState<string>("");
-
+  // Define a function to handle form submission
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
 
     if (!token) {
+      // If the user is not authenticated, navigate to the home page
       navigate("/");
     } else {
+      // Else send a POST request to the server to create a new act
       fetch(serverURL() + "/acts", {
         method: "post",
         headers: {
@@ -47,6 +51,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
       }).then((response) => {
         if (response.status === 200) {
           console.log("Success");
+          // Fetch the updated list of acts from the server
           fetch(serverURL() + "/acts", {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -54,6 +59,8 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
           })
             .then((response) => response.json())
             .then(async (data) => {
+              // Update the state of the parent component with the updated list of acts
+
               setActs(data.acts);
             });
         } else {
@@ -62,7 +69,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
       });
     }
   };
-
+  // Render a form for creating a new act
   return (
     <>
       <div className="form-page">
