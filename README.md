@@ -33,7 +33,7 @@ The backend was test driven using Jest, as well as testing calls using Postman. 
 
 ## Video
 
-[<img src="images/saved_acts.png" >](https://www.youtube.com/watch?v=Mo3J8VAjf9U&ab_channel=RobbieKirkbride)
+[<img width="250px" src="images/saved_acts.png" >](https://www.youtube.com/watch?v=Mo3J8VAjf9U&ab_channel=RobbieKirkbride)
 
 ## Screenshots
 
