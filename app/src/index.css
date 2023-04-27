@@ -229,9 +229,13 @@ th {
 }
 
 .stage-cell {
+  position: sticky;
+  left: 0;
+  background-color: rgba(137, 43, 226, 0.7);
   height: 25px;
   border-bottom: 1px solid white;
   border-right: 1px solid white;
+  z-index: 999;
 }
 
 .cell {
@@ -247,6 +251,7 @@ th {
   bottom: 0;
   left: 50%;
   border-left: 1px dashed white;
+  z-index: 998;
 }
 
 .act {

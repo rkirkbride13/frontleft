@@ -55,11 +55,22 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
     return Array.from(new Set(acts.map((act) => act.stage)));
   };
   // Map chart data for each act
+  const calculateDuration = (start: number, end: number) => {
+    const startHour = Math.floor(start / 100);
+    const startMinute = start % 100;
+    const endHour = Math.floor(end / 100);
+    const endMinute = end % 100;
+    const difference =
+      endHour * 60 + endMinute - (startHour * 60 + startMinute);
+    const duration = (difference / 60) * 100;
+    return Math.round(duration);
+  };
+
   const chartData = acts.map((act) => {
     let duration;
     (act.end - act.start) % 100 === 0
       ? (duration = act.end - act.start)
-      : (duration = ((act.end - act.start) * 1.5) / 1.3);
+      : (duration = calculateDuration(act.start, act.end));
     return {
       stage: act.stage,
       start: act.start,
@@ -93,41 +104,41 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
             {stages.map((stage) => (
               <tr key={stage}>
                 <th className="stage-cell">{stage}</th>
-                {[...Array(25)].map((_, i) => (
-                  <td key={i} className="cell">
-                    {chartData.map((data) => {
-                      if (data.stage === stage && data.start === i * 100) {
-                        const left = 50 + "%";
-                        const width = data.duration + "%";
-                        return (
-                          <div
-                            className="act"
-                            style={{ left: left, width: width }}
-                            key={data.name}
-                          >
-                            {data.name}
-                          </div>
-                        );
-                      } else if (
-                        data.stage === stage &&
-                        data.start === (i + 0.3) * 100
-                      ) {
-                        const left = 100 + "%";
-                        const width = data.duration + "%";
-                        return (
-                          <div
-                            className="act"
-                            style={{ left: left, width: width }}
-                            key={data.name}
-                          >
-                            {data.name}
-                          </div>
-                        );
-                      }
-                      return null;
-                    })}
-                  </td>
-                ))}
+                {[...Array(25)].map((_, i) => {
+                  const headerStart = i * 100;
+                  const act = chartData.find((data) => {
+                    const startInRange =
+                      data.start >= headerStart &&
+                      data.start < headerStart + 100;
+                    return data.stage === stage && startInRange;
+                  });
+                  if (act) {
+                    const width = act.duration + "%";
+                    let left;
+                    if (act.start === headerStart) {
+                      left = 50 + "%";
+                    } else if (act.start === headerStart + 15) {
+                      left = 75 + "%";
+                    } else if (act.start === headerStart + 30) {
+                      left = 100 + "%";
+                    } else if (act.start === headerStart + 45) {
+                      left = 125 + "%";
+                    }
+                    return (
+                      <td key={i} className="cell">
+                        <div
+                          className="act"
+                          style={{ left: left, width: width }}
+                          key={act.name}
+                        >
+                          {act.name}
+                        </div>
+                      </td>
+                    );
+                  } else {
+                    return <td key={i} className="cell"></td>;
+                  }
+                })}
               </tr>
             ))}
           </tbody>
