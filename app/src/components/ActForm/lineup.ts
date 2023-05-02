@@ -202,20 +202,8 @@ export const lineup = [
   {
     performer:
       "RADICAL ROUND UP WITH BILLY BRAGG - WILL VARLEY, LADY NADE, KELLEY SWINDALL",
-    start: "DEBATES: NEURODIVERSITY ",
-    end: " THE FIGHT FOR HUMAN RIGHTS WITH CARLY JONES MBE, CHRIS PACKHAM, SIENA CASTELLON, MAHLIA AMATINA, JOHN HARRIS",
-  },
-  {
-    performer:
-      "RADICAL ROUND UP WITH BILLY BRAGG - WILL VARLEY, LADY NADE, KELLEY SWINDALL",
     start: "13:30",
     end: "14:30",
-  },
-  {
-    performer:
-      "RADICAL ROUND UP WITH BILLY BRAGG - WILL VARLEY, LADY NADE, KELLEY SWINDALL",
-    start: "DEBATES: SOLIDARITY WITH UKRAINE ",
-    end: " WITH EMMA GRAHAM",
   },
   {
     performer:
@@ -236,20 +224,8 @@ export const lineup = [
   {
     performer:
       "RADICAL ROUND UP WITH BILLY BRAGG - SEB LOWE, TOM A. SMITH, JESS SILK",
-    start: "DEBATES: WHAT'S NEXT FOR THE CLIMATE EMERGENCY WITH KAM",
-    end: "BU, HARPREET KAUR PAUL, STOP CAMBO, REBECCA NEWSOM, SCARLETT WESTBROOK",
-  },
-  {
-    performer:
-      "RADICAL ROUND UP WITH BILLY BRAGG - SEB LOWE, TOM A. SMITH, JESS SILK",
     start: "13:30",
     end: "14:30",
-  },
-  {
-    performer:
-      "RADICAL ROUND UP WITH BILLY BRAGG - SEB LOWE, TOM A. SMITH, JESS SILK",
-    start:
-      "DEBATES: STATE OF THE NATION: POLITICS IN CRISIS WITH ANDY BURNHAM, FRANCIS FOLEY, METE COBAN, SHAISTA AZIZ, JOHN HARRIS",
   },
   {
     performer:
@@ -270,22 +246,8 @@ export const lineup = [
   {
     performer:
       "RADICAL ROUND UP WITH BILLY BRAGG - ROMEO STODART, YNES, ABBIE OZARD",
-    start:
-      "DEBATES: BLACK LIVES MATTER AND BEYOND WITH COP WATCH, DR. REMI JOSEPH",
-    end: "SALISBURY, SISTERS UNCUT, KILL THE BILL, NASRA AYUB, RENI EDDO",
-  },
-  {
-    performer:
-      "RADICAL ROUND UP WITH BILLY BRAGG - ROMEO STODART, YNES, ABBIE OZARD",
     start: "13:30",
     end: "14:30",
-  },
-  {
-    performer:
-      "RADICAL ROUND UP WITH BILLY BRAGG - ROMEO STODART, YNES, ABBIE OZARD",
-    start:
-      "DEBATES: DEFYING THE COST OF LIVING CRISIS WITH ELLIE MAE O'HAGEN, JACK MONROE, KWAJO TWENEBOA, ZARAH SULTANA MP, RENI EDDO",
-    end: "LODGE",
   },
   {
     performer:
@@ -308,11 +270,6 @@ export const lineup = [
   { performer: "KURUPT FM", start: "23:15", end: "00:00" },
   { performer: "DJ EZ", start: "22:15", end: "23:15" },
   { performer: "NIA ARCHIVES", start: "21:30", end: "22:15" },
-  {
-    performer: "NIA ARCHIVES",
-    start:
-      "HOSPITALITY SHOWCASE: SPY B2B GRAFIX B2B UNGLUED FEAT CARASEL MC & SOLAH",
-  },
   { performer: "NIA ARCHIVES", start: "01:30", end: "02:30" },
   {
     performer: "SUB FOCUS B2B DIMENSION FEAT ID",
@@ -380,10 +337,6 @@ export const lineup = [
   { performer: "CALL SUPER B2B PARRIS", start: "22:00", end: "00:00" },
   { performer: "MANAMI B2B NIKS", start: "20:00", end: "22:00" },
   { performer: "DR BANANA X LUKAS WIGFLEX", start: "18:00", end: "20:00" },
-  {
-    performer: "DR BANANA X LUKAS WIGFLEX",
-    start: "BUTTER SIDE UP : THE GHOST, SUGAR FREE, HAMISH + TOBY",
-  },
   { performer: "DR BANANA X LUKAS WIGFLEX", start: "12:00", end: "18:00" },
   { performer: "AVALON EMERSON", start: "01:00", end: "03:00" },
   { performer: "OPTIMO (ESPACIO)", start: "23:30", end: "01:00" },
@@ -398,7 +351,6 @@ export const lineup = [
   { performer: "MOXIE B2B PEACH", start: "12:00", end: "15:30" },
   { performer: "BEN PEST", start: "01:30", end: "02:30" },
   { performer: "DARWIN", start: "00:00", end: "01:30" },
-  { performer: "DARWIN", start: "RE:NI" },
   { performer: "DARWIN", start: "22:30", end: "00:00" },
   { performer: "TWO SHELL", start: "21:00", end: "22:30" },
   { performer: "DAR DISKU", start: "19:30", end: "21:00" },
@@ -432,7 +384,6 @@ export const lineup = [
   { performer: "CRAE WOLF", start: "14:15", end: "14:45" },
   { performer: "EMZ", start: "13:30", end: "14:00" },
   { performer: "KENNY ALLSTAR DJ/HOST", start: "13:00", end: "13:30" },
-  { performer: "KENNY ALLSTAR DJ/HOST", start: "ARTWORK PRES: MORE AMOUR" },
   { performer: "KENNY ALLSTAR DJ/HOST", start: "00:30", end: "03:00" },
   { performer: "MURA MASA", start: "23:15", end: "00:15" },
   { performer: "SAD NIGHT DYNAMITE", start: "22:00", end: "22:45" },
@@ -443,10 +394,6 @@ export const lineup = [
   { performer: "LAVA LA RUE", start: "16:30", end: "17:10" },
   { performer: "LOLA YOUNG", start: "15:30", end: "16:00" },
   { performer: "WILLOW KAYNE", start: "14:30", end: "15:00" },
-  {
-    performer: "WILLOW KAYNE",
-    start: "TIFFANY CALVER & FRIENDS FT: HAZEY AND VERY SPECIAL GUESTS",
-  },
   { performer: "WILLOW KAYNE", start: "13:00", end: "14:30" },
   { performer: "ALAMAY & OMAR CASSIUS", start: "12:45", end: "12:55" },
   { performer: "XYZELLE", start: "12:30", end: "12:40" },
@@ -526,21 +473,12 @@ export const lineup = [
   { performer: "AHADADREAM", start: "20:00", end: "21:30" },
   { performer: "COCO EM", start: "18:30", end: "20:00" },
   { performer: "BOKO! BOKO!", start: "17:00", end: "18:30" },
-  {
-    performer: "BOKO! BOKO!",
-    start:
-      "SPORTS BANGER: MEGA RAVE THE RETURN W/ HARRIMANN, JAY CARDER, KLOSE ONE, TASHA, JONNY BANGER + GUESTS",
-  },
   { performer: "BOKO! BOKO!", start: "14:30", end: "17:00" },
   { performer: "CARL (THE SOCIAL)", start: "13:00", end: "14:30" },
   {
     performer: "SPECIAL REQUEST PRESENTS W/ ANZ, ECLAIR FIFI + KETTAMA",
     start: "23:00",
     end: "05:00",
-  },
-  {
-    performer: "SPECIAL REQUEST PRESENTS W/ ANZ, ECLAIR FIFI + KETTAMA",
-    start: "PRETTY WEIRD W/ FLOATING POINTS, OR:LA, CHLOÉ ROBINSON B2B DJ ADHD",
   },
   {
     performer: "SPECIAL REQUEST PRESENTS W/ ANZ, ECLAIR FIFI + KETTAMA",
@@ -553,10 +491,6 @@ export const lineup = [
     performer: "LUKE UNA PRESENTS É SOUL CULTURA",
     start: "13:00",
     end: "16:00",
-  },
-  {
-    performer: "LUKE UNA PRESENTS É SOUL CULTURA",
-    start: "FOUR TET: MORNING SIDE",
   },
   {
     performer: "LUKE UNA PRESENTS É SOUL CULTURA",
@@ -579,10 +513,6 @@ export const lineup = [
   },
   { performer: "FLYING MOJITO BROS", start: "15:30", end: "17:00" },
   { performer: "FLEETMAC WOOD", start: "14:00", end: "15:30" },
-  {
-    performer: "FLEETMAC WOOD",
-    start: "SOCIAL 23: CELEBRATING 23 COSMIC YEARS OF THE SOCIAL",
-  },
   { performer: "FLEETMAC WOOD", start: "13:00", end: "14:00" },
   { performer: "MR BRUCE", start: "02:00", end: "03:00" },
   { performer: "DJ THRILOGY", start: "01:00", end: "02:00" },
@@ -876,15 +806,10 @@ export const lineup = [
   { performer: "DJ SHANE (CIRCUS WARP)", start: "21:00", end: "22:00" },
   { performer: "MELLOWMATIC", start: "19:45", end: "20:45" },
   { performer: "GRAFIX & RUTH ROYALL", start: "18:15", end: "19:15" },
-  {
-    performer: "GRAFIX & RUTH ROYALL",
-    start: "THE JUNGLE SESSION: PROPHECY, NORTH BASE & MARK XTC",
-  },
   { performer: "GRAFIX & RUTH ROYALL", start: "14:30", end: "18:10" },
   { performer: "GUY. IN. GLASSES.", start: "13:15", end: "14:30" },
   { performer: "MIXMASTER MORRIS", start: "12:00", end: "13:15" },
   { performer: "LEEON", start: "00:40", end: "03:00" },
-  { performer: "LEEON", start: "IICON:AV", end: "3D" },
   { performer: "LEEON", start: "00:25", end: "00:40" },
   { performer: "HERCULES & LOVE AFFAIR (REDUX)", start: "23:30", end: "00:25" },
   { performer: "DEENA ABDELWAHED", start: "21:25", end: "23:25" },
@@ -892,7 +817,6 @@ export const lineup = [
   { performer: "FREAKENSTEIN", start: "04:30", end: "06:00" },
   { performer: "LSDXOXO", start: "02:30", end: "04:30" },
   { performer: "OVERMONO (LIVE)", start: "01:30", end: "02:30" },
-  { performer: "OVERMONO (LIVE)", start: "IICON:AV", end: "3D" },
   { performer: "OVERMONO (LIVE)", start: "01:15", end: "01:30" },
   { performer: "MIDLAND", start: "23:15", end: "01:15" },
   { performer: "SAMA' ABDULHADI", start: "21:15", end: "23:15" },
@@ -901,14 +825,12 @@ export const lineup = [
   { performer: "JOY ORBISON", start: "03:00", end: "04:30" },
   { performer: "SHYGIRL (LIVE)", start: "02:20", end: "03:00" },
   { performer: "FLOATING POINTS", start: "00:45", end: "02:15" },
-  { performer: "FLOATING POINTS", start: "IICON:AV", end: "3D" },
   { performer: "FLOATING POINTS", start: "00:30", end: "00:45" },
   { performer: "DJRUM", start: "22:30", end: "00:30" },
   { performer: "TASH LC", start: "20:00", end: "22:30" },
   { performer: "SHERELLE", start: "03:30", end: "05:00" },
   { performer: "A-FUTURE", start: "02:00", end: "03:30" },
   { performer: "STEFFI", start: "00:30", end: "02:00" },
-  { performer: "STEFFI", start: "IICON:AV", end: "3D" },
   { performer: "STEFFI", start: "00:15", end: "00:30" },
   { performer: "FLOORPLAN", start: "22:45", end: "00:15" },
   { performer: "GIANT SWAN (DJ SET)", start: "21:15", end: "22:45" },
@@ -940,10 +862,6 @@ export const lineup = [
   { performer: "FELIX DICKINSON", start: "03:00", end: "05:00" },
   { performer: "PLACID", start: "01:00", end: "03:00" },
   { performer: "ISABELLA (MARICAS)", start: "23:00", end: "01:00" },
-  {
-    performer: "ISABELLA (MARICAS)",
-    start: "PARA: (CASTLEMORTON: 30 YEARS LATER)",
-  },
   { performer: "ISABELLA (MARICAS)", start: "21:00", end: "23:00" },
   { performer: "WILSON PHOENIX", start: "19:30", end: "21:00" },
   { performer: "DAVE HARVEY", start: "18:00", end: "19:30" },
@@ -1106,19 +1024,9 @@ export const lineup = [
   { performer: "JAM SCONES", start: "23:00", end: "00:00" },
   { performer: "RUM SHACK WILD CARD", start: "20:00", end: "23:00" },
   {
-    performer: "RUM SHACK WILD CARD",
-    start: "V SPECIAL GUESTS INCOMING FOR THIS ONE!16:00",
-    end: "21:30",
-  },
-  {
     performer: "MANDIDEXTROUS - AV BONNIE SPENCER",
     start: "02:00",
     end: "03:00",
-  },
-  {
-    performer: "MANDIDEXTROUS - AV BONNIE SPENCER",
-    start: "CRUCAST: SKEPSIS B2B DARKZY FT WINDOW KID : KANINE ",
-    end: " AV BLINKINLAB",
   },
   {
     performer: "MANDIDEXTROUS - AV BONNIE SPENCER",
@@ -1170,7 +1078,6 @@ export const lineup = [
   { performer: "SOLOMUN - VJ FADE IN FADE OUT", start: "04:00", end: "06:00" },
   { performer: "JAMIE JONES - VJ VOLTA XR", start: "02:30", end: "04:00" },
   { performer: "FATBOY SLIM", start: "01:15", end: "02:30" },
-  { performer: "FATBOY SLIM", start: "FOLAMOUR: POWER TO THE PPL AV" },
   { performer: "FATBOY SLIM", start: "00:00", end: "01:15" },
   {
     performer:
@@ -1188,25 +1095,8 @@ export const lineup = [
   },
   { performer: "THE LIGHT SURGEONS (A/V)", start: "18:00", end: "19:00" },
   { performer: "FACES / VOICES (AV FILM)", start: "17:30", end: "18:00" },
-  {
-    performer: "FACES / VOICES (AV FILM)",
-    start:
-      "A COLLECTION OF RADICAL FILMS CURATED BY SHANGRILART FEATURING : DR D",
-    end: "SUBVERTISER, REEL NEWS, DARREN CULLEN AND MANY MORE.",
-  },
   { performer: "FACES / VOICES (AV FILM)", start: "17:15", end: "17:30" },
-  {
-    performer: "FACES / VOICES (AV FILM)",
-    start: "AI WEIWEI: YOURS TRULY ",
-    end: " FILM WITH LIVE ACTIVATION",
-  },
   { performer: "FACES / VOICES (AV FILM)", start: "16:00", end: "17:15" },
-  {
-    performer: "FACES / VOICES (AV FILM)",
-    start:
-      "A COLLECTION OF RADICAL FILMS CURATED BY SHANGRILART FEATURING : DR D",
-    end: "SUBVERTISER, REEL NEWS, DARREN CULLEN AND MANY MORE.",
-  },
   { performer: "FACES / VOICES (AV FILM)", start: "15:00", end: "16:00" },
   {
     performer:
@@ -1236,25 +1126,8 @@ export const lineup = [
   { performer: "ISAAC CARTER", start: "19:30", end: "20:30" },
   { performer: "ALI IS ME B2B ED ROCKSTAR", start: "18:30", end: "19:30" },
   { performer: "AMY CUTLER & BARNEY KASS (A/V)", start: "17:30", end: "18:30" },
-  {
-    performer: "AMY CUTLER & BARNEY KASS (A/V)",
-    start:
-      "A COLLECTION OF RADICAL FILMS CURATED BY SHANGRILART FEATURING : DR D",
-    end: "SUBVERTISER, REEL NEWS, DARREN CULLEN AND MANY MORE.",
-  },
   { performer: "AMY CUTLER & BARNEY KASS (A/V)", start: "17:15", end: "17:30" },
-  {
-    performer: "AMY CUTLER & BARNEY KASS (A/V)",
-    start: "AI WEIWEI: YOURS TRULY ",
-    end: " FILM WITH LIVE ACTIVATION",
-  },
   { performer: "AMY CUTLER & BARNEY KASS (A/V)", start: "16:00", end: "17:15" },
-  {
-    performer: "AMY CUTLER & BARNEY KASS (A/V)",
-    start:
-      "A COLLECTION OF RADICAL FILMS CURATED BY SHANGRILART FEATURING : DR D",
-    end: "SUBVERTISER, REEL NEWS, DARREN CULLEN AND MANY MORE.",
-  },
   { performer: "AMY CUTLER & BARNEY KASS (A/V)", start: "15:00", end: "16:00" },
   { performer: "GHETTO KUMBE", start: "02:10", end: "03:00" },
   { performer: "CAL JADER", start: "01:50", end: "02:10" },
@@ -1307,10 +1180,6 @@ export const lineup = [
     end: "02:20",
   },
   { performer: "ANGEL MEL", start: "00:50", end: "01:20" },
-  {
-    performer: "ANGEL MEL",
-    start: "BCO: GRIME ORCHESTRATED FEAT JUICE MENACE, FOOTSIE AND TANA",
-  },
   { performer: "ANGEL MEL", start: "00:00", end: "00:50" },
   { performer: "ANGEL MEL", start: "23:30", end: "00:00" },
   {
@@ -1332,29 +1201,10 @@ export const lineup = [
   { performer: "MINA & BRYTE", start: "22:30", end: "00:00" },
   { performer: "EMILY DUST", start: "02:00", end: "03:00" },
   { performer: "EDNA MARTINEZ", start: "01:00", end: "02:00" },
-  {
-    performer: "EDNA MARTINEZ",
-    start: "MOVIMENTOS TAKEOVER: BUSHBBY, PANTHER PANTHER, CAL JADER",
-  },
   { performer: "EDNA MARTINEZ", start: "22:00", end: "01:00" },
-  { performer: "EDNA MARTINEZ", start: "HOLD TIGHT RECORDS TAKEOVER: DRIFTY" },
   { performer: "EDNA MARTINEZ", start: "21:00", end: "22:00" },
-  {
-    performer: "EDNA MARTINEZ",
-    start: "HOLD TIGHT RECORDS TAKEOVER: DUTCHIE B2B KREED",
-  },
   { performer: "EDNA MARTINEZ", start: "20:00", end: "21:00" },
-  {
-    performer: "EDNA MARTINEZ",
-    start:
-      "HOLD TIGHT RECORDS TAKEOVER: ICKLE B2B SUPPLYA B2B INNER ECHO FT WHOKNEW",
-  },
   { performer: "EDNA MARTINEZ", start: "19:00", end: "20:00" },
-  {
-    performer: "EDNA MARTINEZ",
-    start:
-      "HOLD TIGHT RECORDS TAKEOVER: DR DUBPLATE B2B BAKEY B2B SPECIAL GUEST B2B BREAKA",
-  },
   { performer: "EDNA MARTINEZ", start: "17:00", end: "19:00" },
   { performer: "KESHENANIGANS", start: "16:00", end: "17:00" },
   { performer: "PAPAOUL", start: "05:00", end: "06:00" },
@@ -1386,13 +1236,9 @@ export const lineup = [
   },
   { performer: "HALCYON HI FI", start: "21:00", end: "22:00" },
   { performer: "TBA", start: "03:00", end: "05:00" },
-  { performer: "TBA", start: "WORMHOLE TAKEOVER: DJ TAHIRA" },
   { performer: "TBA", start: "02:00", end: "03:00" },
-  { performer: "TBA", start: "WORMHOLE TAKEOVER: WORM SOUNDSYSTEM" },
   { performer: "TBA", start: "01:00", end: "02:00" },
-  { performer: "TBA", start: "WORMHOLE TAKEOVER: COCO MARIA" },
   { performer: "TBA", start: "00:00", end: "01:00" },
-  { performer: "TBA", start: "WORMHOLE TAKEOVER: POLY", end: "RITMO" },
   { performer: "TBA", start: "23:00", end: "00:00" },
   { performer: "ESK", start: "22:00", end: "23:00" },
   { performer: "SUMMER AISHA'MAE", start: "21:00", end: "22:00" },
@@ -1778,7 +1624,6 @@ export const lineup = [
   { performer: "NOON GARDEN", start: "16:45", end: "17:30" },
   { performer: "MATT BLACK", start: "15:45", end: "16:45" },
   { performer: "BEANS ON TOAST", start: "15:00", end: "15:45" },
-  { performer: "BEANS ON TOAST", start: "BCO: GRIME ORCHESTRATED" },
   { performer: "BEANS ON TOAST", start: "14:00", end: "14:45" },
   { performer: "EMMANUEL JAL & NYARUACH", start: "12:30", end: "13:20" },
   { performer: "HUSSAIN MANAWER", start: "11:00", end: "12:00" },
@@ -1802,10 +1647,6 @@ export const lineup = [
     performer: "BEAM AMBIENT SOUND AND LIGHT CHILLOUT",
     start: "20:00",
     end: "03:00",
-  },
-  {
-    performer: "BEAM AMBIENT SOUND AND LIGHT CHILLOUT",
-    start: "OVERHEATED DOCUMENTARY (ON LOOP UNTIL 20:00)",
   },
   {
     performer: "BEAM AMBIENT SOUND AND LIGHT CHILLOUT",
@@ -2171,10 +2012,6 @@ export const lineup = [
   { performer: "THE MIDNIGHT PLAYGROUND", start: "23:00", end: "01:00" },
   { performer: "VINYL HITS DISCO", start: "22:30", end: "03:00" },
   { performer: "KWABANA LINDSAY", start: "22:00", end: "22:30" },
-  {
-    performer: "KWABANA LINDSAY",
-    start: "ABOVE AND BEYOND: “MAYHEM!” DRESS AND TECH RUN",
-  },
   { performer: "KWABANA LINDSAY", start: "21:30", end: "22:30" },
   { performer: "PIRATE TAXI", start: "17:35", end: "17:55" },
   { performer: "DYNAMIX", start: "15:00", end: "17:00" },
@@ -2184,10 +2021,6 @@ export const lineup = [
   { performer: "STREET GAMES - ZORBING", start: "12:30", end: "17:30" },
   { performer: "DYNAMIX", start: "11:00", end: "13:00" },
   { performer: "CRATE STACK CHALLENGE", start: "11:00", end: "12:00" },
-  {
-    performer: "CRATE STACK CHALLENGE",
-    start: "ABOVE AND BEYOND PRESENT: “MAYHEM!”",
-  },
   { performer: "CRATE STACK CHALLENGE", start: "00:30", end: "01:00" },
   { performer: "THE MIDNIGHT PLAYGROUND", start: "22:30", end: "00:30" },
   { performer: "WAYNE AND WANDA", start: "23:00", end: "00:30" },
@@ -2207,10 +2040,6 @@ export const lineup = [
   },
   {
     performer: "ABOVE AND BEYOND AERIAL WORKSHOP",
-    start: "ABOVE AND BEYOND FLYING DISPLAY: “MAYHEM!”",
-  },
-  {
-    performer: "ABOVE AND BEYOND AERIAL WORKSHOP",
     start: "13:50",
     end: "14:20",
   },
@@ -2219,10 +2048,6 @@ export const lineup = [
   { performer: "MERRY GO ROUND", start: "12:00", end: "17:00" },
   { performer: "SLACKLINE SCHOOL", start: "11:00", end: "18:00" },
   { performer: "CRATE STACK CHALLENGE", start: "11:00", end: "12:00" },
-  {
-    performer: "CRATE STACK CHALLENGE",
-    start: "ABOVE AND BEYOND PRESENT:”MAYHEM!”",
-  },
   { performer: "CRATE STACK CHALLENGE", start: "00:30", end: "01:00" },
   { performer: "THE MIDNIGHT PLAYGROUND", start: "22:30", end: "00:30" },
   { performer: "WAYNE AND WANDA", start: "23:00", end: "00:30" },
@@ -2241,10 +2066,6 @@ export const lineup = [
   },
   {
     performer: "ABOVE AND BEYOND AERIAL WORKSHOP",
-    start: "ABOVE AND BEYOND FLYING DISPLAY: “MAYHEM!”",
-  },
-  {
-    performer: "ABOVE AND BEYOND AERIAL WORKSHOP",
     start: "13:50",
     end: "14:20",
   },
@@ -2253,10 +2074,6 @@ export const lineup = [
   { performer: "MERRY GO ROUND", start: "12:00", end: "17:00" },
   { performer: "SLACKLINE SCHOOL", start: "11:00", end: "18:00" },
   { performer: "CRATE STACK CHALLENGE", start: "11:00", end: "12:00" },
-  {
-    performer: "CRATE STACK CHALLENGE",
-    start: "ABOVE AND BEYOND PRESENT:”MAYHEM!”",
-  },
   { performer: "CRATE STACK CHALLENGE", start: "00:30", end: "01:00" },
   {
     performer: "VINYL HITS DISCO (PAUSED FOR A & B SHOW AT 00.30-01.00)",
@@ -2272,10 +2089,6 @@ export const lineup = [
   },
   {
     performer: "ABOVE AND BEYOND AERIAL WORKSHOP",
-    start: "ABOVE AND BEYOND FLYING DISPLAY: “MAYHEM!”",
-  },
-  {
-    performer: "ABOVE AND BEYOND AERIAL WORKSHOP",
     start: "13:50",
     end: "14:20",
   },
@@ -2283,7 +2096,6 @@ export const lineup = [
   { performer: "MERRY GO ROUND", start: "12:00", end: "17:00" },
   { performer: "SLACKLINE SCHOOL", start: "12:00", end: "16:00" },
   { performer: "CRATE STACK CHALLENGE", start: "11:00", end: "12:00" },
-  { performer: "CRATE STACK CHALLENGE", start: "BRIEFS : BITE CLUB" },
   { performer: "CRATE STACK CHALLENGE", start: "22:51", end: "23:51" },
   { performer: "DEJA VOODOO", start: "22:21", end: "22:46" },
   { performer: "CIRQUE DU VULGAR", start: "21:06", end: "22:16" },
@@ -2299,7 +2111,6 @@ export const lineup = [
   { performer: "HIGH SOCIETY", start: "17:05", end: "17:30" },
   { performer: "MICHELE DREES JAZZ TAP PROJECT", start: "16:15", end: "17:00" },
   { performer: "BECCA MORDAN (COMPERE)", start: "16:00", end: "16:10" },
-  { performer: "BECCA MORDAN (COMPERE)", start: "BRIEFS : BITE CLUB" },
   { performer: "BECCA MORDAN (COMPERE)", start: "00:31", end: "01:31" },
   { performer: "CIRQUE DU VULGAR", start: "23:16", end: "00:26" },
   { performer: "BEN LOADER", start: "23:05", end: "23:11" },
@@ -2348,7 +2159,6 @@ export const lineup = [
   { performer: "WOOKEY HOLE CIRCUS", start: "11:35", end: "12:05" },
   { performer: "MICHELE DREES JAZZ TAP PROJECT", start: "10:45", end: "11:30" },
   { performer: "DAVE CHAMELEON (COMPERE)", start: "10:30", end: "10:44" },
-  { performer: "DAVE CHAMELEON (COMPERE)", start: "BRIEFS : BITE CLUB" },
   { performer: "DAVE CHAMELEON (COMPERE)", start: "00:26", end: "01:26" },
   { performer: "DEJA VOODOO", start: "23:56", end: "00:21" },
   { performer: "CIRQUE DU VULGAR", start: "22:41", end: "23:51" },
@@ -2864,20 +2674,9 @@ export const lineup = [
   },
   { performer: "LAND OF THE GIANTS", start: "14:00", end: "14:30" },
   {
-    performer: "LAND OF THE GIANTS",
-    start: "THE MEDIA WORKSHOP ",
-    end: " MOVE YOURSELF!, MR PEEWEE THE DRUMMING PUPPET, BOB'S BLUNDABUS, EASEL PEASEL, SOL CINEMA, DAEMON OR DOPPLEGANGER, JEZ MANSFIELD MASTER MAGICIAN, THE MAGPIE'S FORTUNE, SAM SEBASTIAN MAGIC, THE CRAZY GOLF COMPANY, PORTACLUE: THE PORTALOO ESCAPE, GLASTONBURY SINGS!",
-  },
-  {
-    performer: "LAND OF THE GIANTS",
-    start: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!11:00",
+    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
+    start: "11:00",
     end: "04:00",
-  },
-  { performer: "LAND OF THE GIANTS", start: "ATTRACTIONS INCLUDE:" },
-  {
-    performer: "LAND OF THE GIANTS",
-    start: "THE MEDIA WORKSHOP ",
-    end: " MOVE YOURSELF!, MR PEEWEE THE DRUMMING PUPPET, BOB'S BLUNDABUS, EASEL PEASEL, SOL CINEMA, DAEMON OR DOPPLEGANGER, JEZ MANSFIELD MASTER MAGICIAN, THE MAGPIE'S FORTUNE, SAM SEBASTIAN MAGIC, THE CRAZY GOLF COMPANY, PORTACLUE: THE PORTALOO ESCAPE, GLASTONBURY SINGS!",
   },
   {
     performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
@@ -2886,70 +2685,8 @@ export const lineup = [
   },
   {
     performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "THE MEDIA WORKSHOP ",
-    end: " MOVE YOURSELF!, DANIEL MCKEE, WATCH THE BIRDIE, SAM SEBASTIAN MAGIC, BOB'S BLUNDABUS, EASEL PEASEL, SCOTT WALKER, JEZ MANSFIELD MASTER MAGICIAN, MR PEEWEE THE DRUMMING PUPPET, THE MAGPIE'S FORTUNE, SOL CINEMA, THE CRAZY GOLF COMPANY, DAEMON OR DOPPLEGANGER, PORTACLUE: THE PORTALOO ESCAPE, GLASTONBURY SINGS!",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!11:00",
-    end: "04:00",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "ATTRACTIONS INCLUDE:",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "THE MEDIA WORKSHOP ",
-    end: " MOVE YOURSELF!, DANIEL MCKEE, WATCH THE BIRDIE, SAM SEBASTIAN MAGIC, BOB'S BLUNDABUS, EASEL PEASEL, SCOTT WALKER, JEZ MANSFIELD MASTER MAGICIAN, MR PEEWEE THE DRUMMING PUPPET, THE MAGPIE'S FORTUNE, SOL CINEMA, THE CRAZY GOLF COMPANY, DAEMON OR DOPPLEGANGER, PORTACLUE: THE PORTALOO ESCAPE, GLASTONBURY SINGS!",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
     start: "11:00",
     end: "04:00",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "THE MEDIA WORKSHOP ",
-    end: " MOVE YOURSELF!, DANIEL MCKEE, WATCH THE BIRDIE, SAM SEBASTIAN MAGIC, MR PEEWEE THE DRUMMING PUPPET, BOB'S BLUNDABUS, EASEL PEASEL, SCOTT WALKER, JEZ MANSFIELD MASTER MAGICIAN, THE MAGPIE'S FORTUNE, SOL CINEMA, THE CRAZY GOLF COMPANY, DAEMON OR DOPPLEGANGER, PORTACLUE: THE PORTALOO ESCAPE, GLASTONBURY SINGS!",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!11:00",
-    end: "04:00",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "ATTRACTIONS INCLUDE:",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "THE MEDIA WORKSHOP ",
-    end: " MOVE YOURSELF!, DANIEL MCKEE, WATCH THE BIRDIE, SAM SEBASTIAN MAGIC, MR PEEWEE THE DRUMMING PUPPET, BOB'S BLUNDABUS, EASEL PEASEL, SCOTT WALKER, JEZ MANSFIELD MASTER MAGICIAN, THE MAGPIE'S FORTUNE, SOL CINEMA, THE CRAZY GOLF COMPANY, DAEMON OR DOPPLEGANGER, PORTACLUE: THE PORTALOO ESCAPE, GLASTONBURY SINGS!",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "11:00",
-    end: "04:00",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start:
-      "WATCH THE BIRDIE, MR PEEWEE THE DRUMMING PUPPET, DANIEL MCKEE, BOB'S BLUNDABUS, SOL CINEMA, SCOTT WALKER, DAEMON OR DOPPLEGANGER, DANIEL MCKEE, THE MAGPIE'S FORTUNE, SAM SEBASTIAN MAGIC, PORTACLUE: THE PORTALOO ESCAPE",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!11:30",
-    end: "17:30",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start: "ATTRACTIONS INCLUDE:",
-  },
-  {
-    performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
-    start:
-      "WATCH THE BIRDIE, MR PEEWEE THE DRUMMING PUPPET, DANIEL MCKEE, BOB'S BLUNDABUS, SOL CINEMA, SCOTT WALKER, DAEMON OR DOPPLEGANGER, DANIEL MCKEE, THE MAGPIE'S FORTUNE, SAM SEBASTIAN MAGIC, PORTACLUE: THE PORTALOO ESCAPE",
   },
   {
     performer: "PLEASE SEE THEATRE AND CIRCUS PAGE FOR DETAILS!",
@@ -3059,7 +2796,6 @@ export const lineup = [
   { performer: "TOBY SPIN (COMPERE)", start: "22:58", end: "22:59" },
   { performer: "THE FUTURE SHAPE OF SOUND", start: "02:05", end: "02:55" },
   { performer: "ILLUMINAUGHTY BALL", start: "01:00", end: "01:45" },
-  { performer: "ILLUMINAUGHTY BALL", start: "B:RAVE" },
   { performer: "ILLUMINAUGHTY BALL", start: "00:05", end: "00:50" },
   { performer: "FIERCE & FABULOUS", start: "23:10", end: "23:55" },
   { performer: "ABANDOMAN AKA ROB BRODERICK", start: "22:20", end: "23:05" },
@@ -3086,7 +2822,6 @@ export const lineup = [
   { performer: "THE BEATBOX COLLECTIVE", start: "01:15", end: "01:45" },
   { performer: "FIERCE & FABULOUS", start: "00:20", end: "01:05" },
   { performer: "ILLUMINAUGHTY BALL", start: "23:25", end: "00:10" },
-  { performer: "ILLUMINAUGHTY BALL", start: "B:RAVE" },
   { performer: "ILLUMINAUGHTY BALL", start: "22:30", end: "23:15" },
   { performer: "RAVES R US", start: "21:30", end: "22:20" },
   { performer: "TOBY SPIN (COMPERE)", start: "21:25", end: "21:29" },
@@ -3177,10 +2912,8 @@ export const lineup = [
   { performer: "RICHARD STAMP - DICK", start: "21:00", end: "22:00" },
   { performer: "CERYS NELMES (COMPERE)", start: "02:52", end: "03:00" },
   { performer: "PHIL KAY", start: "02:41", end: "02:51" },
-  { performer: "PHIL KAY", start: "BRIEFS : BITE CLUB" },
   { performer: "PHIL KAY", start: "02:29", end: "02:39" },
   { performer: "MISS ALORA LUX", start: "02:21", end: "02:27" },
-  { performer: "MISS ALORA LUX", start: "BRIEFS : BITE CLUB" },
   { performer: "MISS ALORA LUX", start: "02:11", end: "02:19" },
   { performer: "DAVID ERIKSSON", start: "01:59", end: "02:09" },
   { performer: "GUILLERMO LEON", start: "01:52", end: "01:57" },
@@ -3202,11 +2935,9 @@ export const lineup = [
   { performer: "CERYS NELMES (COMPERE)", start: "11:59", end: "00:00" },
   { performer: "KEN FANNING (COMPERE)", start: "02:53", end: "03:00" },
   { performer: "FRANK SANAZI", start: "02:43", end: "02:53" },
-  { performer: "FRANK SANAZI", start: "BRIEFS : BITE CLUB" },
   { performer: "FRANK SANAZI", start: "02:31", end: "02:41" },
   { performer: "MISS ALORA LUX", start: "02:25", end: "02:29" },
   { performer: "DAVID ERIKSSON", start: "02:13", end: "02:23" },
-  { performer: "DAVID ERIKSSON", start: "BRIEFS: BITE CLUB" },
   { performer: "DAVID ERIKSSON", start: "02:04", end: "02:11" },
   { performer: "SAM SEBASTIAN", start: "01:54", end: "02:02" },
   { performer: "LOGY LOGAN", start: "01:44", end: "01:52" },
@@ -3898,10 +3629,6 @@ export const lineup = [
   { performer: "NAKEDPRESENTS", start: "01:30", end: "02:30" },
   { performer: "SMOOTH SAILORS", start: "23:30", end: "01:15" },
   { performer: "KIMMY BEATBOX", start: "23:10", end: "23:20" },
-  {
-    performer: "KIMMY BEATBOX",
-    start: "BREAD AND ROSES EMERGING TALENT SHOWCASE: NAIA",
-  },
   { performer: "KIMMY BEATBOX", start: "22:00", end: "23:00" },
   { performer: "NINOTCHKA", start: "20:30", end: "21:30" },
   { performer: "KIMMY BEATBOX", start: "20:10", end: "20:25" },
@@ -3913,10 +3640,6 @@ export const lineup = [
   { performer: "NAKEDPRESENTS", start: "01:30", end: "03:00" },
   { performer: "SMOOTH SAILORS", start: "23:30", end: "01:15" },
   { performer: "MATILDA MANN", start: "19:00", end: "20:00" },
-  {
-    performer: "MATILDA MANN",
-    start: "BREAD AND ROSES EMERGING TALENT: DAISY CHUTE",
-  },
   { performer: "MATILDA MANN", start: "17:30", end: "18:30" },
   { performer: "KIMMY BEATBOX", start: "17:10", end: "17:25" },
   { performer: "TOM SEALS", start: "16:00", end: "17:00" },
@@ -3952,11 +3675,6 @@ export const lineup = [
   { performer: "THE BITTEN PEACH", start: "13:40", end: "14:40" },
   { performer: "AJIMAL", start: "12:30", end: "13:30" },
   {
-    performer: "AJIMAL",
-    start: "WEDNESDAYCROCK OF GOLD ",
-    end: " A FEW ROUNDS WITH SHANE MACGOWAN21:55",
-  },
-  {
     performer: "CROCK OF GOLD - A FEW ROUNDS WITH SHANE MACGOWAN",
     start: "21:55",
     end: "00:00",
@@ -3981,10 +3699,6 @@ export const lineup = [
   { performer: "KIDS FILMS", start: "12:00", end: "13:30" },
   { performer: "TITANE (18)", start: "02:20", end: "04:10" },
   { performer: "BRIAN AND CHARLES (PG)", start: "00:30", end: "02:00" },
-  {
-    performer: "BRIAN AND CHARLES (PG)",
-    start: "POLY STYRENE: I AM A CLICHÉ (12)",
-  },
   { performer: "BRIAN AND CHARLES (PG)", start: "22:30", end: "00:05" },
   {
     performer: "RIZ AHMED PRESENTS THE LONG GOODBYE",
@@ -3993,7 +3707,6 @@ export const lineup = [
   },
   { performer: "GUEST DJ", start: "20:30", end: "21:45" },
   { performer: "GUEST DJ", start: "19:30", end: "20:30" },
-  { performer: "GUEST DJ", start: "DON LETTS: REBEL DREAD (15)" },
   { performer: "GUEST DJ", start: "18:00", end: "19:30" },
   { performer: "GUEST DJ FOR HOSTILE", start: "17:10", end: "18:00" },
   { performer: "HOSTILE (12) + DIRECTOR Q&A", start: "15:00", end: "17:10" },
@@ -4029,10 +3742,6 @@ export const lineup = [
   },
   {
     performer: "TRAVELLER AWARENESS FILMS & SPEAKERS INTRO",
-    start: "DON'T GO GENTLE: A FILM ABOUT IDLES (15)",
-  },
-  {
-    performer: "TRAVELLER AWARENESS FILMS & SPEAKERS INTRO",
     start: "14:45",
     end: "16:00",
   },
@@ -4047,15 +3756,7 @@ export const lineup = [
     end: "20:30",
   },
   { performer: "REQUIEM FOR DETROIT?", start: "17:25", end: "18:40" },
-  {
-    performer: "REQUIEM FOR DETROIT?",
-    start: "JANIS JOPLIN: LITTLE GIRL BLUE (15)",
-  },
   { performer: "REQUIEM FOR DETROIT?", start: "15:30", end: "17:15" },
-  {
-    performer: "REQUIEM FOR DETROIT?",
-    start: "BOMBSHELL: THE HEDY LAMARR STORY (12)",
-  },
   { performer: "REQUIEM FOR DETROIT?", start: "13:50", end: "15:20" },
   { performer: "KIDS FILMS", start: "12:00", end: "13:40" },
   { performer: "GEDZ (BLENDID TAKEOVER)", start: "01:45", end: "03:00" },
@@ -4231,32 +3932,17 @@ export const lineup = [
   { performer: "DANCE CLASS - SALSA", start: "13:00", end: "14:00" },
   { performer: "CUBAN CARNIVAL", start: "12:00", end: "13:00" },
   {
-    performer: "CUBAN CARNIVAL",
-    start: "WEDNESDAYTHE ADVENTURES OF PRISCILLA, QUEEN OF THE DESERT21:00",
-    end: "22:43YOU ALREADY KNOW 19:00",
-  },
-  {
     performer: "THE ADVENTURES OF PRISCILLA, QUEEN OF THE DESERT",
     start: "21:00",
     end: "22:43",
   },
   { performer: "YOU ALREADY KNOW", start: "19:00", end: "21:00" },
-  {
-    performer: "YOU ALREADY KNOW",
-    start: "THE BEATLES: GET BACK ",
-    end: " THE ROOFTOP CONCERT",
-  },
   { performer: "YOU ALREADY KNOW", start: "17:45", end: "18:50" },
   { performer: "THE HUMAN VOICE", start: "17:00", end: "17:30" },
   { performer: "BELLE", start: "14:45", end: "16:46" },
   { performer: "THE BAD GUYS", start: "13:00", end: "14:40" },
   { performer: "THE MATRIX", start: "23:30", end: "01:46" },
-  { performer: "THE MATRIX", start: "OXIDE GHOSTS: THE BRASS EYE TAPES" },
   { performer: "THE MATRIX", start: "21:30", end: "23:10" },
-  {
-    performer: "THE MATRIX",
-    start: "ORLANDO: 30TH ANNIVERSARY (INTRO BY TILDA SWINTON)",
-  },
   { performer: "THE MATRIX", start: "19:30", end: "21:03" },
   { performer: "BRIAN AND CHARLES", start: "17:45", end: "19:15" },
   {
@@ -4268,10 +3954,6 @@ export const lineup = [
   { performer: "SING 2", start: "13:00", end: "14:50" },
   { performer: "THE ROOM", start: "00:30", end: "02:09" },
   { performer: "TAIMANE GARDNER", start: "00:30", end: "00:30" },
-  {
-    performer: "TAIMANE GARDNER",
-    start: "FANTASTIC BEASTS: THE SECRETS OF DUMBLEDORE",
-  },
   { performer: "TAIMANE GARDNER", start: "20:00", end: "22:22" },
   {
     performer: "THE UNBEARABLE WEIGHT OF MASSIVE TALENT",
@@ -4283,10 +3965,6 @@ export const lineup = [
     performer: "DOCTOR STRANGE IN THE MULTIVERSE OF MADNESS",
     start: "13:15",
     end: "15:21",
-  },
-  {
-    performer: "DOCTOR STRANGE IN THE MULTIVERSE OF MADNESS",
-    start: "MINIONS: THE RISE OF GRU",
   },
   {
     performer: "DOCTOR STRANGE IN THE MULTIVERSE OF MADNESS",
@@ -4305,10 +3983,6 @@ export const lineup = [
   { performer: "LICORICE PIZZA", start: "14:00", end: "16:14" },
   { performer: "JURASSIC WORLD DOMINION", start: "11:15", end: "13:41" },
   { performer: "TAIMANE GARDNER", start: "11:00", end: "11:15" },
-  {
-    performer: "TAIMANE GARDNER",
-    start: "DR. STRANGELOVE : HOW I LEARNED TO STOP WORRYING AND LOVE THE BOMB",
-  },
   { performer: "TAIMANE GARDNER", start: "00:30", end: "02:04" },
   { performer: "WEST SIDE STORY", start: "17:30", end: "20:06" },
   { performer: "ELEVEN DAYS IN MAY", start: "15:15", end: "17:05" },
@@ -4338,7 +4012,6 @@ export const lineup = [
   { performer: "MAFALDA", start: "15:00", end: "16:30" },
   { performer: "SCARLETT O'MALLEY", start: "13:30", end: "15:00" },
   { performer: "AMATEURISM", start: "12:00", end: "13:30" },
-  { performer: "AMATEURISM", start: "ROOM SERVICE: PRAH RECORDINGS" },
   { performer: "AMATEURISM", start: "10:00", end: "12:00" },
   { performer: "DANIEL AVERY", start: "01:30", end: "03:00" },
   { performer: "JON HOPKINS", start: "00:00", end: "01:30" },
@@ -4363,7 +4036,6 @@ export const lineup = [
   { performer: "JOHN GOMEZ", start: "15:30", end: "17:00" },
   { performer: "LAUREN HANSOM", start: "14:00", end: "15:30" },
   { performer: "COCO MARIA", start: "12:00", end: "14:00" },
-  { performer: "COCO MARIA", start: "ROOM SERVICE: JEPH TRACE" },
   { performer: "COCO MARIA", start: "10:00", end: "12:00" },
   { performer: "JOEI SUPERNOVA", start: "01:30", end: "03:00" },
   { performer: "ALPS 2", start: "23:30", end: "01:30" },
@@ -4640,9 +4312,5 @@ export const lineup = [
     start: "10:20",
     end: "11:00",
   },
-  { performer: "", start: "RE:PLAY" },
-  { performer: "", start: "RE:PLAY" },
-  { performer: "", start: "RE:PLAY" },
-  { performer: "", start: "RE:PLAY" },
   { performer: "BLUE PETER PARADE", start: "14:30", end: "15:30" },
 ];

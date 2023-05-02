@@ -1,3 +1,4 @@
+import { filter } from "cypress/types/bluebird";
 import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
 import { NavigateFunction } from "react-router";
 import serverURL from "../../serverURL";
@@ -82,8 +83,24 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
 
   const performerOptions = () => {
     return lineup.map((act) => (
-      <option key={act.performer} value={act.performer}>
-        {act.performer}
+      <option value={act.performer}>{act.performer}</option>
+    ));
+  };
+
+  const startOptions = () => {
+    const filteredLineup = lineup.filter((act) => act.performer === name);
+    return filteredLineup.map((act) => (
+      <option value={act.start.replace(":", "")}>
+        {act.start.replace(":", "")}
+      </option>
+    ));
+  };
+
+  const endOptions = () => {
+    const filteredLineup = lineup.filter((act) => act.performer === name);
+    return filteredLineup.map((act) => (
+      <option value={act.end.replace(":", "")}>
+        {act.end.replace(":", "")}
       </option>
     ));
   };
@@ -134,7 +151,6 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               id="date"
               data-cy="date"
               type="datetime-local"
-              step="900"
               value={date}
               onChange={handleChange(setDate)}
             />
@@ -145,11 +161,12 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               className="input"
               placeholder="E.g. 2030"
               id="start"
+              list="starts"
               data-cy="start"
-              type="number"
               value={start}
               onChange={handleChange(setStart)}
             />
+            <datalist id="starts">{startOptions()}</datalist>
           </div>
           <div className="form-row">
             <label htmlFor="end">End: </label>
@@ -157,11 +174,12 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               className="input"
               placeholder="Until when"
               id="end"
+              list="ends"
               data-cy="end"
-              type="number"
               value={end}
               onChange={handleChange(setEnd)}
             />
+            <datalist id="ends">{endOptions()}</datalist>
           </div>
           <input
             className="save"
