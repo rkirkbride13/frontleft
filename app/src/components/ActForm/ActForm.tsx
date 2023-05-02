@@ -80,6 +80,14 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
     ));
   };
 
+  const performerOptions = () => {
+    return lineup.map((act) => (
+      <option key={act.performer} value={act.performer}>
+        {act.performer}
+      </option>
+    ));
+  };
+
   // Render a form for creating a new act
   return (
     <>
@@ -96,10 +104,12 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               id="name"
               data-cy="name"
               type="text"
+              list="performers"
               style={{ width: "120px" }}
               value={name}
               onChange={handleChange(setName)}
             />
+            <datalist id="performers">{performerOptions()}</datalist>
           </div>
           <div className="form-row">
             <label htmlFor="stage">Stage: </label>
