@@ -2,6 +2,7 @@ import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
 import { NavigateFunction } from "react-router";
 import serverURL from "../../serverURL";
 import { lineup } from "./lineup";
+import { stages } from "./stages";
 
 // Define the expected props for the ActForm component
 interface ActFormInt {
@@ -71,13 +72,20 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
     }
   };
 
+  const stageOptions = () => {
+    return stages.map((stage) => (
+      <option key={stage} value={stage}>
+        {stage}
+      </option>
+    ));
+  };
+
   // Render a form for creating a new act
   return (
     <>
       <div className="form-page">
         <br></br>
         <div className="header">Who would you like to see?</div>
-        <div className="header">{lineup[0].performer}</div>
         <br></br>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
@@ -101,10 +109,12 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               id="stage"
               data-cy="stage"
               type="text"
+              list="stages"
               style={{ width: "120px" }}
               value={stage}
               onChange={handleChange(setStage)}
             />
+            <datalist id="stages">{stageOptions()}</datalist>
           </div>
           <div className="form-row">
             <label htmlFor="date">Time: </label>

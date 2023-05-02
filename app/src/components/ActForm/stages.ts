@@ -1,4 +1,4 @@
-export const stage = [
+export const stages = [
   "Glastonbury Festival Line-Up 2022",
   "PYRAMID STAGE",
   "OTHER STAGE",
