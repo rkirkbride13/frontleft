@@ -1,10 +1,11 @@
 pipeline {
-    agent { docker { image 'node:18.16.0-alpine' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'node --version'
-            }
-        }
-    }
+	agent any
+
+	stages {
+		stage('Checkout') {
+			steps {
+				checkout scm
+			}
+		}
+	}
 }
