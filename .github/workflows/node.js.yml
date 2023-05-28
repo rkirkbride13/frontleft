@@ -1,0 +1,96 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  backend_tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: api/package-lock.json
+      - name: Setup, Run Tests
+        working-directory: ./api
+        run: |
+          npm ci
+          npm run test
+
+    services:
+      mongodb:
+        image: mongo
+        ports:
+          - 27017:27017
+
+  frontend_build_and_component_tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: app/package-lock.json
+      - name: Setup, Build and Run Unit Tests
+        working-directory: ./app
+        run: |
+          npm ci
+          npm run test:unit
+
+  frontend_e2e_tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: |
+            api/package-lock.json
+            app/package-lock.json
+      - name: Setup, and Run Server
+        working-directory: ./api
+        env:
+          JWT_SECRET: ${{ process.env.JWT_SECRET }}
+        run: |
+          npm ci
+          npm run start &
+      - name: Setup, and Run e2e Tests
+        working-directory: ./app
+        run: |
+          npm ci
+          npm run start &
+          npm run test:feature
+
+    services:
+      mongodb:
+        image: mongo
+        ports:
+          - 27017:27017
