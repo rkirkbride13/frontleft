@@ -25,6 +25,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: api/package-lock.json
+          clear-cache: true
       - name: Setup, Run Tests
         working-directory: ./api
         run: |
@@ -52,6 +53,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: app/package-lock.json
+          clear-cache: true
       - name: Setup, Build and Run Unit Tests
         working-directory: ./app
         run: |
@@ -75,6 +77,7 @@ jobs:
           cache-dependency-path: |
             api/package-lock.json
             app/package-lock.json
+          clear-cache: true
       - name: Setup, and Run Server
         working-directory: ./api
         env:
