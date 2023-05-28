@@ -88,7 +88,7 @@ jobs:
         working-directory: ./app
         run: |
           npm ci
-          npm run start
+          npm run start &
       - name: Run e2e Tests
         working-directory: ./app
         run: |
