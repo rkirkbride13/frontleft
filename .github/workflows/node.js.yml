@@ -87,15 +87,11 @@ jobs:
         run: |
           npm ci
           npm run start &
-      - name: Run Frontend
-        working-directory: ./app
-        run: |
-          npm ci
-          npm run start &
       - name: Run e2e Tests
         working-directory: ./app
         run: |
           npm ci
+          npm run start &
           npm run test:feature
     services:
       mongodb:
