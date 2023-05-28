@@ -78,9 +78,9 @@ jobs:
       - name: Setup, and Run Server
         working-directory: ./api
         env:
-          JWT_SECRET: ${{ secret.JWT_SECRET }}
-          SENDGRID_API_KEY: ${{ secret.SENDGRID_API_KEY }}
-          ADMIN_EMAIL: ${{ secret.ADMIN_EMAIL }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
         run: |
           npm ci
           npm run start &
