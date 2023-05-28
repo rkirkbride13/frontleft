@@ -92,6 +92,8 @@ jobs:
         run: |
           npm ci
           npm run start &
+          echo "Waiting for the server to be ready..."
+          timeout 300 bash -c 'until curl --silent --fail http://localhost:3000/; do sleep 5; done'
           npm run test:feature
     services:
       mongodb:
