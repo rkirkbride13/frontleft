@@ -118,3 +118,12 @@ From the main project directory...
 $ cd api
 $ npm run test
 ```
+
+### Front-end
+
+```js
+$ cd frontend
+$ npm run test
+```
+
+**Important:** Ensure you are running both front-end and back-end servers before running the tests.
