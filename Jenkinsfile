@@ -7,14 +7,19 @@ pipeline {
 				checkout scm
 			}
 		}
+    stage('Check Environment') {
+            steps {
+                sh 'printenv'
+            }
+        }
     stage('Frontend tests') {
 	    steps {
         dir('api') {
-          sh 'npm install'
+          sh 'npm ci'
           sh 'npm run start'
         }
         dir('app') {
-          sh 'npm install'
+          sh 'npm ci'
           sh 'npm run start'
           sh 'npm run test'
         }
