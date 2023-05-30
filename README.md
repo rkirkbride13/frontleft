@@ -54,7 +54,9 @@ The backend was test driven using Jest, as well as testing calls using Postman. 
 
 ## Future goals
 
-- Create a web scraper too auto-populate the acts from a given festival. Currently the user has to manually type them in
+- Grey out dates that don't coincide with Glastonbury
+- Change timelines to be from 12pm-6am each day
+- On timelines, cut-off long performer names and add button to reveal the full name is it is cut
 
 ### Installation
 
