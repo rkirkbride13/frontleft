@@ -88,15 +88,13 @@ jobs:
         run: |
           npm ci
           npm run start &
-      - name: Wait for Frontend Server to be Ready
-        run: npm install wait-on
       - name: Run e2e Tests
         working-directory: ./app
         run: |
           npm ci
           npm run start &
-          npx wait-on http://localhost:3000
           npm run test:feature
+          
     services:
       mongodb:
         image: mongo
