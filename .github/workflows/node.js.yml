@@ -79,7 +79,7 @@ jobs:
           cache-dependency-path: |
             api/package-lock.json
             app/package-lock.json
-      - name: Setup, and Run Server
+      - name: Setup, and Run Backend Server
         working-directory: ./api
         env:
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
@@ -88,12 +88,14 @@ jobs:
         run: |
           npm ci
           npm run start &
+      - name: Wait for Frontend Server to be Ready
+        run: npm install wait-on
       - name: Run e2e Tests
         working-directory: ./app
         run: |
           npm ci
           npm run start &
-          wait-on http://localhost:3000
+          npx wait-on http://localhost:3000
           npm run test:feature
     services:
       mongodb:
