@@ -144,13 +144,15 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
             <datalist id="stages">{stageOptions()}</datalist>
           </div>
           <div className="form-row">
-            <label htmlFor="date">Time: </label>
+            <label htmlFor="date">Date: </label>
             <input
               className="input"
               placeholder="Date"
               id="date"
               data-cy="date"
               type="datetime-local"
+              min="2023-06-22T12:00"
+              max="2023-06-26T06:00"
               value={date}
               onChange={handleChange(setDate)}
             />
