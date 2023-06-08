@@ -12,7 +12,7 @@ Since finishing the Makers Academy coding bootcamp I have setout to learn TypeSc
 
 ## Video
 
-[<img width="250px" src="images/saved_acts.png" >](https://www.youtube.com/watch?v=Mo3J8VAjf9U&ab_channel=RobbieKirkbride)
+[<img width="250px" src="images/saved_acts.png" >](https://youtu.be/04Yn1kZ5KL8)
 
 ## Screenshots
 
