@@ -99,7 +99,9 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
         ></div>
         <div className="form-page">
           <br></br>
-          <div className="header">Please sign in below</div>
+          <div className="header">
+            Please sign in below<br></br>or sign up via link
+          </div>
           <br></br>
           <form onSubmit={handleSubmit}>
             <div className="form-row">
@@ -140,6 +142,8 @@ const SignInForm = ({ navigate }: SignInFormInt): ReactElement => {
               <a href="/signup">Or sign up</a>
             </div>
           </form>
+          <br></br>
+          <div className="header">Click logo to go home</div>
         </div>
         <div
           className="flanking-block-right"

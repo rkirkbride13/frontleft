@@ -63,7 +63,10 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
             .then((response) => response.json())
             .then(async (data) => {
               // Update the state of the parent component with the updated list of acts
-
+              setName("");
+              setStage("");
+              setStart("");
+              setEnd("");
               setActs(data.acts);
             });
         } else {
@@ -144,13 +147,15 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
             <datalist id="stages">{stageOptions()}</datalist>
           </div>
           <div className="form-row">
-            <label htmlFor="date">Time: </label>
+            <label htmlFor="date">Date: </label>
             <input
               className="input"
               placeholder="Date"
               id="date"
               data-cy="date"
-              type="datetime-local"
+              type="date"
+              min="2023-06-22"
+              max="2023-06-25"
               value={date}
               onChange={handleChange(setDate)}
             />
@@ -190,6 +195,8 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
             style={{ marginLeft: 125 }}
           />
         </form>
+        <br></br>
+        <div className="header">Click the X to delete acts</div>
       </div>
     </>
   );
