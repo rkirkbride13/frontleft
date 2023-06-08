@@ -14,23 +14,22 @@ const App = (): ReactElement => {
       <Route path="/" element={<SignInForm navigate={useNavigate()} />} />
       <Route
         path="/acts"
-        element={
-          <Acts
-            navigate={useNavigate()}
-            setDayChart={setDayChart}
-          />
-        }
+        element={<Acts navigate={useNavigate()} setDayChart={setDayChart} />}
       />
       <Route
-        path="/day/friday"
+        path="/day/Thursday"
         element={<DayChart navigate={useNavigate()} dayChart={dayChart} />}
       />
       <Route
-        path="/day/saturday"
+        path="/day/Friday"
         element={<DayChart navigate={useNavigate()} dayChart={dayChart} />}
       />
       <Route
-        path="/day/sunday"
+        path="/day/Saturday"
+        element={<DayChart navigate={useNavigate()} dayChart={dayChart} />}
+      />
+      <Route
+        path="/day/Sunday"
         element={<DayChart navigate={useNavigate()} dayChart={dayChart} />}
       />
     </Routes>

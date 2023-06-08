@@ -111,6 +111,11 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
                         convertDateToChunk(actDate).getTime();
                       return actChunkStart === chunkTime;
                     })
+                    .sort((a, b) => {
+                      let aStart = a.start < 1159 ? a.start + 2400 : a.start;
+                      let bStart = b.start < 1159 ? b.start + 2400 : b.start;
+                      return aStart - bStart;
+                    })
                     .map((act) => (
                       <Act
                         key={act._id}
