@@ -48,7 +48,7 @@ const Act = ({ act, token, setActs }: ActInt) => {
         <form onSubmit={handleDelete}>
           <input data-cy="delete-button" type="submit" value="X" />
         </form>
-        - {act.name} - {act.start} to {act.end}
+        {act.name}: {act.start}-{act.end}
       </p>
     </>
   );

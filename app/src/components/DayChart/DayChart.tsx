@@ -89,7 +89,7 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
 
   return (
     <>
-      <div className="fixed-logo" style={{ padding: 2155 / 2 - 340 / 2 }}>
+      <div className="fixed-logo" style={{ padding: 2229 / 2 - 340 / 2 }}>
         <a href="/acts">
           <img
             src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
@@ -102,9 +102,11 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
         <table>
           <thead>
             <tr>
-              <th></th>
+              <th className="stage-header"></th>
               {setTimeHeader.map((time) => (
-                <th key={time}>{time}00</th>
+                <th className="cell-header" key={time}>
+                  {time}00
+                </th>
               ))}
             </tr>
           </thead>
@@ -128,12 +130,28 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
                     let left;
                     if (act.start === headerStart) {
                       left = 50 + "%";
+                    } else if (act.start === headerStart + 5) {
+                      left = 50 + 25 / 3.0 + "%";
+                    } else if (act.start === headerStart + 10) {
+                      left = 50 + 25 / 1.5 + "%";
                     } else if (act.start === headerStart + 15) {
                       left = 75 + "%";
+                    } else if (act.start === headerStart + 20) {
+                      left = 75 + 25 / 3.0 + "%";
+                    } else if (act.start === headerStart + 25) {
+                      left = 75 + 25 / 1.5 + "%";
                     } else if (act.start === headerStart + 30) {
                       left = 100 + "%";
+                    } else if (act.start === headerStart + 35) {
+                      left = 100 + 25 / 3.0 + "%";
+                    } else if (act.start === headerStart + 40) {
+                      left = 100 + 25 / 1.5 + "%";
                     } else if (act.start === headerStart + 45) {
                       left = 125 + "%";
+                    } else if (act.start === headerStart + 50) {
+                      left = 125 + 25 / 3.0 + "%";
+                    } else if (act.start === headerStart + 55) {
+                      left = 125 + 25 / 1.5 + "%";
                     }
                     return (
                       <td key={i} className="cell">
