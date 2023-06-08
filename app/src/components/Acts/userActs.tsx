@@ -17,9 +17,37 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
   // Define state variables for the component
   const [acts, setActs] = useState<Array<any>>([]);
   const [token] = useState<string | null>(window.localStorage.getItem("token"));
-  const [days, setDays] = useState<Array<string>>([]);
+  const [chunks, setChunks] = useState<Array<number>>([]);
   const [screenWidth, setSceenWidth] = useState(window.innerWidth);
-  // Fetch the acts and set the state when the component mounts
+
+  const convertDateToDay = (date: Date) => {
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    return days[date.getDay()];
+  };
+
+  const convertDateToChunk = (date: Date) => {
+    const dayStart = new Date(date);
+    dayStart.setHours(0, 0, 0, 0);
+
+    const chunkStart = new Date(dayStart);
+    if (date.getHours() >= 12) {
+      chunkStart.setDate(dayStart.getDate() + 1);
+      chunkStart.setHours(6, 0, 0, 0);
+    } else {
+      chunkStart.setHours(12, 0, 0, 0);
+    }
+
+    return chunkStart;
+  };
+
   useEffect(() => {
     if (token) {
       fetch(serverURL() + "/acts", {
@@ -34,7 +62,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
     } else {
       navigate("/");
     }
-    // Add event listener to update screen width state on window resize
+
     const handleResize = () => {
       setSceenWidth(window.innerWidth);
     };
@@ -43,14 +71,16 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  // Create a list of days with acts to facilitate grouping of acts
+
   useEffect(() => {
-    const uniqueDays = Array.from(
-      new Set(acts.map((act) => convertDateToDay(act.date)))
+    const uniqueChunks = Array.from(
+      new Set(
+        acts.map((act) => convertDateToChunk(new Date(act.date)).getTime())
+      )
     );
-    setDays(uniqueDays);
+    setChunks(uniqueChunks);
   }, [acts]);
-  // Sort acts by date
+
   const sortByDate = (acts: Array<any>): Array<any> => {
     return acts.sort(
       (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
@@ -58,27 +88,16 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
   };
 
   const sortedActs = sortByDate(acts);
-  // Convert a date to a day of the week
-  const convertDateToDay = (date: Date) => {
-    const days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    return days[new Date(date).getDay()];
-  };
-  // Map each day to a block of acts, each with a link to the DayChart component
+
   const mapDays = () => {
     return (
       <>
-        {days.map((day) => {
+        {chunks.map((chunkTime) => {
+          const chunkStart = new Date(chunkTime);
+          const day = convertDateToDay(chunkStart);
           return (
             <>
-              <div key={day} className="day-block">
+              <div key={chunkTime} className="day-block">
                 <p className="stage">
                   <Link onClick={() => setDayChart(day)} to={`/day/${day}`}>
                     {day}
@@ -86,7 +105,12 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
                 </p>
                 <div data-cy="acts">
                   {sortedActs
-                    .filter((acts) => convertDateToDay(acts.date) === day)
+                    .filter((act) => {
+                      const actDate = new Date(act.date);
+                      const actChunkStart =
+                        convertDateToChunk(actDate).getTime();
+                      return actChunkStart === chunkTime;
+                    })
                     .map((act) => (
                       <Act
                         key={act._id}
@@ -103,7 +127,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
       </>
     );
   };
-  // Render the userActs, along with the PictureForm and ActForm components
+
   return (
     <>
       <div className="logo" style={{ padding: screenWidth / 2 - 340 / 2 }}>

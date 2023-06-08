@@ -150,9 +150,9 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               placeholder="Date"
               id="date"
               data-cy="date"
-              type="datetime-local"
-              min="2023-06-22T12:00"
-              max="2023-06-26T06:00"
+              type="date"
+              min="2023-06-22"
+              max="2023-06-25"
               value={date}
               onChange={handleChange(setDate)}
             />

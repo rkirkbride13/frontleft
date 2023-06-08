@@ -56,6 +56,10 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
   };
   // Map chart data for each act
   const calculateDuration = (start: number, end: number) => {
+    // Adjust for the case where music ends after midnight
+    if (end < start) {
+      end += 2400;
+    }
     const startHour = Math.floor(start / 100);
     const startMinute = start % 100;
     const endHour = Math.floor(end / 100);
@@ -79,6 +83,10 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
     };
   });
 
+  const setTimeHeader = [
+    12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 0, 1, 2, 3, 4, 5, 6,
+  ];
+
   return (
     <>
       <div className="fixed-logo" style={{ padding: 2155 / 2 - 340 / 2 }}>
@@ -95,8 +103,8 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
           <thead>
             <tr>
               <th></th>
-              {[...Array(25)].map((_, i) => (
-                <th key={i}>{i + 0}00</th>
+              {setTimeHeader.map((time) => (
+                <th key={time}>{time}00</th>
               ))}
             </tr>
           </thead>
@@ -104,8 +112,8 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
             {stages.map((stage) => (
               <tr key={stage}>
                 <th className="stage-cell">{stage}</th>
-                {[...Array(25)].map((_, i) => {
-                  const headerStart = i * 100;
+                {[...Array(setTimeHeader.length)].map((_, i) => {
+                  const headerStart = setTimeHeader[i] * 100;
                   const act = chartData.find((data) => {
                     const startInRange =
                       data.start >= headerStart &&
@@ -113,7 +121,10 @@ const DayChart = ({ navigate, dayChart }: DayInt) => {
                     return data.stage === stage && startInRange;
                   });
                   if (act) {
-                    const width = act.duration + "%";
+                    let width;
+                    act.duration < 0
+                      ? (width = act.duration + 2400 + "%")
+                      : (width = act.duration + "%");
                     let left;
                     if (act.start === headerStart) {
                       left = 50 + "%";
