@@ -99,9 +99,11 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
             <>
               <div key={chunkTime} className="day-block">
                 <p className="stage">
+                  👉_
                   <Link onClick={() => setDayChart(day)} to={`/day/${day}`}>
                     {day}
                   </Link>
+                  _👈
                 </p>
                 <div data-cy="acts">
                   {sortedActs

@@ -13,9 +13,6 @@ describe("Saving an act", () => {
     cy.get('[data-cy="end"]').type("1900");
     cy.get('[data-cy="submit-act"]').click();
 
-    cy.get('[data-cy="acts"]').should(
-      "contain.text",
-      "Save test - 1800 to 1900"
-    );
+    cy.get('[data-cy="acts"]').should("contain.text", "Save test: 1800-1900");
   });
 });

@@ -17,7 +17,7 @@ describe("Act", () => {
     // Mount the component with the mock props
     cy.mount(<Act act={act} token={"tokenMock"} setActs={setActsMock} />);
     // Check that the act information is rendered correctly
-    cy.get('[data-cy="act"]').should("contain.text", "Robbie - 1800 to 1900");
+    cy.get('[data-cy="act"]').should("contain.text", "Robbie: 1800-1900");
     // Check that the delete button is rendered correctly
     cy.get('[data-cy="delete-button"]')
       .invoke("attr", "type")
