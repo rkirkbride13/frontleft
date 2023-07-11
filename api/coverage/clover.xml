@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1689084429465" clover="3.2.0">
-  <project timestamp="1689084429465" name="All files">
-    <metrics statements="154" coveredstatements="133" conditionals="10" coveredconditionals="6" methods="24" coveredmethods="17" elements="188" coveredelements="156" complexity="0" loc="154" ncloc="154" packages="6" files="14" classes="14"/>
+<coverage generated="1689084635771" clover="3.2.0">
+  <project timestamp="1689084635771" name="All files">
+    <metrics statements="154" coveredstatements="134" conditionals="10" coveredconditionals="6" methods="23" coveredmethods="17" elements="187" coveredelements="157" complexity="0" loc="154" ncloc="154" packages="6" files="14" classes="14"/>
     <package name="src">
       <metrics statements="26" coveredstatements="26" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
       <file name="app.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/app.ts">
@@ -35,7 +35,7 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="70" coveredstatements="52" conditionals="6" coveredconditionals="3" methods="17" coveredmethods="11"/>
+      <metrics statements="70" coveredstatements="53" conditionals="6" coveredconditionals="3" methods="16" coveredmethods="11"/>
       <file name="acts.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/controllers/acts.ts">
         <metrics statements="21" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
         <line num="2" count="3" type="stmt"/>
@@ -83,7 +83,7 @@
         <line num="47" count="3" type="stmt"/>
       </file>
       <file name="tokens.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/controllers/tokens.ts">
-        <metrics statements="17" coveredstatements="16" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="2"/>
+        <metrics statements="17" coveredstatements="17" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
@@ -95,8 +95,8 @@
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="19" count="2" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>

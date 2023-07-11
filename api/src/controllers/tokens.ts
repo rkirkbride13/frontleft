@@ -16,12 +16,12 @@ const TokensController = {
       return;
     }
     // Compare the given password to the user's password hash
-    const match = await bcrypt
-      .compare(password, user.password)
-      .catch((error) => console.error(error));
+    const match = await bcrypt.compare(password, user.password);
+
     // If the passwords do not match, send a 401 Unauthorized response
     if (!match) {
       res.status(401).json({ message: "auth error - passwords do not match" });
+      return;
     } else {
       // If the passwords match, generate a new authentication token
       const token = await Token.jsonwebtoken(user.id);
