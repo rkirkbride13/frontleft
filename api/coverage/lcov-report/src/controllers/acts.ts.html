@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.36% </span>
+                <span class="strong">90.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/22</span>
+                <span class='fraction'>19/21</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.36% </span>
+                <span class="strong">90.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>19/22</span>
+                <span class='fraction'>19/21</span>
             </div>
         
             
@@ -99,15 +99,22 @@
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -115,17 +122,20 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -137,13 +147,15 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response } from "express";
 import Act, { IAct } from "../models/acts";
-&nbsp;
+// Define a controller object for handling requests related to the "Act" model
 const ActsController = {
+  // Define a method for creating a new act
   Create: async (req: Request, res: Response): Promise&lt;void&gt; =&gt; {
+    // Extract the relevant fields from the request body and create a new act object with them
     const { name, stage, date, start, end, user_id } = req.body;
     const act: IAct = new Act({ name, stage, date, start, end, user_id });
-&nbsp;
     try {
+      // Save the new act to the database
       await act.save();
       res.status(200).json({ message: "OK" });
     } catch (err) {
@@ -151,17 +163,20 @@ const ActsController = {
       res.status(400).json({ message: "Act not created" });
     }
   },
+  // Define a method for finding acts belonging to a specific user
   Find: async (req: Request, res: Response) =&gt; {
     try {
-      const acts = await Act.find({ user_id: req.body.user_id })
-      res.status(200).json({ acts })
+      // Find all acts in the database with a matching user_id
+      const acts = await Act.find({ user_id: req.body.user_id });
+      res.status(200).json({ acts });
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      console.error(err);</span>
-<span class="cstat-no" title="statement not covered" >      res.status(400).json({ message: "Acts not found" });</span>
+<span class="cstat-no" title="statement not covered" >      res.status(400).json({ error: "Acts not found" });</span>
     }
   },
+  // Define a method for deleting an act by ID
   Delete: async (req: Request, res: Response) =&gt; {
     try {
+      // Find and delete an act with a matching _id field with the act_id passed in the request header
       await Act.findOneAndDelete({ _id: req.get("act_id") });
       res.status(200).json({ message: "DELETED" });
     } catch (err) {
@@ -178,7 +193,7 @@ export default ActsController;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-28T08:58:22.512Z
+                at 2023-07-11T14:07:09.387Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

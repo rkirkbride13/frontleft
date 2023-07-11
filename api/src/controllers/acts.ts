@@ -23,8 +23,7 @@ const ActsController = {
       const acts = await Act.find({ user_id: req.body.user_id });
       res.status(200).json({ acts });
     } catch (err) {
-      console.error(err);
-      res.status(400).json({ message: "Acts not found" });
+      res.status(400).json({ error: "Acts not found" });
     }
   },
   // Define a method for deleting an act by ID

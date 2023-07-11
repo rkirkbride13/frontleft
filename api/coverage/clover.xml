@@ -1,259 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1679993902705" clover="3.2.0">
-  <project timestamp="1679993902705" name="All files">
-    <metrics statements="315" coveredstatements="300" conditionals="180" coveredconditionals="157" methods="76" coveredmethods="68" elements="571" coveredelements="525" complexity="0" loc="315" ncloc="315" packages="10" files="22" classes="22"/>
-    <package name="build">
-      <metrics statements="28" coveredstatements="28" conditionals="11" coveredconditionals="11" methods="2" coveredmethods="2"/>
-      <file name="app.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/app.js">
-        <metrics statements="28" coveredstatements="28" conditionals="11" coveredconditionals="11" methods="2" coveredmethods="2"/>
-        <line num="2" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="18" type="cond" truecount="4" falsecount="0"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
-        <line num="23" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="26" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="27" count="7" type="stmt"/>
-        <line num="28" count="7" type="stmt"/>
-        <line num="29" count="7" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="36" count="3" type="stmt"/>
-        <line num="37" count="3" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-      </file>
-    </package>
-    <package name="build.controllers">
-      <metrics statements="81" coveredstatements="76" conditionals="58" coveredconditionals="56" methods="36" coveredmethods="33"/>
-      <file name="acts.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/controllers/acts.js">
-        <metrics statements="32" coveredstatements="29" conditionals="18" coveredconditionals="17" methods="14" coveredmethods="14"/>
-        <line num="2" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="4" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="14" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="11" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="12" count="3" type="cond" truecount="3" falsecount="1"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
-        <line num="18" count="5" type="stmt"/>
-        <line num="19" count="5" type="stmt"/>
-        <line num="20" count="5" type="stmt"/>
-        <line num="21" count="5" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="49" count="3" type="stmt"/>
-      </file>
-      <file name="tokens.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/controllers/tokens.js">
-        <metrics statements="28" coveredstatements="26" conditionals="22" coveredconditionals="22" methods="11" coveredmethods="9"/>
-        <line num="2" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="4" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="11" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="12" count="9" type="cond" truecount="4" falsecount="0"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
-      </file>
-      <file name="users.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/controllers/users.js">
-        <metrics statements="21" coveredstatements="21" conditionals="18" coveredconditionals="17" methods="11" coveredmethods="10"/>
-        <line num="2" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="15" type="cond" truecount="1" falsecount="1"/>
-        <line num="4" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="10" type="stmt"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="7" count="23" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="11" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="12" count="6" type="cond" truecount="4" falsecount="0"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="21" count="8" type="stmt"/>
-        <line num="23" count="8" type="stmt"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="32" count="5" type="stmt"/>
-        <line num="36" count="3" type="stmt"/>
-      </file>
-    </package>
-    <package name="build.models">
-      <metrics statements="53" coveredstatements="47" conditionals="77" coveredconditionals="60" methods="14" coveredmethods="10"/>
-      <file name="acts.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/models/acts.js">
-        <metrics statements="22" coveredstatements="19" conditionals="35" coveredconditionals="27" methods="6" coveredmethods="4"/>
-        <line num="2" count="4" type="cond" truecount="4" falsecount="1"/>
-        <line num="3" count="204" type="cond" truecount="1" falsecount="1"/>
-        <line num="4" count="204" type="stmt"/>
-        <line num="5" count="204" type="cond" truecount="7" falsecount="1"/>
-        <line num="6" count="200" type="stmt"/>
-        <line num="8" count="204" type="stmt"/>
-        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="4" type="cond" truecount="4" falsecount="1"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="18" count="4" type="cond" truecount="3" falsecount="0"/>
-        <line num="19" count="4" type="cond" truecount="3" falsecount="1"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="21" count="236" type="cond" truecount="5" falsecount="1"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="26" count="4" type="stmt"/>
-        <line num="27" count="4" type="stmt"/>
-        <line num="35" count="4" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
-      </file>
-      <file name="tokens.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/models/tokens.js">
-        <metrics statements="9" coveredstatements="9" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="2"/>
-        <line num="2" count="4" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="4" type="cond" truecount="3" falsecount="1"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="12" count="7" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-      </file>
-      <file name="users.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/models/users.js">
-        <metrics statements="22" coveredstatements="19" conditionals="35" coveredconditionals="27" methods="6" coveredmethods="4"/>
-        <line num="2" count="4" type="cond" truecount="4" falsecount="1"/>
-        <line num="3" count="204" type="cond" truecount="1" falsecount="1"/>
-        <line num="4" count="204" type="stmt"/>
-        <line num="5" count="204" type="cond" truecount="7" falsecount="1"/>
-        <line num="6" count="200" type="stmt"/>
-        <line num="8" count="204" type="stmt"/>
-        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="4" type="cond" truecount="4" falsecount="1"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="18" count="4" type="cond" truecount="3" falsecount="0"/>
-        <line num="19" count="4" type="cond" truecount="3" falsecount="1"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="21" count="236" type="cond" truecount="5" falsecount="1"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="26" count="4" type="stmt"/>
-        <line num="27" count="4" type="stmt"/>
-        <line num="38" count="4" type="stmt"/>
-        <line num="39" count="4" type="stmt"/>
-      </file>
-    </package>
-    <package name="build.routes">
-      <metrics statements="26" coveredstatements="26" conditionals="21" coveredconditionals="18" methods="3" coveredmethods="3"/>
-      <file name="acts.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/routes/acts.js">
-        <metrics statements="10" coveredstatements="10" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="2" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="3" type="cond" truecount="3" falsecount="1"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-      </file>
-      <file name="tokens.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/routes/tokens.js">
-        <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="2" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="3" type="cond" truecount="3" falsecount="1"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-      </file>
-      <file name="users.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/routes/users.js">
-        <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="2" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="3" type="cond" truecount="3" falsecount="1"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-      </file>
-    </package>
-    <package name="build.spec">
-      <metrics statements="12" coveredstatements="12" conditionals="7" coveredconditionals="6" methods="4" coveredmethods="4"/>
-      <file name="mongodb_helper.js" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/build/spec/mongodb_helper.js">
-        <metrics statements="12" coveredstatements="12" conditionals="7" coveredconditionals="6" methods="4" coveredmethods="4"/>
-        <line num="2" count="5" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="5" type="cond" truecount="3" falsecount="1"/>
-        <line num="5" count="5" type="stmt"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
-        <line num="15" count="5" type="stmt"/>
-        <line num="18" count="5" type="stmt"/>
-        <line num="19" count="5" type="stmt"/>
-      </file>
-    </package>
+<coverage generated="1689084429465" clover="3.2.0">
+  <project timestamp="1689084429465" name="All files">
+    <metrics statements="154" coveredstatements="133" conditionals="10" coveredconditionals="6" methods="24" coveredmethods="17" elements="188" coveredelements="156" complexity="0" loc="154" ncloc="154" packages="6" files="14" classes="14"/>
     <package name="src">
-      <metrics statements="24" coveredstatements="24" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+      <metrics statements="26" coveredstatements="26" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
       <file name="app.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/app.ts">
-        <metrics statements="24" coveredstatements="24" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <metrics statements="26" coveredstatements="26" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
@@ -261,86 +13,123 @@
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
         <line num="11" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
         <line num="15" count="3" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
-        <line num="19" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="20" count="7" type="stmt"/>
-        <line num="23" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="25" count="7" type="stmt"/>
-        <line num="26" count="7" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
-        <line num="34" count="3" type="stmt"/>
-        <line num="35" count="3" type="stmt"/>
-        <line num="37" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="21" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="25" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="7" type="stmt"/>
+        <line num="32" count="7" type="stmt"/>
+        <line num="33" count="7" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="51" coveredstatements="47" conditionals="3" coveredconditionals="3" methods="12" coveredmethods="11"/>
+      <metrics statements="70" coveredstatements="52" conditionals="6" coveredconditionals="3" methods="17" coveredmethods="11"/>
       <file name="acts.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/controllers/acts.ts">
-        <metrics statements="22" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <metrics statements="21" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
         <line num="2" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
-        <line num="5" count="5" type="stmt"/>
         <line num="6" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
         <line num="9" count="5" type="stmt"/>
         <line num="10" count="5" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+      </file>
+      <file name="pictures.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/controllers/pictures.ts">
+        <metrics statements="19" coveredstatements="4" conditionals="3" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="36" count="3" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="47" count="3" type="stmt"/>
       </file>
       <file name="tokens.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/controllers/tokens.ts">
-        <metrics statements="18" coveredstatements="17" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="2"/>
+        <metrics statements="17" coveredstatements="16" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="2"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
-        <line num="11" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="14" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
       </file>
       <file name="users.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/controllers/users.ts">
-        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
         <line num="8" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="13" count="7" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="20" count="5" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.emails">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="account.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/emails/account.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.models">
@@ -348,38 +137,52 @@
       <file name="acts.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/models/acts.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
       </file>
       <file name="tokens.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/models/tokens.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="4" type="stmt"/>
         <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
       </file>
       <file name="users.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/models/users.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.routes">
-      <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="28" coveredstatements="25" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="acts.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/routes/acts.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="3" type="stmt"/>
         <line num="2" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+      </file>
+      <file name="pictures.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/routes/pictures.ts">
+        <metrics statements="11" coveredstatements="8" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
       </file>
       <file name="tokens.ts" path="/Users/robbiekirkbride/Desktop/Projects/frontleft/api/src/routes/tokens.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
