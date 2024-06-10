@@ -139,10 +139,7 @@ const Acts = ({ navigate, setDayChart }: ActsInt) => {
     <>
       <div className="logo" style={{ padding: screenWidth / 2 - 340 / 2 }}>
         <a href="/">
-          <img
-            src="https://see.fontimg.com/api/renderfont4/ARpL/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjOTYxNUM4IiwiYmdjIjoiI0ZERkRGRCIsInQiOjF9/ZnJvbnRsZWZ0/inner-flasher.png"
-            alt="Lightning fonts"
-          ></img>
+          Frontleft
         </a>
       </div>
       <div className="main-container">

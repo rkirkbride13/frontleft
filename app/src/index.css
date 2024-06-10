@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
   font-family: 'Inconsolata', monospace;
-  background: url('../public/alien-monster.svg');
+  background: url('../public/alien.svg');
   background-repeat: repeat;
-  background-size: 40px 40px;
+  background-size: 25px 25px;
+  background-color: black;
 }
 
 .main-container {
@@ -27,7 +30,7 @@ body {
   margin-top: 30px;
   padding-bottom: 20px;
   width: 250px;
-  background-color: rgba(137, 43, 226, 0.7);
+  background-color: rgba(20, 227, 26);
   border-radius: 10px;
 }
 
@@ -57,14 +60,14 @@ label {
 }
 
 .submit {
-  color:blueviolet;
+  color:rgb(20, 227, 26);
   background-color: white;
   border-color: #fff;
   border-radius: 5px;
 }
 
 .save {
-  color:blueviolet;
+  color:20, 227, 26;
   background-color: white;
   border-color: #fff;
   border-radius: 5px;
@@ -84,17 +87,31 @@ label {
 }
 
 .logo {
+  font-family: 'Orbitron', sans-serif;
   position: sticky;
-  top: 0;
-  left: 0;
+  color: rgb(20, 227, 26);
+  width: 340px;
+  padding-bottom: 20px!important;
+  padding-top: 25px!important;
+  background-color: black;
+  border-bottom: 2px solid rgb(20, 227, 26);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo a {
+  color: rgb(20, 227, 26);
+  font-size: 48px;
 }
 
 .logo, .fixed-logo {
   width: 340px;
   padding-bottom: 20px!important;
   padding-top: 25px!important;
-  background-color: white;
-  border-bottom: 2px solid rgb(137, 43, 226);
+  background-color: black;
+  border-bottom: 2px solid rgb(20, 227, 26);
   z-index: 999;
 }
 
@@ -125,7 +142,7 @@ input[type="file"] {
 }
 .custom-file-upload {
   color:white;
-  background-color: rgba(137, 43, 226, 0.8);
+  background-color: rgba(20, 227, 26);
   border-color: #fff;
   border-radius: 5px;
   padding: 5px;
@@ -135,7 +152,7 @@ input[type="file"] {
 
 .save-image {
   color:white;
-  background-color: rgba(137, 43, 226, 0.8);
+  background-color: rgba(20, 227, 26);
   border: none;
   border-radius: 5px;
   padding: 5px;
@@ -180,7 +197,7 @@ input[type="file"] {
   align-items: center;
   width: 250px;
   margin-bottom: 30px;
-  background-color: rgba(137, 43, 226, 0.7);
+  background-color: rgba(20, 227, 26, 0.7);
   border-radius: 10px;
 }
 
@@ -217,7 +234,7 @@ input[type="file"] {
 }
 
 .act-chart {
-  background-color: rgba(137, 43, 226, 0.7);
+  background-color: rgba(20, 227, 26, 0.7);
   color: white;
   width: max-content;
 }
@@ -231,7 +248,7 @@ input[type="file"] {
 .stage-cell {
   position: sticky;
   left: 0;
-  background-color: rgba(137, 43, 226, 0.7);
+  background-color: rgba(20, 227, 26, 0.7);
   height: 25px;
   padding-left: 5px;
   padding-right: 5px;
@@ -264,13 +281,13 @@ input[type="file"] {
 
 .act {
   height: 25px;
-  background-color: white;
-  color: rgb(137, 43, 226);
+  background-color: black;
+  color: rgb(20, 227, 26);
   text-align: center;
   font-size: 12px;
   position: absolute;
   border-radius: 5px;
-  border-color: purple;
+  border-color: rgb(25, 229, 49);
   border-style: solid;
   border-width: 1px;
   top: 7.5px;
@@ -282,8 +299,8 @@ input[type="file"] {
 }
 
 .base-block {
-  background-color: white;
-  border-top: 2px solid rgb(137, 43, 226);
+  background-color: black;
+  border-top: 2px solid rgb(20, 227, 26);
   display: flex;
   margin-left: 0;
   width: 2229px;
@@ -297,8 +314,8 @@ input[type="file"] {
 @media screen and (min-width: 500px) {
 
   .flanking-block-left {
-    background-color: rgba(137, 43, 226, 0.6);
-    border-right: 2px solid rgb(137, 43, 226);
+    background-color: rgba(20, 227, 26, 0.6);
+    border-right: 2px solid rgb(20, 227, 26);
     display: flex;
     margin-left: 0;
     height: max(100%, 100vh);
@@ -307,8 +324,8 @@ input[type="file"] {
   }
 
   .flanking-block-right {
-    background-color: rgba(137, 43, 226, 0.6);
-    border-left: 2px solid rgb(137, 43, 226);
+    background-color: rgba(20, 227, 26, 0.6);
+    border-left: 2px solid rgb(20, 227, 26);
     display: flex;
     margin-left: 0;
     height: max(100%, 100vh);
