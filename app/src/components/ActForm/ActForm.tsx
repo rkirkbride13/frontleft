@@ -154,8 +154,8 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               id="date"
               data-cy="date"
               type="date"
-              min="2023-06-22"
-              max="2023-06-25"
+              min="2024-06-27"
+              max="2024-06-30"
               value={date}
               onChange={handleChange(setDate)}
             />

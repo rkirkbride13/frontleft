@@ -19,7 +19,7 @@ html, body {
 
 .header {
   font-size: 16px;
-  color: white;
+  color: black;
 }
 
 .form-page {
@@ -54,7 +54,7 @@ html, body {
 }
 
 label {
-  color: white;
+  color: black;
   font-size: 15px;
   font-weight: 500;
 }
@@ -107,6 +107,7 @@ label {
 }
 
 .logo, .fixed-logo {
+  font-family: 'Orbitron', sans-serif;
   width: 340px;
   padding-bottom: 20px!important;
   padding-top: 25px!important;
@@ -115,13 +116,18 @@ label {
   z-index: 999;
 }
 
+.fixed-logo a {
+  color: rgb(20, 227, 26);
+  font-size: 48px;
+}
+
 img {
   width: 100%;
   text-align: center;
 }
 
 a {
-  color: white;
+  color: black;
   font-size: 14px;
 }
 
@@ -197,7 +203,7 @@ input[type="file"] {
   align-items: center;
   width: 250px;
   margin-bottom: 30px;
-  background-color: rgba(20, 227, 26, 0.7);
+  background-color: rgba(20, 227, 26);
   border-radius: 10px;
 }
 
@@ -211,7 +217,7 @@ input[type="file"] {
 .day-acts {
   display: flex;
   font-size: 14px;
-  color: white;
+  color: black;
   text-decoration: none;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -220,7 +226,7 @@ input[type="file"] {
 .day-acts input {
   background: none;
   border: none;
-  color: white;
+  color: rgb(215, 31, 31);
   cursor: pointer;
 }
 
@@ -248,7 +254,7 @@ input[type="file"] {
 .stage-cell {
   position: sticky;
   left: 0;
-  background-color: rgba(20, 227, 26, 0.7);
+  background-color: rgba(20, 227, 26);
   height: 25px;
   padding-left: 5px;
   padding-right: 5px;
@@ -282,7 +288,7 @@ input[type="file"] {
 .act {
   height: 25px;
   background-color: black;
-  color: rgb(20, 227, 26);
+  color: rgb(white);
   text-align: center;
   font-size: 12px;
   position: absolute;
