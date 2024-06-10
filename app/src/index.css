@@ -281,7 +281,7 @@ input[type="file"] {
   top: 0;
   bottom: 0;
   left: 50%;
-  border-left: 1px dashed white;
+  border-left: 1px dashed black;
   z-index: 998;
 }
 

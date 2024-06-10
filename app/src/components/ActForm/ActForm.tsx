@@ -1,4 +1,3 @@
-import { filter } from "cypress/types/bluebird";
 import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
 import { NavigateFunction } from "react-router";
 import serverURL from "../../serverURL";
@@ -13,20 +12,35 @@ interface ActFormInt {
 }
 
 const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
-  // Define a function to handle changes to an input field
-  const handleChange = (
-    setFunction: React.Dispatch<React.SetStateAction<string>>
-  ) => {
-    return (event: ChangeEvent<HTMLInputElement>) => {
-      setFunction(event.target.value);
-    };
-  };
   // Define state variables for the input fields
   const [name, setName] = useState<string>("");
   const [stage, setStage] = useState<string>("");
   const [date, setDate] = useState<string>("");
   const [start, setStart] = useState<string>("");
   const [end, setEnd] = useState<string>("");
+
+  // Define a function to handle changes to an input field
+  const handleChange = (
+    setFunction: React.Dispatch<React.SetStateAction<string>>,
+    field?: string
+  ) => {
+    return (event: ChangeEvent<HTMLInputElement>) => {
+      const value = event.target.value;
+      setFunction(value);
+
+      if (field === "name") {
+        const performer = lineup.find((act) => act.performer === value);
+        if (performer) {
+          setStart(performer.start.replace(":", ""));
+          setEnd(performer.end.replace(":", ""));
+        } else {
+          setStart("");
+          setEnd("");
+        }
+      }
+    };
+  };
+
   // Define a function to handle form submission
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
@@ -86,14 +100,16 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
 
   const performerOptions = () => {
     return lineup.map((act) => (
-      <option value={act.performer}>{act.performer}</option>
+      <option key={act.performer} value={act.performer}>
+        {act.performer}
+      </option>
     ));
   };
 
   const startOptions = () => {
     const filteredLineup = lineup.filter((act) => act.performer === name);
     return filteredLineup.map((act) => (
-      <option value={act.start.replace(":", "")}>
+      <option key={act.start} value={act.start.replace(":", "")}>
         {act.start.replace(":", "")}
       </option>
     ));
@@ -102,7 +118,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
   const endOptions = () => {
     const filteredLineup = lineup.filter((act) => act.performer === name);
     return filteredLineup.map((act) => (
-      <option value={act.end.replace(":", "")}>
+      <option key={act.end} value={act.end.replace(":", "")}>
         {act.end.replace(":", "")}
       </option>
     ));
@@ -117,19 +133,18 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
         <br></br>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
-            <label htmlFor="name">Name: </label>
+            <label htmlFor="date">Date: </label>
             <input
               className="input"
-              placeholder="Band, DJ etc.."
-              id="name"
-              data-cy="name"
-              type="text"
-              list="performers"
-              style={{ width: "120px" }}
-              value={name}
-              onChange={handleChange(setName)}
+              placeholder="Date"
+              id="date"
+              data-cy="date"
+              type="date"
+              min="2024-06-27"
+              max="2024-06-30"
+              value={date}
+              onChange={handleChange(setDate)}
             />
-            <datalist id="performers">{performerOptions()}</datalist>
           </div>
           <div className="form-row">
             <label htmlFor="stage">Stage: </label>
@@ -147,18 +162,19 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
             <datalist id="stages">{stageOptions()}</datalist>
           </div>
           <div className="form-row">
-            <label htmlFor="date">Date: </label>
+            <label htmlFor="name">Name: </label>
             <input
               className="input"
-              placeholder="Date"
-              id="date"
-              data-cy="date"
-              type="date"
-              min="2024-06-27"
-              max="2024-06-30"
-              value={date}
-              onChange={handleChange(setDate)}
+              placeholder="Band, DJ etc.."
+              id="name"
+              data-cy="name"
+              type="text"
+              list="performers"
+              style={{ width: "120px" }}
+              value={name}
+              onChange={handleChange(setName, "name")}
             />
+            <datalist id="performers">{performerOptions()}</datalist>
           </div>
           <div className="form-row">
             <label htmlFor="start">Start: </label>
