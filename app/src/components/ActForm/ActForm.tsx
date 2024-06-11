@@ -1,4 +1,10 @@
-import React, { useState, FormEvent, ChangeEvent, ReactElement } from "react";
+import React, {
+  useState,
+  FormEvent,
+  ChangeEvent,
+  ReactElement,
+  useEffect,
+} from "react";
 import { NavigateFunction } from "react-router";
 import serverURL from "../../serverURL";
 import { lineup } from "./lineup";
@@ -19,6 +25,32 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
   const [start, setStart] = useState<string>("");
   const [end, setEnd] = useState<string>("");
 
+  const dateToDayMap: { [key: string]: string } = {
+    "2024-06-27": "THURSDAY",
+    "2024-06-28": "FRIDAY",
+    "2024-06-29": "SATURDAY",
+    "2024-06-30": "SUNDAY",
+  };
+
+  useEffect(() => {
+    if (date && stage && name) {
+      const day = dateToDayMap[date];
+      const stageData = lineup.find((s) => s.stage === stage);
+      if (stageData) {
+        const performer = stageData.performers.find(
+          (act) => act.day === day && act.name === name
+        );
+        if (performer) {
+          setStart(performer.start.replace(":", ""));
+          setEnd(performer.end.replace(":", ""));
+        } else {
+          setStart("");
+          setEnd("");
+        }
+      }
+    }
+  }, [date, stage, name]);
+
   // Define a function to handle changes to an input field
   const handleChange = (
     setFunction: React.Dispatch<React.SetStateAction<string>>,
@@ -29,16 +61,29 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
       setFunction(value);
 
       if (field === "name") {
-        const performer = lineup.find((act) => act.performer === value);
-        if (performer) {
-          setStart(performer.start.replace(":", ""));
-          setEnd(performer.end.replace(":", ""));
-        } else {
-          setStart("");
-          setEnd("");
+        const day = dateToDayMap[date];
+        const stageData = lineup.find((s) => s.stage === stage);
+        if (stageData) {
+          const performer = stageData.performers.find(
+            (act) => act.day === day && act.name === value
+          );
+          if (performer) {
+            setStart(performer.start.replace(":", ""));
+            setEnd(performer.end.replace(":", ""));
+          } else {
+            setStart("");
+            setEnd("");
+          }
         }
       }
     };
+  };
+
+  // Define a function to clear an input field
+  const handleClear = (
+    setFunction: React.Dispatch<React.SetStateAction<string>>
+  ) => {
+    return () => setFunction("");
   };
 
   // Define a function to handle form submission
@@ -78,7 +123,6 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
             .then(async (data) => {
               // Update the state of the parent component with the updated list of acts
               setName("");
-              setStage("");
               setStart("");
               setEnd("");
               setActs(data.acts);
@@ -99,29 +143,50 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
   };
 
   const performerOptions = () => {
-    return lineup.map((act) => (
-      <option key={act.performer} value={act.performer}>
-        {act.performer}
-      </option>
-    ));
+    const day = dateToDayMap[date];
+    const stageData = lineup.find((s) => s.stage === stage);
+    if (stageData) {
+      return stageData.performers
+        .filter((act) => act.day === day)
+        .map((act) => (
+          <option key={act.name} value={act.name}>
+            {act.name}
+          </option>
+        ));
+    }
+    return null;
   };
 
   const startOptions = () => {
-    const filteredLineup = lineup.filter((act) => act.performer === name);
-    return filteredLineup.map((act) => (
-      <option key={act.start} value={act.start.replace(":", "")}>
-        {act.start.replace(":", "")}
-      </option>
-    ));
+    const day = dateToDayMap[date];
+    const stageData = lineup.find((s) => s.stage === stage);
+    if (stageData) {
+      const filteredLineup = stageData.performers.filter(
+        (act) => act.day === day
+      );
+      return filteredLineup.map((act) => (
+        <option key={act.start} value={act.start.replace(":", "")}>
+          {act.start.replace(":", "")}
+        </option>
+      ));
+    }
+    return null;
   };
 
   const endOptions = () => {
-    const filteredLineup = lineup.filter((act) => act.performer === name);
-    return filteredLineup.map((act) => (
-      <option key={act.end} value={act.end.replace(":", "")}>
-        {act.end.replace(":", "")}
-      </option>
-    ));
+    const day = dateToDayMap[date];
+    const stageData = lineup.find((s) => s.stage === stage);
+    if (stageData) {
+      const filteredLineup = stageData.performers.filter(
+        (act) => act.day === day
+      );
+      return filteredLineup.map((act) => (
+        <option key={act.end} value={act.end.replace(":", "")}>
+          {act.end.replace(":", "")}
+        </option>
+      ));
+    }
+    return null;
   };
 
   // Render a form for creating a new act
@@ -159,6 +224,13 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               value={stage}
               onChange={handleChange(setStage)}
             />
+            <button
+              type="button"
+              onClick={handleClear(setStage)}
+              className="clear-button"
+            >
+              X
+            </button>
             <datalist id="stages">{stageOptions()}</datalist>
           </div>
           <div className="form-row">
@@ -174,6 +246,13 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               value={name}
               onChange={handleChange(setName, "name")}
             />
+            <button
+              type="button"
+              onClick={handleClear(setName)}
+              className="clear-button"
+            >
+              X
+            </button>
             <datalist id="performers">{performerOptions()}</datalist>
           </div>
           <div className="form-row">
@@ -187,6 +266,13 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               value={start}
               onChange={handleChange(setStart)}
             />
+            <button
+              type="button"
+              onClick={handleClear(setStart)}
+              className="clear-button"
+            >
+              X
+            </button>
             <datalist id="starts">{startOptions()}</datalist>
           </div>
           <div className="form-row">
@@ -200,6 +286,13 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
               value={end}
               onChange={handleChange(setEnd)}
             />
+            <button
+              className="clear-button"
+              type="button"
+              onClick={handleClear(setEnd)}
+            >
+              X
+            </button>
             <datalist id="ends">{endOptions()}</datalist>
           </div>
           <input
