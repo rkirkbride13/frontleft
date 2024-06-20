@@ -37,7 +37,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
       const day = dateToDayMap[date];
       const stageData = lineup.find((s) => s.stage === stage);
       if (stageData) {
-        const performer = stageData.performers.find(
+        const performer = lineup.find(
           (act) => act.day === day && act.name === name
         );
         if (performer) {
@@ -64,7 +64,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
         const day = dateToDayMap[date];
         const stageData = lineup.find((s) => s.stage === stage);
         if (stageData) {
-          const performer = stageData.performers.find(
+          const performer = lineup.find(
             (act) => act.day === day && act.name === value
           );
           if (performer) {
@@ -146,8 +146,8 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
     const day = dateToDayMap[date];
     const stageData = lineup.find((s) => s.stage === stage);
     if (stageData) {
-      return stageData.performers
-        .filter((act) => act.day === day)
+      return lineup
+        .filter((act) => act.day === day && act.stage === stage)
         .map((act) => (
           <option key={act.name} value={act.name}>
             {act.name}
@@ -161,9 +161,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
     const day = dateToDayMap[date];
     const stageData = lineup.find((s) => s.stage === stage);
     if (stageData) {
-      const filteredLineup = stageData.performers.filter(
-        (act) => act.day === day
-      );
+      const filteredLineup = lineup.filter((act) => act.day === day);
       return filteredLineup.map((act) => (
         <option key={act.start} value={act.start.replace(":", "")}>
           {act.start.replace(":", "")}
@@ -177,9 +175,7 @@ const ActForm = ({ navigate, token, setActs }: ActFormInt): ReactElement => {
     const day = dateToDayMap[date];
     const stageData = lineup.find((s) => s.stage === stage);
     if (stageData) {
-      const filteredLineup = stageData.performers.filter(
-        (act) => act.day === day
-      );
+      const filteredLineup = lineup.filter((act) => act.day === day);
       return filteredLineup.map((act) => (
         <option key={act.end} value={act.end.replace(":", "")}>
           {act.end.replace(":", "")}
